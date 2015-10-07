@@ -11,6 +11,7 @@
     "debug": "~2.2.0",
     "env2": "^2.0.2",
     "express": "~4.13.1",
+    "fs-readdir-recursive": "^1.0.0",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"

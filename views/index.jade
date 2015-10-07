@@ -1,5 +1,16 @@
 extends layout
 
+block navigation
+  nav(class='navbar navbar-inverse' role='navigation')
+    div(class='navbar-header')
+      div(class='navbar-brand') My Blog
+
+    ul(class='nav navbar-nav')
+      li
+        a(ui-sref='home') Home
+      li
+        a(ui-sref='addPost') Add Post
+
 block content
-  h1= title
-  p Welcome to the #{title}
+  div(class='container')
+    div(ui-view)

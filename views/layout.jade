@@ -2,6 +2,19 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+
+    //- Load bootstrap.
+    link(href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet")
+    style .navbar { border-radius: 0; }
+
+    //- Load Angular & ui-router.
+    script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js")
+    script(src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js")
+
+    //- Load all Angular app scripts.
+    for script in scripts
+      script(src='javascripts/' + script)
+
+  body(ng-app='angular-express')
+    block navigation
     block content
