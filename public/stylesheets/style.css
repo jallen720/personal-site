@@ -1,8 +1,14 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.navbar {
+  border-radius: 0;
 }
 
-a {
-  color: #00B7FF;
+.post-date {
+  color: #999;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.post-body {
+  color: #444;
+  font-size: 18px;
 }

@@ -1,8 +1,5 @@
-p There are {{ posts.length }} posts
-
 div(ng-repeat='post in posts')
-  h3 {{ post.title }}
-  div {{ post.body }}
+  include post
   a(href='#/editPost/{{ $index }}') Edit
   |  -&nbsp;
   a(href='#/deletePost/{{ $index }}') Delete
