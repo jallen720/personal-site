@@ -1,14 +1,14 @@
-var express       = require('express'),
-    readRecursive = require('fs-readdir-recursive');
+var express = require('express'),
+    readdir = require('fs-readdir-recursive');
 
-var router = express.Router();
-var ngScripts = readRecursive('public/javascripts');
+var router  = express.Router(),
+    scripts = readdir('public/javascripts');
 
 // Home page.
 router.get('/', function(req, res) {
   res.render('index', {
     title:   'My Blog',
-    scripts: ngScripts,
+    scripts: scripts,
   });
 });
 
