@@ -5,7 +5,9 @@ app.controller('addPost', [
   '$state',
   'posts',
   function($scope, $state, posts) {
-    $scope.addPost = function() {
+    $scope.formName = 'Write a new post';
+
+    $scope.submit = function() {
       posts.add($scope.post);
       $state.go('home');
     };

@@ -15,18 +15,18 @@ app.config([
 
       .state('addPost', {
         url:         '/addPost',
-        templateUrl: '/partials/addPost',
+        templateUrl: '/partials/postForm',
         controller:  'addPost'
       })
 
       .state('editPost', {
-        url:         '/editPost/{index}',
-        templateUrl: '/partials/editPost',
+        url:         '/editPost/{id}',
+        templateUrl: '/partials/postForm',
         controller:  'editPost'
       })
 
       .state('deletePost', {
-        url:         '/deletePost/{index}',
+        url:         '/deletePost/{id}',
         templateUrl: '/partials/deletePost',
         controller:  'deletePost'
       });

@@ -27,39 +27,27 @@ var testBody =
 'st about double every year. Which means the forthcoming iPhone 6s will be al' +
 'most 10 times faster than the iPhone 4 was.'
 
-function asParagraphs(text) {
-  return text.split('\n');
-}
-
-function asText(paragraphs) {
-  return paragraphs.join('\n');
-}
-
 app.factory('posts', [
   function() {
     var posts = {
       all: [
         {
           title: 'Test post',
-          body:  asParagraphs(testBody),
+          body:  testBody,
           date:  now(),
         }
       ]
     };
 
     posts.get = function(id) {
-      var post = posts.all[id];
-      post.body = asText(post.body);
       return posts.all[id];
     }
 
     posts.set = function(id, post) {
-      post.body = asParagraphs(post.body);
       posts.all[id] = post;
     }
 
     posts.add = function(post) {
-      post.body = asParagraphs(post.body);
       post.date = now();
       posts.all.push(post);
     }

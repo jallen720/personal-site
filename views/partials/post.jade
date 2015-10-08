@@ -1,4 +1,4 @@
 h2 {{ post.title }}
 div(class='post-date') {{ post.date }}
-div(class='post-body' ng-repeat='paragraph in post.body track by $index')
-  p {{ paragraph }}
+div(class='post-body' ng-repeat='paragraph in post.body.split("\\n") track by $index')
+  p(class='post-paragraph') {{ paragraph }}

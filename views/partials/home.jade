@@ -1,5 +1,4 @@
 div(ng-repeat='post in posts')
   include post
-  a(href='#/editPost/{{ $index }}') Edit
-  |  -&nbsp;
-  a(href='#/deletePost/{{ $index }}') Delete
+  button(class='btn left-btn' ng-click='editPost($index)') Edit
+  button(class='btn left-btn' ng-click='deletePost($index)') Delete

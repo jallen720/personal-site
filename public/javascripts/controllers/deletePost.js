@@ -6,14 +6,14 @@ app.controller('deletePost', [
   '$stateParams',
   'posts',
   function($scope, $state, $stateParams, posts) {
-    $scope.post = posts.get($stateParams.index);
+    $scope.post = posts.get($stateParams.id);
 
     $scope.cancel = function() {
       $state.go('home');
     }
 
     $scope.deletePost = function() {
-      posts.delete($stateParams.index);
+      posts.delete($stateParams.id);
       $state.go('home');
     }
   }

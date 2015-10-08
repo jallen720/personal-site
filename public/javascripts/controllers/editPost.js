@@ -6,10 +6,11 @@ app.controller('editPost', [
   '$stateParams',
   'posts',
   function($scope, $state, $stateParams, posts) {
-    $scope.post = posts.get($stateParams.index);
+    $scope.post = posts.get($stateParams.id);
+    $scope.formName = 'Edit post';
 
-    $scope.editPost = function() {
-      posts.set($stateParams.index, $scope.post);
+    $scope.submit = function() {
+      posts.set($stateParams.id, $scope.post);
       $state.go('home');
     }
   }
