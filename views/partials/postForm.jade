@@ -1,5 +1,8 @@
 h2 {{ formName }}
 
+div(ng-show='error' class='alert alert-danger')
+  p(class='warning') {{ error.message }}
+
 input(
   class='post-form-title form-control'
   ng-model='post.title'

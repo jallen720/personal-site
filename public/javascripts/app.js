@@ -10,7 +10,16 @@ app.config([
       .state('home', {
         url:         '/home',
         templateUrl: '/partials/home',
-        controller:  'home'
+        controller:  'home',
+
+        resolve: {
+          loadPosts: [
+            'posts',
+            function(posts) {
+              posts.load();
+            }
+          ]
+        }
       })
 
       .state('createPost', {

@@ -6,9 +6,14 @@ var express      = require('express'),
     logger       = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser   = require('body-parser'),
+    mongoose     = require('mongoose'),
+    Post         = require('./models/Post'),
     index        = require('./routes/index');
 
 var app = express();
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost/blog');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

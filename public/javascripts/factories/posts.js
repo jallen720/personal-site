@@ -9,52 +9,41 @@ function monthName(monthIndex) {
   ][monthIndex];
 }
 
-function now() {
-  var date = new Date();
+function formattedDate(date) {
   return monthName(date.getMonth()) + ' ' +
          date.getDate() + ', ' +
          date.getFullYear();
 }
 
-var testBody =
-'The last time I seriously upgraded my PC was in 2011, because the PC is over' +
-'. And in some ways, it truly is – they can slap a ton more CPU cores on a di' +
-'e, for sure, but the overall single core performance increase from a 2011 hi' +
-'gh end Intel CPU to today\'s high end Intel CPU is … really quite modest, on' +
-' the order of maybe 30% to 40%.\n' +
-'\n' +
-'In that same timespan, mobile and tablet CPU performance has continued to ju' +
-'st about double every year. Which means the forthcoming iPhone 6s will be al' +
-'most 10 times faster than the iPhone 4 was.'
-
 app.factory('posts', [
-  function() {
+  '$http',
+  function($http) {
     var posts = {
-      all: [
-        {
-          title: 'Test post',
-          body:  testBody,
-          date:  now(),
-        }
-      ]
+      all: []
+    };
+
+    posts.load = function() {
+      $http.get('/posts').success(function(data) {
+        angular.copy(data, posts.all);
+      });
+    };
+
+    posts.create = function(post) {
+      post.date = formattedDate(new Date());
+      return $http.post('/posts', post);
+    };
+
+    posts.delete = function(id) {
+      return $http.delete('/posts/' + id);
     };
 
     posts.get = function(id) {
-      return posts.all[id];
-    }
+      return $http.get('/posts/' + id);
+    };
 
     posts.set = function(id, post) {
-      posts.all[id] = post;
-    }
-
-    posts.add = function(post) {
-      post.date = now();
-      posts.all.push(post);
-    }
-
-    posts.delete = function(id) {
-      posts.all.splice(id, 1);
-    }
+      return $http.post('/posts/' + id, post);
+    };
 
     return posts;
   }

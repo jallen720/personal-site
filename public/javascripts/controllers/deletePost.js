@@ -6,15 +6,20 @@ app.controller('deletePost', [
   '$stateParams',
   'posts',
   function($scope, $state, $stateParams, posts) {
-    $scope.post = posts.get($stateParams.id);
+    posts.get($stateParams.id)
+      .success(function(post) {
+        $scope.post = post;
+      });
 
     $scope.cancel = function() {
       $state.go('home');
     };
 
     $scope.deletePost = function() {
-      posts.delete($stateParams.id);
-      $state.go('home');
+      posts.delete($stateParams.id)
+        .success(function() {
+          $state.go('home');
+        });
     };
   }
 ]);
