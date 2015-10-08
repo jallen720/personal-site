@@ -5,12 +5,9 @@ app.controller('editPost', [
   '$state',
   '$stateParams',
   'posts',
-  function($scope, $state, $stateParams, posts) {
-    posts.get($stateParams.id)
-      .success(function(post) {
-        $scope.post = post;
-      });
-
+  'post',
+  function($scope, $state, $stateParams, posts, post) {
+    $scope.post = post;
     $scope.formName = 'Edit post';
 
     $scope.submit = function() {

@@ -5,11 +5,9 @@ app.controller('deletePost', [
   '$state',
   '$stateParams',
   'posts',
-  function($scope, $state, $stateParams, posts) {
-    posts.get($stateParams.id)
-      .success(function(post) {
-        $scope.post = post;
-      });
+  'post',
+  function($scope, $state, $stateParams, posts, post) {
+    $scope.post = post;
 
     $scope.cancel = function() {
       $state.go('home');
