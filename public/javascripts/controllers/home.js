@@ -10,10 +10,10 @@ app.controller('home', [
 
     $scope.editPost = function(id) {
       $state.go('editPost', { id: id });
-    }
+    };
 
     $scope.deletePost = function(id) {
       $state.go('deletePost', { id: id });
-    }
+    };
   }
 ]);

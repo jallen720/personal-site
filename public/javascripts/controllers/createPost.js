@@ -1,6 +1,6 @@
 var app = angular.module('angular-express');
 
-app.controller('addPost', [
+app.controller('createPost', [
   '$scope',
   '$state',
   'posts',
@@ -8,7 +8,7 @@ app.controller('addPost', [
     $scope.formName = 'Write a new post';
 
     $scope.submit = function() {
-      posts.add($scope.post);
+      posts.create($scope.post);
       $state.go('home');
     };
   }

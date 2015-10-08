@@ -13,10 +13,10 @@ app.config([
         controller:  'home'
       })
 
-      .state('addPost', {
-        url:         '/addPost',
+      .state('createPost', {
+        url:         '/createPost',
         templateUrl: '/partials/postForm',
-        controller:  'addPost'
+        controller:  'createPost'
       })
 
       .state('editPost', {

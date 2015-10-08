@@ -10,11 +10,11 @@ app.controller('deletePost', [
 
     $scope.cancel = function() {
       $state.go('home');
-    }
+    };
 
     $scope.deletePost = function() {
       posts.delete($stateParams.id);
       $state.go('home');
-    }
+    };
   }
 ]);

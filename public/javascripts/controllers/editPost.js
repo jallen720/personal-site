@@ -12,6 +12,6 @@ app.controller('editPost', [
     $scope.submit = function() {
       posts.set($stateParams.id, $scope.post);
       $state.go('home');
-    }
+    };
   }
 ]);
