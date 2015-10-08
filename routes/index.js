@@ -14,23 +14,34 @@ function savePost(post, res, next) {
   });
 }
 
-function isValidPost(reqBody) {
-  return reqBody.title && reqBody.title !== '' &&
-         reqBody.body && reqBody.body !== '';
-}
-
-function sendError(res, message) {
+function sendError(res, messages) {
   res.status(400).send({
-    message: message
+    messages: messages
   });
 }
 
-function validatePost(post, res, success) {
-  if (isValidPost(post)) {
-    success();
-  } else {
-    sendError(res, 'All fields must be filled out!');
+function getErrorMessages(post, callback) {
+  var messages = [];
+
+  if (!post.title || post.title === '') {
+    messages.push('Post title must be filled out!');
   }
+
+  if (!post.body || post.body === '') {
+    messages.push('Post body must be filled out!');
+  }
+
+  callback(messages);
+}
+
+function validatePost(post, res, success) {
+  getErrorMessages(post, function(messages) {
+    if (messages.length === 0) {
+      success();
+    } else {
+      sendError(res, messages);
+    }
+  });
 }
 
 function createPost(newPost, res, next) {
