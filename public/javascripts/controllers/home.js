@@ -6,7 +6,7 @@ app.controller('home', [
   '$http',
   'posts',
   function($scope, $state, $http, posts) {
-    $scope.posts = posts.all;
+    $scope.posts = posts.getAll();
 
     $scope.editPost = function(id) {
       $state.go('editPost', { id: id });
