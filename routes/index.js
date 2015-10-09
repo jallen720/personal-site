@@ -78,15 +78,13 @@ router.route('/posts')
 router.param('post', function(req, res, next, id) {
   Post.findById(id).exec(function(err, post) {
     if (err) {
-      return next(err);
+      next(err);
+    } else if (!post) {
+      next(new Error('Can\'t find post!'));
+    } else {
+      req.post = post;
+      next();
     }
-
-    if (!post) {
-      return next(new Error('Can\'t find post!'));
-    }
-
-    req.post = post;
-    return next();
   });
 });
 
