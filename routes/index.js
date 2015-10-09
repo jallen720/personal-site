@@ -4,14 +4,16 @@ var express  = require('express'),
 var router = express.Router(),
     Post   = mongoose.model('Post');
 
-function savePost(post, res, next) {
-  post.save(function(err) {
-    if (err) {
-      return next(err);
-    }
+function getMessages(errors) {
+  var messages = [];
 
-    res.sendStatus(200);
-  });
+  for (var error in errors) {
+    if (errors.hasOwnProperty(error)) {
+      messages.push(errors[error].message);
+    }
+  }
+
+  return messages;
 }
 
 function sendError(res, messages) {
@@ -20,41 +22,27 @@ function sendError(res, messages) {
   });
 }
 
-function getErrorMessages(post, callback) {
-  var messages = [];
-
-  if (!post.title || post.title === '') {
-    messages.push('Post title must be filled out!');
-  }
-
-  if (!post.body || post.body === '') {
-    messages.push('Post body must be filled out!');
-  }
-
-  callback(messages);
-}
-
-function validatePost(post, res, success) {
-  getErrorMessages(post, function(messages) {
-    if (messages.length === 0) {
-      success();
+function savePost(post, res) {
+  post.save(function(err) {
+    if (err) {
+      sendError(res, getMessages(err.errors));
     } else {
-      sendError(res, messages);
+      res.sendStatus(200);
     }
   });
 }
 
-function createPost(newPost, res, next) {
+function createPost(newPost, res) {
   // Create Post with request body, which contains the post data (title, body,
   // and date). Not to be confused with the posts body. Then save the post, and
   // send it in the result.
-  savePost(new Post(newPost), res, next);
+  savePost(new Post(newPost), res);
 }
 
-function updatePost(post, updatedPost, res, next) {
+function updatePost(post, updatedPost, res) {
   post.title = updatedPost.title;
   post.body = updatedPost.body;
-  savePost(post, res, next);
+  savePost(post, res);
 }
 
 // Home page.
@@ -84,9 +72,7 @@ router.route('/posts')
 
   // Create new post.
   .post(function(req, res, next) {
-    validatePost(req.body, res, function() {
-      createPost(req.body, res, next);
-    });
+    createPost(req.body, res);
   });
 
 router.param('post', function(req, res, next, id) {
@@ -110,9 +96,7 @@ router.route('/posts/:post')
   })
 
   .post(function(req, res, next) {
-    validatePost(req.body, res, function() {
-      updatePost(req.post, req.body, res, next);
-    });
+    updatePost(req.post, req.body, res);
   })
 
   .delete(function(req, res, next) {
