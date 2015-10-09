@@ -27,7 +27,7 @@ app.factory('posts', [
 
       load: function() {
         $http.get('/posts').success(function(data) {
-          angular.copy(data, all);
+          angular.copy(data.reverse(), all);
         });
       },
 

@@ -5,13 +5,13 @@ div(ng-show='error' class='alert alert-danger')
     p(class='warning') {{ message }}
 
 input(
-  class='post-form-title input-field form-control'
+  class='post-form-title input-field form-control input-area'
   ng-model='post.title'
   placeholder='Put your post\'s title here...'
 )
 
 textarea(
-  class='post-form-body form-control'
+  class='post-form-body form-control input-area'
   ng-model='post.body'
   placeholder='Write your post here...'
   rows=12
