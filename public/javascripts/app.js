@@ -59,6 +59,12 @@ app.config([
         resolve: {
           post: postPromise
         }
+      })
+
+      .state('admin', {
+        url:         '/admin',
+        templateUrl: '/partials/admin',
+        controller:  'admin'
       });
 
     $urlRouterProvider.otherwise('home');

@@ -73,24 +73,21 @@
   margin-bottom: 20px;
 }
 
+.input-field {
+  margin-bottom: 10px;
+}
+
+.admin-input {
+  max-width: 400px;
+  font-size: 18px;
+}
+
 .post-form-title {
   font-size: 22px;
-  display: block;
-  margin-bottom: 10px;
-  width: 100%;
-
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 .post-form-body {
   font-size: 18px;
-  width: 100%;
-
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 html, body {
