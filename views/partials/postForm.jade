@@ -5,17 +5,16 @@ div(ng-show='error' class='alert alert-danger')
     p(class='warning') {{ message }}
 
 input(
-  class='post-form-title input-field form-control input-area'
+  class='post-form-title input-field form-control'
   ng-model='post.title'
   placeholder='Put your post\'s title here...'
 )
 
 textarea(
-  class='post-form-body form-control input-area'
+  class='post-form-body input-field form-control'
   ng-model='post.body'
   placeholder='Write your post here...'
   rows=12
 )
 
-br
 button(class='btn left-btn' ng-click='submit()') Submit
