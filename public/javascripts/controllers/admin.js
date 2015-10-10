@@ -6,7 +6,7 @@ app.controller(
     $scope.credentials = {};
 
     $scope.submit = function() {
-      admin.login($scope.credentials)
+      admin.logIn($scope.credentials)
         .error(function(error) {
           $scope.error = error;
         })

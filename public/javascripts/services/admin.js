@@ -10,10 +10,14 @@ app.factory('admin', [
         return _isLoggedIn;
       },
 
-      login: function(credentials) {
+      logIn: function(credentials) {
         return $http.post('/login', credentials).success(function() {
           _isLoggedIn = true;
         });
+      },
+
+      logOut: function() {
+        _isLoggedIn = false;
       },
     };
   }

@@ -16,6 +16,19 @@ var postPromise = function($stateParams, posts) {
     });
 }
 
+var nonAdminReroute = function($state, admin) {
+  if (!admin.isLoggedIn()) {
+    $state.go('home');
+  }
+}
+
+var adminReroute = function($state, admin) {
+  console.log('admin.isLoggedIn(): ' + admin.isLoggedIn());
+  if (admin.isLoggedIn()) {
+    $state.go('home');
+  }
+}
+
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
@@ -32,12 +45,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url:         '/createPost',
       templateUrl: '/partials/postForm',
       controller:  'createPost',
+      onEnter:     nonAdminReroute,
     })
 
     .state('editPost', {
       url:         '/editPost/{id}',
       templateUrl: '/partials/postForm',
       controller:  'editPost',
+      onEnter:     nonAdminReroute,
 
       resolve: {
         post: postPromise,
@@ -48,6 +63,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url:         '/deletePost/{id}',
       templateUrl: '/partials/deletePost',
       controller:  'deletePost',
+      onEnter:     nonAdminReroute,
 
       resolve: {
         post: postPromise,
@@ -58,6 +74,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url:         '/admin',
       templateUrl: '/partials/admin',
       controller:  'admin',
+      onEnter:     adminReroute,
     });
 
   $urlRouterProvider.otherwise('home');

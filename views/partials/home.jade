@@ -1,6 +1,6 @@
 div(ng-repeat='post in posts')
   include post
 
-  div(ng-show='isLoggedIn')
+  div(ng-show='isLoggedIn()')
     button(class='btn left-btn' ng-click='editPost(post._id)') Edit
     button(class='btn left-btn' ng-click='deletePost(post._id)') Delete
