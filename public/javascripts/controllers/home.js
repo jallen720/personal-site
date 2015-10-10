@@ -2,9 +2,9 @@ var app = angular.module('angular-express');
 
 app.controller(
   'home',
-  function($scope, $state, $http, allPosts, admin) {
+  function($scope, $rootScope, $state, allPosts, admin) {
     $scope.posts = allPosts;
-    $scope.isLoggedIn = admin.isLoggedIn();
+    $rootScope.isLoggedIn = admin.isLoggedIn();
 
     $scope.editPost = function(id) {
       $state.go('editPost', { id: id });
