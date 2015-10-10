@@ -7,7 +7,7 @@ var postsPromise = [
   function(posts) {
     posts.load();
   }
-]
+];
 
 var postPromise = [
   '$stateParams',
@@ -18,7 +18,7 @@ var postPromise = [
         return res.data;
       });
   }
-]
+];
 
 app.config([
   '$stateProvider',
