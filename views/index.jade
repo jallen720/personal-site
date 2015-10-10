@@ -1,17 +1,8 @@
 extends layout
 
-block navigation
-  nav(class='navbar navbar-inverse' role='navigation')
-    div(class='navbar-header')
-      div(class='navbar-brand') My Blog
-
-    ul(class='nav navbar-nav')
-      li
-        a(ui-sref='home') Home
-      li
-        a(ui-sref='createPost') Create Post
-
 block content
+  include partials/navigation
+
   div(class="row")
     div(class="col-md-8 col-md-offset-2")
       div(ui-view)

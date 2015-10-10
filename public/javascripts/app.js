@@ -16,53 +16,49 @@ var postPromise = function($stateParams, posts) {
     });
 }
 
-app.config([
-  '$stateProvider',
-  '$urlRouterProvider',
-  function($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url:         '/home',
-        templateUrl: '/partials/home',
-        controller:  'home',
+app.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+    .state('home', {
+      url:         '/home',
+      templateUrl: '/partials/home',
+      controller:  'home',
 
-        resolve: {
-          allPosts: allPostsPromise,
-        },
-      })
+      resolve: {
+        allPosts: allPostsPromise,
+      },
+    })
 
-      .state('createPost', {
-        url:         '/createPost',
-        templateUrl: '/partials/postForm',
-        controller:  'createPost',
-      })
+    .state('createPost', {
+      url:         '/createPost',
+      templateUrl: '/partials/postForm',
+      controller:  'createPost',
+    })
 
-      .state('editPost', {
-        url:         '/editPost/{id}',
-        templateUrl: '/partials/postForm',
-        controller:  'editPost',
+    .state('editPost', {
+      url:         '/editPost/{id}',
+      templateUrl: '/partials/postForm',
+      controller:  'editPost',
 
-        resolve: {
-          post: postPromise,
-        },
-      })
+      resolve: {
+        post: postPromise,
+      },
+    })
 
-      .state('deletePost', {
-        url:         '/deletePost/{id}',
-        templateUrl: '/partials/deletePost',
-        controller:  'deletePost',
+    .state('deletePost', {
+      url:         '/deletePost/{id}',
+      templateUrl: '/partials/deletePost',
+      controller:  'deletePost',
 
-        resolve: {
-          post: postPromise,
-        },
-      })
+      resolve: {
+        post: postPromise,
+      },
+    })
 
-      .state('admin', {
-        url:         '/admin',
-        templateUrl: '/partials/admin',
-        controller:  'admin',
-      });
+    .state('admin', {
+      url:         '/admin',
+      templateUrl: '/partials/admin',
+      controller:  'admin',
+    });
 
-    $urlRouterProvider.otherwise('home');
-  }
-]);
+  $urlRouterProvider.otherwise('home');
+});
