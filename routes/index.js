@@ -109,14 +109,24 @@ function getAdminAccount(next, callback) {
   });
 }
 
+function isValidUsername(admin, credentials) {
+  return credentials.username &&
+         admin.username == credentials.username;
+}
+
+function isValidPassword(admin, credentials) {
+  return credentials.password &&
+         admin.isPassword(credentials.password);
+}
+
 function validateCredentials(admin, credentials, callback) {
   var errorMessages = [];
 
-  if (!credentials.username || admin.username != credentials.username) {
+  if (!isValidUsername(admin, credentials)) {
     errorMessages.push('Invalid username!');
   }
 
-  if (!credentials.password || !admin.isPassword(credentials.password)) {
+  if (!isValidPassword(admin, credentials)) {
     errorMessages.push('Invalid password!');
   }
 
