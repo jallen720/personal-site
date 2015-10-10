@@ -3,11 +3,22 @@ var app = angular.module('angular-express');
 app.controller('admin', [
   '$scope',
   '$state',
-  function($scope, $state) {
-    $scope.admin = {};
+  'admin',
+  function($scope, $state, admin) {
+    $scope.credentials = {};
 
     $scope.submit = function() {
-      $state.go('home');
-    }
+      admin.login($scope.credentials)
+        .error(function(error) {
+          $scope.error = error;
+        })
+
+        .success(function() {
+          console.log(admin.isLoggedIn());
+          // $state.go('home');
+        });
+
+      // $state.go('home');
+    };
   }
 ]);

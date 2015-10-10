@@ -5,8 +5,10 @@ app.controller('home', [
   '$state',
   '$http',
   'posts',
-  function($scope, $state, $http, posts) {
+  'admin',
+  function($scope, $state, $http, posts, admin) {
     $scope.posts = posts.getAll();
+    $scope.isLoggedIn = admin.isLoggedIn();
 
     $scope.editPost = function(id) {
       $state.go('editPost', { id: id });

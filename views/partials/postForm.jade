@@ -1,8 +1,6 @@
 h2 {{ formName }}
 
-div(ng-show='error' class='alert alert-danger')
-  div(ng-repeat='message in error.messages')
-    p(class='warning') {{ message }}
+include errors
 
 input(
   class='post-form-title input-field form-control'

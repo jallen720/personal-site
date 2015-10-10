@@ -3,7 +3,8 @@ var express          = require('express'),
     getErrorMessages = require('../utils/getErrorMessages');
 
 var router = express.Router(),
-    Post   = mongoose.model('Post');
+    Post   = mongoose.model('Post'),
+    Admin  = mongoose.model('Admin');
 
 function sendError(res, messages) {
   res.status(400).send({
@@ -93,6 +94,45 @@ router.route('/posts/:post')
       }
 
       res.sendStatus(200);
+    });
+  });
+
+function getAdminAccount(next, callback) {
+  Admin.findOne(function(err, admin) {
+    if (err) {
+      next(err);
+    } else if (!admin) {
+      next(new Error('An admin account has not been set up!'));
+    } else {
+      callback(admin);
+    }
+  });
+}
+
+function validateCredentials(admin, credentials, callback) {
+  var errorMessages = [];
+
+  if (!credentials.username || admin.username != credentials.username) {
+    errorMessages.push('Invalid username!');
+  }
+
+  if (!credentials.password || !admin.isPassword(credentials.password)) {
+    errorMessages.push('Invalid password!');
+  }
+
+  callback(errorMessages);
+}
+
+router.route('/login')
+  .post(function(req, res, next) {
+    getAdminAccount(next, function(admin) {
+      validateCredentials(admin, req.body, function(errorMessages) {
+        if (errorMessages.length > 0) {
+          sendError(res, errorMessages);
+        } else {
+          res.sendStatus(200);
+        }
+      });
     });
   });
 

@@ -8,6 +8,7 @@ var express      = require('express'),
     bodyParser   = require('body-parser'),
     mongoose     = require('mongoose'),
     Post         = require('./models/Post'),
+    Admin        = require('./models/Admin'),
     index        = require('./routes/index');
 
 var app = express();
