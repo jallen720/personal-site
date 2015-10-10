@@ -1,8 +1,6 @@
 var app = angular.module('angular-express');
 
-app.controller('admin', [
-  '$scope',
-  '$state',
+app.controller(
   'admin',
   function($scope, $state, admin) {
     $scope.credentials = {};
@@ -14,11 +12,8 @@ app.controller('admin', [
         })
 
         .success(function() {
-          console.log(admin.isLoggedIn());
-          // $state.go('home');
+          $state.go('home');
         });
-
-      // $state.go('home');
     };
   }
-]);
+);

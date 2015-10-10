@@ -1,13 +1,9 @@
 var app = angular.module('angular-express');
 
-app.controller('home', [
-  '$scope',
-  '$state',
-  '$http',
-  'posts',
-  'admin',
-  function($scope, $state, $http, posts, admin) {
-    $scope.posts = posts.getAll();
+app.controller(
+  'home',
+  function($scope, $state, $http, allPosts, admin) {
+    $scope.posts = allPosts;
     $scope.isLoggedIn = admin.isLoggedIn();
 
     $scope.editPost = function(id) {
@@ -18,4 +14,4 @@ app.controller('home', [
       $state.go('deletePost', { id: id });
     };
   }
-]);
+);

@@ -2,23 +2,19 @@ var app = angular.module('angular-express', [
   'ui.router',
 ]);
 
-var postsPromise = [
-  'posts',
-  function(posts) {
-    posts.load();
-  }
-];
+var allPostsPromise = function(posts) {
+  return posts.getAll()
+    .then(function(res) {
+      return res.data.reverse();
+    });
+}
 
-var postPromise = [
-  '$stateParams',
-  'posts',
-  function($stateParams, posts) {
-    return posts.get($stateParams.id)
-      .then(function(res) {
-        return res.data;
-      });
-  }
-];
+var postPromise = function($stateParams, posts) {
+  return posts.get($stateParams.id)
+    .then(function(res) {
+      return res.data;
+    });
+}
 
 app.config([
   '$stateProvider',
@@ -31,14 +27,14 @@ app.config([
         controller:  'home',
 
         resolve: {
-          loadPosts: postsPromise
-        }
+          allPosts: allPostsPromise,
+        },
       })
 
       .state('createPost', {
         url:         '/createPost',
         templateUrl: '/partials/postForm',
-        controller:  'createPost'
+        controller:  'createPost',
       })
 
       .state('editPost', {
@@ -47,8 +43,8 @@ app.config([
         controller:  'editPost',
 
         resolve: {
-          post: postPromise
-        }
+          post: postPromise,
+        },
       })
 
       .state('deletePost', {
@@ -57,14 +53,14 @@ app.config([
         controller:  'deletePost',
 
         resolve: {
-          post: postPromise
-        }
+          post: postPromise,
+        },
       })
 
       .state('admin', {
         url:         '/admin',
         templateUrl: '/partials/admin',
-        controller:  'admin'
+        controller:  'admin',
       });
 
     $urlRouterProvider.otherwise('home');

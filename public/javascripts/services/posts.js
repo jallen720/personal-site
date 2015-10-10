@@ -15,38 +15,27 @@ function formattedDate(date) {
          date.getFullYear();
 }
 
-app.factory('posts', [
-  '$http',
-  function($http) {
-    var all = [];
+app.factory('posts', function($http) {
+  return {
+    getAll: function() {
+      return $http.get('/posts');
+    },
 
-    return {
-      getAll: function() {
-        return all;
-      },
+    create: function(post) {
+      post.date = formattedDate(new Date());
+      return $http.post('/posts', post);
+    },
 
-      load: function() {
-        $http.get('/posts').success(function(data) {
-          angular.copy(data.reverse(), all);
-        });
-      },
+    delete: function(id) {
+      return $http.delete('/posts/' + id);
+    },
 
-      create: function(post) {
-        post.date = formattedDate(new Date());
-        return $http.post('/posts', post);
-      },
+    get: function(id) {
+      return $http.get('/posts/' + id);
+    },
 
-      delete: function(id) {
-        return $http.delete('/posts/' + id);
-      },
-
-      get: function(id) {
-        return $http.get('/posts/' + id);
-      },
-
-      set: function(id, post) {
-        return $http.post('/posts/' + id, post);
-      },
-    };
-  }
-]);
+    set: function(id, post) {
+      return $http.post('/posts/' + id, post);
+    },
+  };
+});

@@ -1,11 +1,7 @@
 var app = angular.module('angular-express');
 
-app.controller('deletePost', [
-  '$scope',
-  '$state',
-  '$stateParams',
-  'posts',
-  'post',
+app.controller(
+  'deletePost',
   function($scope, $state, $stateParams, posts, post) {
     $scope.post = post;
 
@@ -20,4 +16,4 @@ app.controller('deletePost', [
         });
     };
   }
-]);
+);

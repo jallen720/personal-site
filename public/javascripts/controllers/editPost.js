@@ -1,14 +1,10 @@
 var app = angular.module('angular-express');
 
-app.controller('editPost', [
-  '$scope',
-  '$state',
-  '$stateParams',
-  'posts',
-  'post',
+app.controller(
+  'editPost',
   function($scope, $state, $stateParams, posts, post) {
-    $scope.post = post;
     $scope.formName = 'Edit post';
+    $scope.post = post;
 
     $scope.submit = function() {
       posts.set($stateParams.id, $scope.post)
@@ -21,4 +17,4 @@ app.controller('editPost', [
         });
     };
   }
-]);
+);
