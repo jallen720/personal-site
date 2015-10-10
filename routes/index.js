@@ -1,20 +1,9 @@
-var express  = require('express'),
-    mongoose = require('mongoose');
+var express          = require('express'),
+    mongoose         = require('mongoose'),
+    getErrorMessages = require('../utils/getErrorMessages');
 
 var router = express.Router(),
     Post   = mongoose.model('Post');
-
-function getMessages(errors) {
-  var messages = [];
-
-  for (var error in errors) {
-    if (errors.hasOwnProperty(error)) {
-      messages.push(errors[error].message);
-    }
-  }
-
-  return messages;
-}
 
 function sendError(res, messages) {
   res.status(400).send({
@@ -25,7 +14,7 @@ function sendError(res, messages) {
 function savePost(post, res) {
   post.save(function(err) {
     if (err) {
-      sendError(res, getMessages(err.errors));
+      sendError(res, getErrorMessages(err.errors));
     } else {
       res.sendStatus(200);
     }

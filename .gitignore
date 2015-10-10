@@ -32,3 +32,6 @@ config.env
 
 # Sublime files
 *.sublime*
+
+# To-do list
+todo
