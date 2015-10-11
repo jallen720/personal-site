@@ -1,0 +1,16 @@
+button(
+  class='btn left-btn'
+  ng-click='postAction("read", post._id)'
+) Read
+
+button(
+  ng-show='isLoggedIn()'
+  class='btn left-btn'
+  ng-click='postAction("edit", post._id)'
+) Edit
+
+button(
+  ng-show='isLoggedIn()'
+  class='btn left-btn'
+  ng-click='postAction("delete", post._id)'
+) Delete

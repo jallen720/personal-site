@@ -2,6 +2,15 @@ var app = angular.module('angular-express', [
   'ui.router',
 ]);
 
+function scrollToTop() {
+  document.body.scrollTop =
+  document.documentElement.scrollTop = 0;
+}
+
+app.run(function($rootScope) {
+  $rootScope.$on('$stateChangeSuccess', scrollToTop);
+});
+
 function monthString(dateString) {
   var MONTH_BEGIN = 5;
   var MONTH_END = 7;
@@ -92,6 +101,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: '/partials/post.form',
       controller:  'createPost',
       onEnter:     nonAdminReroute,
+    })
+
+    .state('readPost', {
+      url:         '/readPost/{id}',
+      templateUrl: '/partials/post.full',
+      controller:  'readPost',
+
+      resolve: {
+        post: postPromise,
+      },
     })
 
     .state('editPost', {

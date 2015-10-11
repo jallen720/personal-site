@@ -6,12 +6,8 @@ app.controller(
     $scope.posts = allPosts;
     $scope.isLoggedIn = admin.isLoggedIn;
 
-    $scope.editPost = function(id) {
-      $state.go('editPost', { id: id });
-    };
-
-    $scope.deletePost = function(id) {
-      $state.go('deletePost', { id: id });
+    $scope.postAction = function(action, id) {
+      $state.go(action + 'Post', { id: id });
     };
   }
 );
