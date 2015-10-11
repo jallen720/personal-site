@@ -39,16 +39,14 @@ function formattedDate(dateString) {
          yearString(dateString);
 };
 
-function formatDates(posts) {
-  posts.forEach(function(post) {
-    post.date = formattedDate(post.date);
-  });
-
-  return posts;
+function formattedPost(post) {
+  post.date = formattedDate(post.date);
+  return post;
 }
 
 function formattedPosts(posts) {
-  return formatDates(posts).reverse();
+  return posts.map(formattedPost)
+              .reverse();
 }
 
 var allPostsPromise = function(posts) {
@@ -61,7 +59,7 @@ var allPostsPromise = function(posts) {
 var postPromise = function($stateParams, posts) {
   return posts.get($stateParams.id)
     .then(function(res) {
-      return res.data;
+      return formattedPost(res.data);
     });
 }
 
