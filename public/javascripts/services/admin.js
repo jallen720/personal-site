@@ -1,6 +1,7 @@
 var app = angular.module('angular-express');
 
 app.factory('admin', function($http, $window) {
+  var admin = {};
   var TOKEN_NAME = 'blog-admin-token';
 
   function getPayload(token) {
@@ -15,28 +16,28 @@ app.factory('admin', function($http, $window) {
     return token && !isExpired(token);
   }
 
-  function loadToken() {
-    return $window.localStorage[TOKEN_NAME];
-  }
-
   function saveToken(token) {
     $window.localStorage[TOKEN_NAME] = token;
   }
 
-  return {
-    isLoggedIn: function() {
-      return isValidToken(loadToken());
-    },
-
-    logIn: function(credentials) {
-      return $http.post('/login', credentials)
-        .success(function(data) {
-          saveToken(data.token);
-        });
-    },
-
-    logOut: function() {
-      $window.localStorage.removeItem(TOKEN_NAME);
-    },
+  admin.loadToken = function() {
+    return $window.localStorage[TOKEN_NAME];
   };
+
+  admin.isLoggedIn = function() {
+    return isValidToken(admin.loadToken());
+  };
+
+  admin.logIn = function(credentials) {
+    return $http.post('/login', credentials)
+      .success(function(data) {
+        saveToken(data.token);
+      });
+  };
+
+  admin.logOut = function() {
+    $window.localStorage.removeItem(TOKEN_NAME);
+  };
+
+  return admin;
 });

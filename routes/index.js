@@ -1,10 +1,15 @@
 var express          = require('express'),
     mongoose         = require('mongoose'),
+    jwt              = require('express-jwt'),
     getErrorMessages = require('../utils/getErrorMessages');
 
 var router = express.Router(),
     Post   = mongoose.model('Post'),
-    Admin  = mongoose.model('Admin');
+    Admin  = mongoose.model('Admin'),
+    auth   = jwt({
+               secret:       process.env.SECRET,
+               userProperty: 'payload'
+             });
 
 function sendError(res, messages) {
   res.status(400).send({
@@ -52,16 +57,16 @@ router.route('/posts')
   .get(function(_, res, next) {
     Post.find(function(err, posts) {
       if (err) {
-        return next(err);
+        next(err);
+      } else {
+        // Send all posts as JSON (empty object if no posts exist) to client.
+        res.json(posts);
       }
-
-      // Send all posts as JSON (empty object if no posts exist) to client.
-      res.json(posts);
     });
   })
 
   // Create new post.
-  .post(function(req, res, next) {
+  .post(auth, function(req, res, next) {
     createPost(req.body, res);
   });
 
@@ -83,11 +88,11 @@ router.route('/posts/:post')
     res.send(req.post);
   })
 
-  .post(function(req, res, next) {
+  .post(auth, function(req, res, next) {
     updatePost(req.post, req.body, res);
   })
 
-  .delete(function(req, res, next) {
+  .delete(auth, function(req, res, next) {
     req.post.remove(function(err) {
       if (err) {
         return next(err);

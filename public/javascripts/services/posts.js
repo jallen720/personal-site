@@ -15,7 +15,15 @@ function formattedDate(date) {
          date.getFullYear();
 }
 
-app.factory('posts', function($http) {
+function authHeader(token) {
+  return {
+    headers: {
+      Authorization: 'Bearer ' + token
+    }
+  }
+}
+
+app.factory('posts', function($http, admin) {
   return {
     getAll: function() {
       return $http.get('/posts');
@@ -23,11 +31,19 @@ app.factory('posts', function($http) {
 
     create: function(post) {
       post.date = formattedDate(new Date());
-      return $http.post('/posts', post);
+
+      return $http.post(
+        '/posts',
+        post,
+        authHeader(admin.loadToken())
+      );
     },
 
     delete: function(id) {
-      return $http.delete('/posts/' + id);
+      return $http.delete(
+        '/posts/' + id,
+        authHeader(admin.loadToken())
+      );
     },
 
     get: function(id) {
@@ -35,7 +51,11 @@ app.factory('posts', function($http) {
     },
 
     set: function(id, post) {
-      return $http.post('/posts/' + id, post);
+      return $http.post(
+        '/posts/' + id,
+        post,
+        authHeader(admin.loadToken())
+      );
     },
   };
 });
