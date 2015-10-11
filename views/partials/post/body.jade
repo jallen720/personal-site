@@ -1,7 +1,3 @@
-h2 {{ post.title }}
-div(class='post-date') {{ post.date }}
-img(ng-show='post.imageURL' src='{{ post.imageURL }}' class='post-image')
-
 div(
   class='post-body'
   ng-repeat='paragraph in post.body.split("\\n") track by $index'

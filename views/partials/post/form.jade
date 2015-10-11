@@ -1,6 +1,5 @@
 h2 {{ formName }}
-
-include errors
+include ../errors
 
 input(
   class='post-form-title input-field form-control'
@@ -22,3 +21,6 @@ textarea(
 )
 
 button(class='btn left-btn' ng-click='submit()') Submit
+
+h2 Live Preview
+include full

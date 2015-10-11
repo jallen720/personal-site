@@ -1,5 +1,5 @@
 div(ng-repeat='post in posts')
-  include post
+  include post/preview
 
   div(ng-show='isLoggedIn()')
     button(class='btn left-btn' ng-click='editPost(post._id)') Edit

@@ -11,6 +11,27 @@ var router = express.Router(),
                userProperty: 'payload'
              });
 
+// Home page.
+router.get('/', function(_, res) {
+  res.render('index', {
+    title: 'My Blog'
+  });
+});
+
+function getPartialPath(partialName) {
+  return partialName.replace('.', '/');
+}
+
+router.param('partialName', function(req, res, next, partialName) {
+  req.partialPath = getPartialPath(partialName);
+  next();
+});
+
+// Partial templates for Angular states.
+router.get('/partials/:partialName', function(req, res) {
+  res.render('partials/' + req.partialPath);
+});
+
 function sendError(res, messages) {
   res.status(400).send({
     messages: messages
@@ -33,25 +54,6 @@ function createPost(newPost, res) {
   // send it in the result.
   savePost(new Post(newPost), res);
 }
-
-function updatePost(post, updatedPost, res) {
-  post.title    = updatedPost.title;
-  post.imageURL = updatedPost.imageURL;
-  post.body     = updatedPost.body;
-  savePost(post, res);
-}
-
-// Home page.
-router.get('/', function(_, res) {
-  res.render('index', {
-    title: 'My Blog'
-  });
-});
-
-// Partial templates for Angular states.
-router.get('/partials/:name', function(req, res) {
-  res.render('partials/' + req.params.name);
-});
 
 router.route('/posts')
   // Get all posts.
@@ -83,6 +85,13 @@ router.param('post', function(req, res, next, id) {
     }
   });
 });
+
+function updatePost(post, updatedPost, res) {
+  post.title    = updatedPost.title;
+  post.imageURL = updatedPost.imageURL;
+  post.body     = updatedPost.body;
+  savePost(post, res);
+}
 
 router.route('/posts/:post')
   .get(function(req, res) {
