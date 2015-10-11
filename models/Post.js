@@ -8,12 +8,13 @@ var PostSchema = new mongoose.Schema({
     required: requiredMessage
   },
 
+  date:     Date,
+  imageURL: String,
+
   body: {
     type:     String,
     required: requiredMessage
   },
-
-  date: Date,
 });
 
 PostSchema.pre('save', function(next) {

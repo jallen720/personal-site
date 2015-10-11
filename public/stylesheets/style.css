@@ -69,7 +69,12 @@
   text-align: right;
 }
 
-.post-paragraph {
+.post-image {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.post-paragraph, .post-image {
   margin-bottom: 20px;
 }
 
@@ -121,7 +126,7 @@
   font-size: 22px;
 }
 
-.post-form-body {
+.post-form-body, .post-form-image-url {
   font-size: 18px;
 }
 

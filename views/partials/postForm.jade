@@ -8,6 +8,12 @@ input(
   placeholder='Put your post\'s title here...'
 )
 
+input(
+  class='post-form-image-url input-field form-control'
+  ng-model='post.imageURL'
+  placeholder='Put your post\'s header image URL here...'
+)
+
 textarea(
   class='post-form-body input-field form-control'
   ng-model='post.body'

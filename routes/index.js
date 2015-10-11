@@ -35,8 +35,9 @@ function createPost(newPost, res) {
 }
 
 function updatePost(post, updatedPost, res) {
-  post.title = updatedPost.title;
-  post.body = updatedPost.body;
+  post.title    = updatedPost.title;
+  post.imageURL = updatedPost.imageURL;
+  post.body     = updatedPost.body;
   savePost(post, res);
 }
 
