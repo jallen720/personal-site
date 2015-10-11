@@ -10,7 +10,46 @@
 
 .post-body {
   color: #444;
+}
+
+.post-preview {
+  max-height: 200px;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.fadeout {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  height: 140px;
+  background:       -webkit-linear-gradient(transparent 0%, white 100%);
+  background-image:    -moz-linear-gradient(transparent 0%, white 100%);
+  background-image:     -ms-linear-gradient(transparent 0%, white 100%);
+  background-image:      -o-linear-gradient(transparent 0%, white 100%);
+  background-image:         linear-gradient(transparent 0%, white 100%);
+}
+
+.post-form-title {
+  font-size: 22px;
+}
+
+.post-body,
+.post-form-body,
+.post-form-image-url,
+.admin-input {
   font-size: 18px;
+}
+
+.post-image {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.post-paragraph,
+.post-image,
+.post-preview {
+  margin-bottom: 20px;
 }
 
 .btn {
@@ -69,15 +108,6 @@
   text-align: right;
 }
 
-.post-image {
-  border-radius: 5px;
-  width: 100%;
-}
-
-.post-paragraph, .post-image {
-  margin-bottom: 20px;
-}
-
 .input-field {
   border-width: 2px;
   margin-bottom: 10px;
@@ -119,15 +149,6 @@
 
 .admin-input {
   max-width: 400px;
-  font-size: 18px;
-}
-
-.post-form-title {
-  font-size: 22px;
-}
-
-.post-form-body, .post-form-image-url {
-  font-size: 18px;
 }
 
 html, body {
