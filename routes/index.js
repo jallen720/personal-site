@@ -145,7 +145,9 @@ router.route('/login')
         if (errorMessages.length > 0) {
           sendError(res, errorMessages);
         } else {
-          res.json({ token: admin.generateJWT() });
+          res.json({
+            token: admin.generateJWT()
+          });
         }
       });
     });
