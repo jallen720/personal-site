@@ -47,7 +47,7 @@ router.get('/', function(_, res) {
   });
 });
 
-// Partial templates for Angular.
+// Partial templates for Angular states.
 router.get('/partials/:name', function(req, res) {
   res.render('partials/' + req.params.name);
 });

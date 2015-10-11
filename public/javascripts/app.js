@@ -2,10 +2,59 @@ var app = angular.module('angular-express', [
   'ui.router',
 ]);
 
+function monthString(dateString) {
+  var MONTH_BEGIN = 5;
+  var MONTH_END = 7;
+  return dateString.substring(MONTH_BEGIN, MONTH_END);
+}
+
+function monthIndex(dateString) {
+  return parseInt(monthString(dateString)) - 1;
+}
+
+function monthName(dateString) {
+  return [
+    "January", "February", "March"    ,
+    "April"  , "May"     , "June"     ,
+    "July"   , "August"  , "September",
+    "October", "November", "December" ,
+  ][monthIndex(dateString)];
+}
+
+function dayString(dateString) {
+  var DAY_BEGIN = 8;
+  var DAY_END = 10;
+  return dateString.substring(DAY_BEGIN, DAY_END);
+}
+
+function yearString(dateString) {
+  var YEAR_BEGIN = 0;
+  var YEAR_END = 4;
+  return dateString.substring(YEAR_BEGIN, YEAR_END);
+}
+
+function formattedDate(dateString) {
+  return monthName(dateString) + ' ' +
+         dayString(dateString) + ', ' +
+         yearString(dateString);
+};
+
+function formatDates(posts) {
+  posts.forEach(function(post) {
+    post.date = formattedDate(post.date);
+  });
+
+  return posts;
+}
+
+function formattedPosts(posts) {
+  return formatDates(posts).reverse();
+}
+
 var allPostsPromise = function(posts) {
   return posts.getAll()
     .then(function(res) {
-      return res.data.reverse();
+      return formattedPosts(res.data);
     });
 }
 

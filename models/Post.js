@@ -13,10 +13,15 @@ var PostSchema = new mongoose.Schema({
     required: requiredMessage
   },
 
-  date: {
-    type:     String,
-    required: requiredMessage
-  },
+  date: Date,
+});
+
+PostSchema.pre('save', function(next) {
+  if (!this.date) {
+    this.date = new Date();
+  }
+
+  next();
 });
 
 mongoose.model('Post', PostSchema);

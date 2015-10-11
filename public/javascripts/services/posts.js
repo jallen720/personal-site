@@ -1,20 +1,5 @@
 var app = angular.module('angular-express');
 
-function monthName(monthIndex) {
-  return [
-    "January", "February", "March"    ,
-    "April"  , "May"     , "June"     ,
-    "July"   , "August"  , "September",
-    "October", "November", "December" ,
-  ][monthIndex];
-}
-
-function formattedDate(date) {
-  return monthName(date.getMonth()) + ' ' +
-         date.getDate() + ', ' +
-         date.getFullYear();
-}
-
 function authHeader(token) {
   return {
     headers: {
@@ -30,8 +15,6 @@ app.factory('posts', function($http, admin) {
     },
 
     create: function(post) {
-      post.date = formattedDate(new Date());
-
       return $http.post(
         '/posts',
         post,
