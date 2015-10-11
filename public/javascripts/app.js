@@ -23,7 +23,6 @@ var nonAdminReroute = function($state, admin) {
 }
 
 var adminReroute = function($state, admin) {
-  console.log('admin.isLoggedIn(): ' + admin.isLoggedIn());
   if (admin.isLoggedIn()) {
     $state.go('home');
   }

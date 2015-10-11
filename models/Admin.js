@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
-    crypto   = require('crypto');
+    crypto   = require('crypto'),
+    jwt      = require('jsonwebtoken');
 
 var regexes = {
   username: /^[a-zA-Z0-9_]{6,24}$/,
@@ -54,19 +55,24 @@ AdminSchema.methods.isPassword = function(password) {
   return this.hash === createHash(password, this.salt);
 };
 
-// function daysFromNow(days) {
-//   return new Date(new Date().getDate() + days);
-// }
+function daysFromNow(days) {
+  var today = new Date();
+  var exp = new Date(today);
+  exp.setDate(today.getDate() + days);
+  return exp;
+}
 
-// AdminSchema.methods.generateJWT = function() {
-//   return jwt.sign(
-//     {
-//       _id: this._id,
-//       username: this.username,
-//       expiration: parseInt(daysFromNow(60).getTime() / 1000),
-//     },
-//     process.env.SECRET
-//   );
-// };
+function createPayload() {
+  return {
+    expiration: parseInt(daysFromNow(60).getTime() / 1000),
+  };
+}
+
+AdminSchema.methods.generateJWT = function() {
+  return jwt.sign(
+    createPayload(),
+    process.env.SECRET
+  );
+};
 
 mongoose.model('Admin', AdminSchema);
