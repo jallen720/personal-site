@@ -5,18 +5,17 @@ div(ng-controller='postForm')
   input(
     class='post-form-title input-field form-control'
     ng-model='post.title'
-    placeholder='Put your post\'s title here...'
+    placeholder='Title'
   )
 
   input(
     class='post-form-image-url input-field form-control'
     ng-model='post.imageURL'
-    placeholder='Put your post\'s header image URL here...'
+    placeholder='Header image URL'
   )
 
   textarea(
     ng-model='post.body'
-    placeholder='Write your post here...'
     rows=12
     ui-tinymce='tinymceOptions'
   )
