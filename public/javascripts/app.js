@@ -1,5 +1,6 @@
 var app = angular.module('angular-express', [
   'ui.router',
+  'ui.tinymce',
 ]);
 
 function scrollToTop() {

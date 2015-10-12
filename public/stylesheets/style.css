@@ -35,8 +35,8 @@
 }
 
 .post-body,
-.post-form-body,
 .post-form-image-url,
+.mce-content-body,
 .admin-input {
   font-size: 18px;
 }
@@ -108,9 +108,13 @@
   text-align: right;
 }
 
+#mceu_4,
+.input-field {
+  margin-bottom: 10px;
+}
+
 .input-field {
   border-width: 2px;
-  margin-bottom: 10px;
   border-color: #EEE;
   background: #EEE;
 

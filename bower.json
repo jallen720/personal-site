@@ -1,0 +1,22 @@
+{
+  "name": "angular-express",
+  "version": "0.0.0",
+  "authors": [
+    "Joel Allen <joelallen720@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-tinymce": "~0.0.9"
+  }
+}
