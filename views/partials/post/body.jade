@@ -1,5 +1,1 @@
-div(
-  class='post-body'
-  ng-repeat='paragraph in post.body.split("\\n") track by $index'
-)
-  p(class='post-paragraph') {{ paragraph }}
+div(class='post-body' ng-bind-html='trust(post.body)' ng-controller='postBody')
