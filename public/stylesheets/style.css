@@ -14,6 +14,7 @@
 
 .post-preview {
   max-height: 200px;
+  min-height: 140px;
   overflow-y: hidden;
   position: relative;
 }
@@ -69,10 +70,10 @@
        -o-transition-property: background, color;
           transition-property: background, color;
 
-  -webkit-transition-duration: 0.25s;
-     -moz-transition-duration: 0.25s;
-       -o-transition-duration: 0.25s;
-          transition-duration: 0.25s;
+  -webkit-transition-duration: 0.2s;
+     -moz-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 
   -webkit-transition-timing-function: linear;
      -moz-transition-timing-function: linear;
@@ -108,7 +109,6 @@
   text-align: right;
 }
 
-#mceu_4,
 .input-field {
   margin-bottom: 10px;
 }
@@ -123,10 +123,10 @@
        -o-transition-property: background;
           transition-property: background;
 
-  -webkit-transition-duration: 0.25s;
-     -moz-transition-duration: 0.25s;
-       -o-transition-duration: 0.25s;
-          transition-duration: 0.25s;
+  -webkit-transition-duration: 0.2s;
+     -moz-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 
   -webkit-transition-timing-function: linear;
      -moz-transition-timing-function: linear;
