@@ -1,0 +1,18 @@
+//- Bootstrap
+link(href='bootstrap/dist/css/bootstrap.min.css' rel='stylesheet')
+
+-
+  scripts = [
+    //- Angular
+    'angular/angular.min.js',
+
+    //- ui.router
+    'angular-ui-router/release/angular-ui-router.min.js',
+
+    //- ui.tinymce
+    'tinymce-dist/tinymce.min.js',
+    'angular-ui-tinymce/src/tinymce.js',
+  ];
+
+each script in scripts
+  script(src=script)
