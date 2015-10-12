@@ -12,9 +12,9 @@ app.controller(
 
     $scope.tinymceOptions = {
       content_css: 'stylesheets/style.css',
-      menubar: false,
-      statusbar: false,
-      toolbar: TOOLS,
+      menubar:     false,
+      statusbar:   false,
+      toolbar:     TOOLS,
     };
   }
 );
