@@ -28,8 +28,15 @@ router.param('partialName', function(req, res, next, partialName) {
 });
 
 // Partial templates for Angular states.
-router.get('/partials/:partialName', function(req, res) {
-  res.render('partials/' + req.partialPath);
+router.get('/partials/:partialName', function(req, res, next) {
+  res.render('partials/' + req.partialPath, {}, function(err, html) {
+    if (err) {
+      console.log(err);
+      next();
+    } else {
+      res.send(html);
+    }
+  });
 });
 
 function sendError(res, messages) {
