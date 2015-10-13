@@ -16,11 +16,9 @@ div(ng-controller='postForm')
 
   textarea(
     ng-model='post.body'
-    rows=12
+    rows=16
     ui-tinymce='tinymceOptions'
   )
 
+  div(class='tinymce-bottom-margin')
   button(class='btn left-btn' ng-click='submit()') Submit
-
-  h2 Live Preview
-  include full
