@@ -3,7 +3,7 @@ var app = angular.module('angular-express');
 app.controller(
   'createPost',
   function($scope, $state, posts) {
-    $scope.formName = 'Write a new post';
+    $scope.formName = 'New Post';
     $scope.post = {};
 
     $scope.submit = function() {
