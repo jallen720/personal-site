@@ -8,13 +8,23 @@ function scrollToTop() {
   document.documentElement.scrollTop = 0;
 }
 
+function getScrollTop(stateName) {
+  return stateName == 'home'
+         ? 0
+         : $('#ui-view').offset().top;
+}
+
 app.run(function($rootScope) {
-  $rootScope.$on('$stateChangeSuccess', scrollToTop);
+  $rootScope.$on('$stateChangeSuccess', function(_, toState) {
+    $('html, body').animate({
+      scrollTop: getScrollTop(toState.name),
+    }, 500);
+  });
 });
 
 function monthString(dateString) {
-  var MONTH_BEGIN = 5;
-  var MONTH_END = 7;
+  const MONTH_BEGIN = 5;
+  const MONTH_END   = 7;
   return dateString.substring(MONTH_BEGIN, MONTH_END);
 }
 
@@ -32,14 +42,14 @@ function monthName(dateString) {
 }
 
 function dayString(dateString) {
-  var DAY_BEGIN = 8;
-  var DAY_END = 10;
+  const DAY_BEGIN = 8;
+  const DAY_END   = 10;
   return dateString.substring(DAY_BEGIN, DAY_END);
 }
 
 function yearString(dateString) {
-  var YEAR_BEGIN = 0;
-  var YEAR_END = 4;
+  const YEAR_BEGIN = 0;
+  const YEAR_END   = 4;
   return dateString.substring(YEAR_BEGIN, YEAR_END);
 }
 
