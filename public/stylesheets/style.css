@@ -29,11 +29,10 @@
   top: 60px;
   width: 100%;
   height: 140px;
-  background:       -webkit-linear-gradient(transparent 0%, white 100%);
-  background-image:    -moz-linear-gradient(transparent 0%, white 100%);
-  background-image:     -ms-linear-gradient(transparent 0%, white 100%);
-  background-image:      -o-linear-gradient(transparent 0%, white 100%);
-  background-image:         linear-gradient(transparent 0%, white 100%);
+  background: -webkit-linear-gradient(transparent 0%, white 100%);
+  background:    -moz-linear-gradient(transparent 0%, white 100%);
+  background:      -o-linear-gradient(transparent 0%, white 100%);
+  background:         linear-gradient(transparent 0%, white 100%);
 }
 
 .post-form-title {
@@ -59,16 +58,17 @@
 }
 
 .btn {
-  -webkit-border-radius: 8;
-     -moz-border-radius: 8;
-          border-radius: 8px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+       -o-border-radius: 5px;
+          border-radius: 5px;
 
   background: white;
-  color: #33990B;
+  color: #0B9927;
   text-decoration: none;
   font-size: 20px;
   padding: 4px 24px 4px 24px;
-  border: solid #33990B 2px;
+  border: solid #0B9927 2px;
 
   -webkit-transition-property: background, color;
      -moz-transition-property: background, color;
@@ -87,7 +87,7 @@
 }
 
 .btn:hover {
-  background: #33990B;
+  background: #0B9927;
   color: #fff;
 }
 
@@ -140,12 +140,14 @@
        -o-transition-timing-function: linear;
           transition-timing-function: linear;
 
-  -webkit-border-radius: 5;
-     -moz-border-radius: 5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+       -o-border-radius: 5px;
           border-radius: 5px;
 
   -webkit-box-shadow: 0 0 0 #000;
      -moz-box-shadow: 0 0 0 #000;
+       -o-box-shadow: 0 0 0 #000;
           box-shadow: 0 0 0 #000;
 }
 
@@ -155,6 +157,7 @@
 
   -webkit-box-shadow: 0 0 0 #000;
      -moz-box-shadow: 0 0 0 #000;
+       -o-box-shadow: 0 0 0 #000;
           box-shadow: 0 0 0 #000;
 }
 
@@ -163,7 +166,7 @@
 }
 
 .blog-nav {
-  background-color: #444;
+  background: #444;
   border: none;
   box-shadow: 0px 5px 10px #aaa;
   margin-left: -5px;
@@ -195,8 +198,8 @@
 }
 
 .blog-nav-items li:hover {
-  border-bottom: 2px solid #44CC0E;
-  box-shadow: inset 0 -10px 10px -10px #44CC0E;
+  border-bottom: 2px solid #0FCC35;
+  box-shadow: inset 0 -10px 10px -10px #0FCC35;
 }
 
 #top-image {
