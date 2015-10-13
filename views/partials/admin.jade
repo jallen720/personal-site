@@ -1,16 +1,22 @@
 include errors
 
-input(
-  class='form-control input-field admin-input'
-  ng-model='credentials.username'
-  placeholder='Username'
-)
+form(ng-submit='submit()')
+  input(
+    class='form-control input-field admin-input'
+    ng-model='credentials.username'
+    placeholder='Username'
+    autofocus
+  )
 
-input(
-  class='form-control input-field admin-input'
-  ng-model='credentials.password'
-  placeholder='Password'
-  type='password'
-)
+  input(
+    class='form-control input-field admin-input'
+    ng-model='credentials.password'
+    placeholder='Password'
+    type='password'
+  )
 
-button(class='btn left-btn' ng-click='submit()') Submit
+  input(
+    class='btn left-btn'
+    type='submit'
+    value='Submit'
+  )
