@@ -12,7 +12,8 @@
   font-size: 16px;
 }
 
-.post-body {
+.post-body,
+.post-title {
   color: #444;
 }
 
