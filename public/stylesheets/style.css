@@ -46,7 +46,8 @@
   margin-bottom: 20px;
 }
 
-.post-body p {
+.post-body p,
+.mce-content-body p {
   text-indent: 1cm;
 }
 
