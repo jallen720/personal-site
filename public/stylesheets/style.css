@@ -102,6 +102,7 @@
 .alert {
   width: 100%;
   display: table;
+  padding: 10px 15px;
 }
 
 .warning {
