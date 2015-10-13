@@ -1,5 +1,10 @@
-include header
+extends post
 
-div(class='post-preview')
-  include body
-  div(class='fadeout')
+block post
+  include header
+
+  div(class='post-preview')
+    include body
+    div(class='fadeout')
+
+  include controls
