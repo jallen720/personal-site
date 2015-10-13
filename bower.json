@@ -18,8 +18,15 @@
   ],
   "dependencies": {
     "angular-ui-tinymce": "~0.0.9",
-    "angular": "~1.4.7",
+    "angular": "1.5.0-build.4320+sha.a4ada8b",
     "angular-ui-router": "ui-router#~0.2.15",
+    "jquery": "3.0.0-alpha1+compat",
+    "tinymce": "tinymce-dist#4.2.6",
     "bootstrap": "~3.3.5"
+  },
+  "resolutions": {
+    "angular": "1.5.0-build.4320+sha.a4ada8b",
+    "bootstrap": "4.0.0-alpha",
+    "jquery": "3.0.0-alpha1+compat"
   }
 }
