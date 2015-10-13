@@ -33,8 +33,8 @@ app.factory('posts', function($http, admin) {
       return $http.get('/posts/' + id);
     },
 
-    set: function(id, post) {
-      return $http.post(
+    update: function(id, post) {
+      return $http.patch(
         '/posts/' + id,
         post,
         authHeader(admin.loadToken())

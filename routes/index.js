@@ -105,7 +105,7 @@ router.route('/posts/:post')
     res.send(req.post);
   })
 
-  .post(auth, function(req, res, next) {
+  .patch(auth, function(req, res, next) {
     updatePost(req.post, req.body, res);
   })
 

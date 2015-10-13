@@ -7,7 +7,7 @@ app.controller(
     $scope.post = post;
 
     $scope.submit = function() {
-      posts.set($stateParams.id, $scope.post)
+      posts.update($stateParams.id, $scope.post)
         .error(function(error) {
           $scope.error = error;
         })
