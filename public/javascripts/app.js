@@ -50,26 +50,22 @@ function formattedDate(dateString) {
          yearString(dateString);
 };
 
-function formattedPost(post) {
+function formatDate(post) {
   post.date = formattedDate(post.date);
   return post;
-}
-
-function formattedPosts(posts) {
-  return posts.map(formattedPost);
 }
 
 function allPostsPromise(posts) {
   return posts.getAll()
     .then(function(res) {
-      return formattedPosts(res.data);
+      return res.data.map(formatDate);
     });
 }
 
 function postPromise($stateParams, posts) {
   return posts.get($stateParams.id)
     .then(function(res) {
-      return formattedPost(res.data);
+      return formatDate(res.data);
     });
 }
 
