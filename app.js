@@ -1,4 +1,7 @@
-require('env2')('config.env');
+var env2 = require('env2');
+
+// Load environment configuration.
+env2('config.env');
 
 var express      = require('express'),
     path         = require('path'),
