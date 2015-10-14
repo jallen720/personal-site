@@ -65,8 +65,7 @@ function formattedPost(post) {
 }
 
 function formattedPosts(posts) {
-  return posts.map(formattedPost)
-              .reverse();
+  return posts.map(formattedPost);
 }
 
 var allPostsPromise = function(posts) {

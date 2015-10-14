@@ -65,7 +65,7 @@ function createPost(newPost, res) {
 router.route('/posts')
   // Get all posts.
   .get(function(_, res, next) {
-    Post.find(function(err, posts) {
+    Post.find({}).sort('-date').exec(function(err, posts) {
       if (err) {
         next(err);
       } else {
