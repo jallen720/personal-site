@@ -1,14 +1,14 @@
-var app = angular.module('angular-express');
+app.factory('posts',
 
-function authHeader(token) {
-  return {
-    headers: {
-      Authorization: 'Bearer ' + token
+function($http, admin) {
+  function authHeader(token) {
+    return {
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
     }
   }
-}
 
-app.factory('posts', function($http, admin) {
   return {
     getAll: function() {
       return $http.get('/posts');
@@ -41,4 +41,6 @@ app.factory('posts', function($http, admin) {
       );
     },
   };
-});
+}
+
+);

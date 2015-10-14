@@ -3,6 +3,8 @@ var app = angular.module('angular-express', [
   'ui.tinymce',
 ]);
 
+(function() {
+
 function scrollToTop() {
   document.body.scrollTop =
   document.documentElement.scrollTop = 0;
@@ -68,27 +70,27 @@ function formattedPosts(posts) {
   return posts.map(formattedPost);
 }
 
-var allPostsPromise = function(posts) {
+function allPostsPromise(posts) {
   return posts.getAll()
     .then(function(res) {
       return formattedPosts(res.data);
     });
 }
 
-var postPromise = function($stateParams, posts) {
+function postPromise($stateParams, posts) {
   return posts.get($stateParams.id)
     .then(function(res) {
       return formattedPost(res.data);
     });
 }
 
-var nonAdminReroute = function($state, admin) {
+function nonAdminReroute($state, admin) {
   if (!admin.isLoggedIn()) {
     $state.go('home');
   }
 }
 
-var adminReroute = function($state, admin) {
+function adminReroute($state, admin) {
   if (admin.isLoggedIn()) {
     $state.go('home');
   }
@@ -106,51 +108,53 @@ app.config(function($stateProvider, $urlRouterProvider) {
       },
     })
 
-    .state('createPost', {
-      url:         '/createPost',
-      templateUrl: '/partials/post.form',
-      controller:  'createPost',
-      onEnter:     nonAdminReroute,
-    })
-
-    .state('readPost', {
-      url:         '/readPost/{id}',
-      templateUrl: '/partials/post.full',
-      controller:  'readPost',
-
-      resolve: {
-        post: postPromise,
-      },
-    })
-
-    .state('editPost', {
-      url:         '/editPost/{id}',
-      templateUrl: '/partials/post.form',
-      controller:  'editPost',
-      onEnter:     nonAdminReroute,
-
-      resolve: {
-        post: postPromise,
-      },
-    })
-
-    .state('deletePost', {
-      url:         '/deletePost/{id}',
-      templateUrl: '/partials/post.delete',
-      controller:  'deletePost',
-      onEnter:     nonAdminReroute,
-
-      resolve: {
-        post: postPromise,
-      },
-    })
-
     .state('admin', {
       url:         '/admin',
       templateUrl: '/partials/admin',
       controller:  'admin',
       onEnter:     adminReroute,
+    })
+
+    .state('postCreate', {
+      url:         '/postCreate',
+      templateUrl: '/partials/post.form',
+      controller:  'postCreate',
+      onEnter:     nonAdminReroute,
+    })
+
+    .state('postRead', {
+      url:         '/postRead/{id}',
+      templateUrl: '/partials/post.full',
+      controller:  'postRead',
+
+      resolve: {
+        post: postPromise,
+      },
+    })
+
+    .state('postUpdate', {
+      url:         '/postUpdate/{id}',
+      templateUrl: '/partials/post.form',
+      controller:  'postUpdate',
+      onEnter:     nonAdminReroute,
+
+      resolve: {
+        post: postPromise,
+      },
+    })
+
+    .state('postDelete', {
+      url:         '/postDelete/{id}',
+      templateUrl: '/partials/post.delete',
+      controller:  'postDelete',
+      onEnter:     nonAdminReroute,
+
+      resolve: {
+        post: postPromise,
+      },
     });
 
   $urlRouterProvider.otherwise('home');
 });
+
+})();

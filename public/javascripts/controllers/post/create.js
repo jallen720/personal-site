@@ -1,10 +1,11 @@
-app.controller('admin',
+app.controller('postCreate',
 
-function($scope, $state, admin) {
-  $scope.credentials = {};
+function($scope, $state, posts) {
+  $scope.formName = 'New Post';
+  $scope.post = {};
 
   $scope.submit = function() {
-    admin.logIn($scope.credentials)
+    posts.create($scope.post)
       .error(function(error) {
         $scope.error = error;
       })

@@ -1,6 +1,6 @@
-var app = angular.module('angular-express');
+app.factory('admin',
 
-app.factory('admin', function($http, $window) {
+function($http, $window) {
   var admin = {};
   var TOKEN_NAME = 'blog-admin-token';
 
@@ -40,4 +40,6 @@ app.factory('admin', function($http, $window) {
   };
 
   return admin;
-});
+}
+
+);

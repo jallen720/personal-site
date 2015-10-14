@@ -1,16 +1,16 @@
 button(
   class='btn left-btn'
-  ng-click='postAction("read", post._id)'
+  ng-click='postAction("Read", post._id)'
 ) Read
 
 button(
   ng-show='isLoggedIn()'
   class='btn left-btn'
-  ng-click='postAction("edit", post._id)'
-) Edit
+  ng-click='postAction("Update", post._id)'
+) Update
 
 button(
   ng-show='isLoggedIn()'
   class='btn left-btn'
-  ng-click='postAction("delete", post._id)'
+  ng-click='postAction("Delete", post._id)'
 ) Delete
