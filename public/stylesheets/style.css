@@ -1,5 +1,9 @@
-.navbar {
-  border-radius: 0;
+.navbar,
+.input-field {
+  -webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+       -o-border-radius: 0px;
+          border-radius: 0px;
 }
 
 .post {
@@ -68,7 +72,11 @@
      -moz-transition-property: background, color;
        -o-transition-property: background, color;
           transition-property: background, color;
+}
 
+.btn,
+.input-field,
+.blog-nav-items li {
   -webkit-transition-duration: 0.2s;
      -moz-transition-duration: 0.2s;
        -o-transition-duration: 0.2s;
@@ -130,32 +138,15 @@
      -moz-transition-property: background;
        -o-transition-property: background;
           transition-property: background;
-
-  -webkit-transition-duration: 0.2s;
-     -moz-transition-duration: 0.2s;
-       -o-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-
-  -webkit-transition-timing-function: linear;
-     -moz-transition-timing-function: linear;
-       -o-transition-timing-function: linear;
-          transition-timing-function: linear;
-
-  -webkit-border-radius: 0px;
-     -moz-border-radius: 0px;
-       -o-border-radius: 0px;
-          border-radius: 0px;
-
-  -webkit-box-shadow: 0 0 0 #000;
-     -moz-box-shadow: 0 0 0 #000;
-       -o-box-shadow: 0 0 0 #000;
-          box-shadow: 0 0 0 #000;
 }
 
 .input-field:focus {
   border-color: #EEE;
   background: #FFF;
+}
 
+.input-field,
+.input-field:focus {
   -webkit-box-shadow: 0 0 0 #000;
      -moz-box-shadow: 0 0 0 #000;
        -o-box-shadow: 0 0 0 #000;
@@ -191,16 +182,6 @@
      -moz-transition-property: border-bottom-color;
        -o-transition-property: border-bottom-color;
           transition-property: border-bottom-color;
-
-  -webkit-transition-duration: 0.2s;
-     -moz-transition-duration: 0.2s;
-       -o-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-
-  -webkit-transition-timing-function: linear;
-     -moz-transition-timing-function: linear;
-       -o-transition-timing-function: linear;
-          transition-timing-function: linear;
 }
 
 .blog-nav-items li:hover {
