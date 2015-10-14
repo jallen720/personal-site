@@ -5,22 +5,11 @@ var app = angular.module('angular-express', [
 
 (function() {
 
-function scrollToTop() {
-  document.body.scrollTop =
-  document.documentElement.scrollTop = 0;
-}
-
-function getScrollTop(stateName) {
-  return stateName == 'home'
-         ? 0
-         : $('#ui-view').offset().top;
-}
-
 app.run(function($rootScope) {
-  $rootScope.$on('$stateChangeSuccess', function(_, toState) {
-    $('html, body').animate({
-      scrollTop: getScrollTop(toState.name),
-    }, 500);
+  $rootScope.$on('$stateChangeSuccess', function() {
+    // Scroll page to top when state changes.
+    document.body.scrollTop =
+    document.documentElement.scrollTop = 0;
   });
 });
 
