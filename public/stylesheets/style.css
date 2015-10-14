@@ -181,15 +181,16 @@
 .blog-nav-items li a {
   color: white !important;
   font-size: 18px;
+  padding-bottom: 12px; /* To account for the 3px bottom border */
 }
 
 .blog-nav-items li {
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
 
-  -webkit-transition-property: border-bottom, box-shadow;
-     -moz-transition-property: border-bottom, box-shadow;
-       -o-transition-property: border-bottom, box-shadow;
-          transition-property: border-bottom, box-shadow;
+  -webkit-transition-property: border-bottom-color;
+     -moz-transition-property: border-bottom-color;
+       -o-transition-property: border-bottom-color;
+          transition-property: border-bottom-color;
 
   -webkit-transition-duration: 0.2s;
      -moz-transition-duration: 0.2s;
@@ -203,8 +204,7 @@
 }
 
 .blog-nav-items li:hover {
-  border-bottom: 2px solid #0FCC35;
-  box-shadow: inset 0 -10px 10px -10px #0FCC35;
+  border-bottom-color: #0EBF32;
 }
 
 #top-image {
