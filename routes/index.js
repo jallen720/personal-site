@@ -31,8 +31,7 @@ router.param('partialName', function(req, res, next, partialName) {
 router.get('/partials/:partialName', function(req, res, next) {
   res.render('partials/' + req.partialPath, {}, function(err, html) {
     if (err) {
-      console.log(err);
-      next();
+      next(err);
     } else {
       res.send(html);
     }

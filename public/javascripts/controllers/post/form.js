@@ -7,7 +7,7 @@ function($scope) {
     statusbar:   false,
 
     plugins: [
-      'advlist autolink lists link image charmap print hr anchor pagebreak',
+      'advlist autolink autoresize lists link image charmap print hr anchor pagebreak',
       'searchreplace wordcount visualblocks visualchars code fullscreen',
       'insertdatetime nonbreaking save table contextmenu directionality',
       'emoticons template paste textcolor colorpicker textpattern',
