@@ -8,8 +8,12 @@
           border-radius: 0px;
 }
 
-.post {
-  margin-bottom: 50px;
+.input-field:focus,
+.switcher,
+.btn,
+.btn:focus,
+.tile {
+  background-color: white;
 }
 
 .post-date {
@@ -22,8 +26,7 @@
   min-height: 140px;
 }
 
-.post-preview,
-.post-editor {
+.post-preview {
   position: relative;
   overflow-y: hidden;
 }
@@ -50,11 +53,6 @@
   font-size: 18px;
 }
 
-/*.post-image {
-  border-radius: 5px;
-}*/
-
-.post-body p,
 .post-image,
 .post-preview {
   margin-bottom: 20px;
@@ -72,20 +70,19 @@
 .switcher,
 .btn,
 .btn:focus {
-  background: white;
   color: #0B9927;
   text-decoration: none;
   padding: 4px 24px 4px 24px;
   border-style: solid;
   border-color: #0B9927;
   outline: none !important;
-  box-shadow: none;
 
-  -webkit-transition-property: background, color;
-     -moz-transition-property: background, color;
-       -o-transition-property: background, color;
-          transition-property: background, color;
+  -webkit-transition-property: background-color, color;
+     -moz-transition-property: background-color, color;
+       -o-transition-property: background-color, color;
+          transition-property: background-color, color;
 }
+
 .switcher,
 .btn,
 .btn:focus,
@@ -154,31 +151,37 @@
 .tinymce-bottom-margin,
 .post-date,
 .alert,
-#switcher-container {
+#switcher-container,
+.tile {
   margin-bottom: 10px;
 }
 
+body[ng-app='angular-express'],
 .input-field {
-  border-color: #EEE;
-  background: #EEE;
-
-  -webkit-transition-property: background;
-     -moz-transition-property: background;
-       -o-transition-property: background;
-          transition-property: background;
-}
-
-.input-field:focus {
-  border-color: #EEE;
-  background: #FFF;
+  background-color: #EEE;
 }
 
 .input-field,
 .input-field:focus {
-  -webkit-box-shadow: 0 0 0 #000;
-     -moz-box-shadow: 0 0 0 #000;
-       -o-box-shadow: 0 0 0 #000;
-          box-shadow: 0 0 0 #000;
+  border-color: #EEE;
+}
+
+.input-field {
+  -webkit-transition-property: background-color;
+     -moz-transition-property: background-color;
+       -o-transition-property: background-color;
+          transition-property: background-color;
+}
+
+.switcher,
+.input-field,
+.input-field:focus,
+.btn,
+.btn:focus {
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+       -o-box-shadow: none;
+          box-shadow: none;
 }
 
 .short-input {
@@ -192,7 +195,7 @@
 
 .blog-nav {
   background: #444;
-  box-shadow: 0px 5px 10px #aaa;
+  box-shadow: 0px 1px 14px #666;
   margin-left: -5px;
   margin-right: -5px;
 }
@@ -214,6 +217,15 @@
 
 .blog-nav-items li:hover {
   border-bottom-color: #0EBF32;
+}
+
+.tile {
+  padding: 10px;
+
+  -webkit-box-shadow: 0 1px 5px #aaa;
+     -moz-box-shadow: 0 1px 5px #aaa;
+       -o-box-shadow: 0 1px 5px #aaa;
+          box-shadow: 0 1px 5px #aaa;
 }
 
 body {
