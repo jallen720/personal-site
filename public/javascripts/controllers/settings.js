@@ -1,0 +1,7 @@
+app.controller('settings',
+
+function() {
+
+}
+
+);

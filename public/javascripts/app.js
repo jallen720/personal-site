@@ -100,6 +100,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
       onEnter:     adminReroute,
     })
 
+    .state('settings', {
+      url:         '/settings',
+      templateUrl: '/partials/settings',
+      controller:  'settings',
+      onEnter:     nonAdminReroute,
+    })
+
     .state('postCreate', {
       url:         '/postCreate',
       templateUrl: '/partials/post.editor',
