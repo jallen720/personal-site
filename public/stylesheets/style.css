@@ -181,8 +181,8 @@
           box-shadow: 0 0 0 #000;
 }
 
-.admin-input {
-  max-width: 400px;
+.short-input {
+  max-width: 50%;
 }
 
 .blog-nav,
