@@ -1,7 +1,7 @@
 app.controller('postCreate',
 
 function($scope, $state, posts) {
-  $scope.formName = 'New Post';
+  $scope.formAction = 'Create';
   $scope.post = {};
 
   $scope.submit = function() {

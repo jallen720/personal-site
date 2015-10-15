@@ -7,16 +7,16 @@ function($scope) {
     statusbar:   false,
 
     plugins: [
-      'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      'advlist autolink lists link image charmap print hr anchor pagebreak',
       'searchreplace wordcount visualblocks visualchars code fullscreen',
       'insertdatetime nonbreaking save table contextmenu directionality',
       'emoticons template paste textcolor colorpicker textpattern',
     ],
 
     toolbar:
-      'preview | styleselect | bold italic | alignleft aligncenter alignrig' +
-      'ht alignjustify | bullist numlist outdent indent | link image | fore' +
-      'color backcolor emoticons | undo redo',
+      'styleselect | bold italic | alignleft aligncenter alignright alignjust' +
+      'ify | bullist numlist outdent indent | link image | forecolor backcolo' +
+      'r emoticons | undo redo',
 
     image_advtab: true,
   };

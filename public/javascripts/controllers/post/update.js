@@ -1,7 +1,7 @@
 app.controller('postUpdate',
 
 function($scope, $state, $stateParams, posts, post) {
-  $scope.formName = 'Update post';
+  $scope.formAction = 'Update';
   $scope.post = post;
 
   $scope.submit = function() {
