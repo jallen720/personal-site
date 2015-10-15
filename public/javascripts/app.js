@@ -102,7 +102,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     .state('settings', {
       url:         '/settings',
-      templateUrl: '/partials/settings',
+      templateUrl: '/partials/settings.settings',
       controller:  'settings',
       onEnter:     nonAdminReroute,
     })
