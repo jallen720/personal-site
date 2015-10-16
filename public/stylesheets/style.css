@@ -33,8 +33,16 @@
 
 .fadeout,
 .post-image,
-.alert {
+.alert ,
+.divider {
   width: 100%;
+}
+
+.post-image {
+  width: -webkit-calc(100% + 20px);
+  width:    -moz-calc(100% + 20px);
+  width:      -o-calc(100% + 20px);
+  width:         calc(100% + 20px);
 }
 
 .fadeout {
@@ -53,14 +61,8 @@
   font-size: 18px;
 }
 
-.post-image,
-.post-preview {
-  margin-bottom: 20px;
-}
-
-.post-body p,
-.mce-content-body p {
-  text-indent: 1cm;
+p, ul, ol {
+  margin-bottom: 24px;
 }
 
 .switcher {
@@ -70,7 +72,6 @@
 .switcher,
 .btn,
 .btn:focus {
-  color: #0B9927;
   text-decoration: none;
   padding: 4px 24px 4px 24px;
   border-style: solid;
@@ -154,8 +155,17 @@
 .post-date,
 .alert,
 #switcher-container,
-.tile {
+.tile,
+.post-image,
+.post-preview,
+.divider {
   margin-bottom: 10px;
+}
+
+.post-image {
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: -10px;
 }
 
 body[ng-app='angular-express'],
@@ -196,14 +206,14 @@ body[ng-app='angular-express'],
 }
 
 .blog-nav {
-  background: #444;
+  background: white;
   box-shadow: 0px 1px 14px #666;
   margin-left: -5px;
   margin-right: -5px;
 }
 
 .blog-nav-items li a {
-  color: white !important;
+  color: #444 !important;
   font-size: 18px;
   padding-bottom: 12px; /* To account for the 3px bottom border */
 }
@@ -231,6 +241,14 @@ body[ng-app='angular-express'],
      -moz-box-shadow: 0 1px 5px #aaa;
        -o-box-shadow: 0 1px 5px #aaa;
           box-shadow: 0 1px 5px #aaa;
+}
+
+.divider {
+  border-bottom: solid 1px #DDD;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
 }
 
 body {
