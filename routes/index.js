@@ -19,7 +19,7 @@ router.get('/', function(_, res) {
 });
 
 function getPartialPath(partialName) {
-  return partialName.replace('.', '/');
+  return partialName.replace(/\./g, '/');
 }
 
 router.param('partialName', function(req, res, next, partialName) {
@@ -55,20 +55,16 @@ function savePost(post, res) {
 }
 
 function createPost(newPost, res) {
-  // Create Post with request body, which contains the post data (title, body,
-  // and date). Not to be confused with the posts body. Then save the post, and
-  // send it in the result.
   savePost(new Post(newPost), res);
 }
 
 router.route('/posts')
-  // Get all posts.
+  // Get all posts (sorted in descending order by date).
   .get(function(_, res, next) {
     Post.find({}).sort('-date').exec(function(err, posts) {
       if (err) {
         next(err);
       } else {
-        // Send all posts as JSON (empty object if no posts exist) to client.
         res.json(posts);
       }
     });
