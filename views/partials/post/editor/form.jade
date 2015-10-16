@@ -1,6 +1,6 @@
-div(ng-controller='postForm' class='tile')
-  include ../errors
+extends ../../form
 
+block inputs
   input(
     class='input-field form-control'
     ng-model='post.title'
@@ -17,7 +17,7 @@ div(ng-controller='postForm' class='tile')
   textarea(
     ng-model='post.body'
     ui-tinymce='tinymceOptions'
+    ng-controller='postForm'
   )
 
   div(class='tinymce-bottom-margin')
-  button(class='btn left-btn' ng-click='submit()') Submit

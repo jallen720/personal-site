@@ -109,7 +109,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     .state('postCreate', {
       url:         '/postCreate',
-      templateUrl: '/partials/post.editor',
+      templateUrl: '/partials/post.editor.editor',
       controller:  'postCreate',
       onEnter:     nonAdminReroute,
     })
@@ -126,7 +126,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     .state('postUpdate', {
       url:         '/postUpdate/{id}',
-      templateUrl: '/partials/post.editor',
+      templateUrl: '/partials/post.editor.editor',
       controller:  'postUpdate',
       onEnter:     nonAdminReroute,
 

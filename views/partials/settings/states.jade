@@ -1,0 +1,14 @@
+extends ../switcher
+
+block states
+  button(
+    class='switcher'
+    id='switcher-left'
+    ng-click='switchTo("change-username")'
+  ) Change Username
+
+  button(
+    class='switcher'
+    id='switcher-right'
+    ng-click='switchTo("change-password")'
+  ) Change Password

@@ -1,0 +1,14 @@
+extends ../../switcher
+
+block states
+  button(
+    class='switcher'
+    id='switcher-left'
+    ng-click='switchTo("form")'
+  ) {{ formAction }}
+
+  button(
+    class='switcher'
+    id='switcher-right'
+    ng-click='switchTo("preview")'
+  ) Preview
