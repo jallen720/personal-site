@@ -9,13 +9,13 @@ function($scope) {
 
   setSwitcherOn('left', true);
 
-  function updateSwitchers(isChangeUsername) {
-    setSwitcherOn('left', isChangeUsername);
-    setSwitcherOn('right', !isChangeUsername);
+  function updateSwitchers(isChangeEmail) {
+    setSwitcherOn('left', isChangeEmail);
+    setSwitcherOn('right', !isChangeEmail);
   }
 
-  function offView(isChangeUsername) {
-    return isChangeUsername ? 'change-password' : 'change-username';
+  function offView(isChangeEmail) {
+    return isChangeEmail ? 'change-password' : 'change-email';
   }
 
   function fadeViews(onView, offView) {
@@ -27,9 +27,9 @@ function($scope) {
   }
 
   $scope.switchTo = function(view) {
-    var isChangeUsername = view === 'change-username';
-    updateSwitchers(isChangeUsername);
-    fadeViews(view, offView(isChangeUsername));
+    var isChangeEmail = view === 'change-email';
+    updateSwitchers(isChangeEmail);
+    fadeViews(view, offView(isChangeEmail));
   };
 }
 

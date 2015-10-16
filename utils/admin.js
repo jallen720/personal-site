@@ -18,10 +18,10 @@ function displayResult(err) {
   }
 }
 
-function setAdmin(username, password) {
+function setAdmin(email, password) {
   Admin.findOne(function(err, existingAdmin) {
     var admin = existingAdmin || new Admin();
-    admin.username = username;
+    admin.email = email;
     admin.setPassword(password);
 
     admin.save(function(err) {
@@ -31,8 +31,8 @@ function setAdmin(username, password) {
   });
 }
 
-read({ prompt: 'Admin Username: ' }, function(_, username) {
+read({ prompt: 'Admin E-mail: ' }, function(_, email) {
 read({ prompt: 'Admin Password: ', silent: true }, function(_, password) {
-  setAdmin(username, password);
+  setAdmin(email, password);
 });
 });

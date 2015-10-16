@@ -29,7 +29,7 @@ function($http, $window) {
   };
 
   admin.logIn = function(credentials) {
-    return $http.post('/login', credentials)
+    return $http.post('/admin', credentials)
       .success(function(data) {
         saveToken(data.token);
       });
@@ -38,6 +38,10 @@ function($http, $window) {
   admin.logOut = function() {
     $window.localStorage.removeItem(TOKEN_NAME);
   };
+
+  admin.getInfo = function() {
+    return $http.get('/admin');
+  }
 
   return admin;
 }

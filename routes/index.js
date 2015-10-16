@@ -120,9 +120,9 @@ function getAdminAccount(next, callback) {
   });
 }
 
-function isValidUsername(admin, credentials) {
-  return credentials.username &&
-         admin.username == credentials.username;
+function isValidEmail(admin, credentials) {
+  return credentials.email &&
+         admin.email == credentials.email;
 }
 
 function isValidPassword(admin, credentials) {
@@ -133,8 +133,8 @@ function isValidPassword(admin, credentials) {
 function validateCredentials(admin, credentials, callback) {
   var errorMessages = [];
 
-  if (!isValidUsername(admin, credentials)) {
-    errorMessages.push('Invalid username!');
+  if (!isValidEmail(admin, credentials)) {
+    errorMessages.push('Invalid e-mail!');
   }
 
   if (!isValidPassword(admin, credentials)) {
@@ -144,7 +144,8 @@ function validateCredentials(admin, credentials, callback) {
   callback(errorMessages);
 }
 
-router.route('/login')
+router.route('/admin')
+  // Login to admin account.
   .post(function(req, res, next) {
     getAdminAccount(next, function(admin) {
       validateCredentials(admin, req.body, function(errorMessages) {
@@ -157,6 +158,16 @@ router.route('/login')
         }
       });
     });
+  })
+
+  // Get admin account info.
+  .get(function(req, res, next) {
+    getAdminAccount(next, function(admin) {
+      res.send({
+        email: admin.email,
+        bio: admin.bio,
+      });
+    })
   });
 
 module.exports = router;

@@ -1,6 +1,7 @@
 var app = angular.module('angular-express', [
   'ui.router',
   'ui.tinymce',
+  'angular-md5',
 ]);
 
 (function() {
@@ -81,12 +82,27 @@ function adminReroute($state, admin) {
   }
 }
 
+const BIO_VIEW = {
+  templateUrl: '/partials/bio',
+  controller:  'bio',
+};
+
+function getViews(mainView, sideView) {
+  return {
+    main: mainView,
+    side: sideView || BIO_VIEW,
+  };
+}
+
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
-      url:         '/home',
-      templateUrl: '/partials/home',
-      controller:  'home',
+      url: '/home',
+
+      views: getViews({
+        templateUrl: '/partials/home',
+        controller:  'home',
+      }),
 
       resolve: {
         allPosts: allPostsPromise,
@@ -94,30 +110,45 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
 
     .state('admin', {
-      url:         '/admin',
-      templateUrl: '/partials/admin',
-      controller:  'admin',
-      onEnter:     adminReroute,
+      url: '/admin',
+
+      views: getViews({
+        templateUrl: '/partials/admin',
+        controller:  'admin',
+      }),
+
+      onEnter: adminReroute,
     })
 
     .state('settings', {
-      url:         '/settings',
-      templateUrl: '/partials/settings.settings',
-      controller:  'settings',
-      onEnter:     nonAdminReroute,
+      url: '/settings',
+
+      views: getViews({
+        templateUrl: '/partials/settings.settings',
+        controller:  'settings',
+      }),
+
+      onEnter: nonAdminReroute,
     })
 
     .state('postCreate', {
-      url:         '/postCreate',
-      templateUrl: '/partials/post.editor.editor',
-      controller:  'postCreate',
-      onEnter:     nonAdminReroute,
+      url: '/postCreate',
+
+      views: getViews({
+        templateUrl: '/partials/post.editor.editor',
+        controller:  'postCreate',
+      }),
+
+      onEnter: nonAdminReroute,
     })
 
     .state('postRead', {
-      url:         '/postRead/{id}',
-      templateUrl: '/partials/post.full',
-      controller:  'postRead',
+      url: '/postRead/{id}',
+
+      views: getViews({
+        templateUrl: '/partials/post.full',
+        controller:  'postRead',
+      }),
 
       resolve: {
         post: postPromise,
@@ -125,10 +156,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
 
     .state('postUpdate', {
-      url:         '/postUpdate/{id}',
-      templateUrl: '/partials/post.editor.editor',
-      controller:  'postUpdate',
-      onEnter:     nonAdminReroute,
+      url: '/postUpdate/{id}',
+
+      views: getViews({
+        templateUrl: '/partials/post.editor.editor',
+        controller:  'postUpdate',
+      }),
+
+      onEnter: nonAdminReroute,
 
       resolve: {
         post: postPromise,
@@ -136,10 +171,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
 
     .state('postDelete', {
-      url:         '/postDelete/{id}',
-      templateUrl: '/partials/post.delete',
-      controller:  'postDelete',
-      onEnter:     nonAdminReroute,
+      url: '/postDelete/{id}',
+
+      views: getViews({
+        templateUrl: '/partials/post.delete',
+        controller:  'postDelete',
+      }),
+
+      onEnter: nonAdminReroute,
 
       resolve: {
         post: postPromise,

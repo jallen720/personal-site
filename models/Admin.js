@@ -3,34 +3,37 @@ var mongoose = require('mongoose'),
     jwt      = require('jsonwebtoken');
 
 var regexes = {
-  username: /^[a-zA-Z0-9_]{6,24}$/,
-  password: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,24}$/
+  email: /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i,
+  password: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,24}$/,
 };
 
 var AdminSchema = new mongoose.Schema({
-  username: {
+  email: {
     type: String,
 
     validate: {
-      validator: function(username) {
-        return regexes.username.test(username);
+      validator: function(email) {
+        return regexes.email.test(email);
       },
 
-      message:
-        'Username must have 6-24 characters and contain only alpha-numeric ch' +
-        'aracters and underscores, no spaces.'
-    }
+      message: 'The e-mail you entered is invalid.',
+    },
+  },
+
+  bio: {
+    type:    String,
+    default: 'This is your bio...',
   },
 
   hash: {
     type: String,
 
     required:
-      'Password must have 6-24 characters and have atleast one lower case let' +
-      'ter, one upper case letter, one digit, and no spaces'
+      'Password must have 6-24 characters and atleast one lower-case letter, ' +
+      'one upper-case letter, one digit, and no spaces.',
   },
 
-  salt: String
+  salt: String,
 });
 
 function isValidPassword(password) {
