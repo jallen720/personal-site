@@ -136,6 +136,8 @@
 .alert {
   display: table;
   padding: 10px 10px 10px 15px;
+  background-color: #FFA5A5;
+  color: #B51C1C;
 }
 
 .warning {
@@ -221,7 +223,10 @@ body[ng-app='angular-express'],
 
 .tile {
   padding: 10px;
+}
 
+.tile,
+.alert {
   -webkit-box-shadow: 0 1px 5px #aaa;
      -moz-box-shadow: 0 1px 5px #aaa;
        -o-box-shadow: 0 1px 5px #aaa;
