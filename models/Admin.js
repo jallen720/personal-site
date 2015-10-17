@@ -7,6 +7,8 @@ var regexes = {
   password: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,24}$/,
 };
 
+const INVALID_EMAIL_MESSAGE = 'The e-mail you entered is invalid.';
+
 var AdminSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -16,8 +18,10 @@ var AdminSchema = new mongoose.Schema({
         return regexes.email.test(email);
       },
 
-      message: 'The e-mail you entered is invalid.',
+      message: INVALID_EMAIL_MESSAGE,
     },
+
+    required: INVALID_EMAIL_MESSAGE,
   },
 
   bio: {

@@ -5,7 +5,7 @@ function($scope, $state, admin) {
   $scope.bio = {};
 
   $scope.submit = function() {
-    admin.updateBio($scope.bio)
+    admin.update('bio', $scope.bio)
       .error(function(error) {
         $scope.error = error;
       })

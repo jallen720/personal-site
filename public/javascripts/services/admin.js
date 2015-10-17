@@ -51,18 +51,10 @@ function($http, $window) {
     };
   };
 
-  admin.updateBio = function(bio) {
+  admin.update = function(info, data) {
     return $http.patch(
-      '/admin/bio',
-      bio,
-      admin.getAuthHeader()
-    );
-  };
-
-  admin.updatePassword = function(password) {
-    return $http.patch(
-      '/admin/password',
-      password,
+      '/admin/' + info,
+      data,
       admin.getAuthHeader()
     );
   };

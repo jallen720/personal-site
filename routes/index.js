@@ -200,4 +200,20 @@ router.patch('/admin/password', auth, function(req, res, next) {
   });
 });
 
+function updateAdminEmail(admin, email, res) {
+  admin.email = email;
+  saveModel(admin, res);
+}
+
+// Update admin e-mail.
+router.patch('/admin/email', auth, function(req, res, next) {
+  getAdminAccount(next, function(admin) {
+    if (!isValidPassword(admin, req.body.password)) {
+      sendError(res, [ 'Invalid password!' ]);
+    } else {
+      updateAdminEmail(admin, req.body.content, res);
+    }
+  });
+});
+
 module.exports = router;

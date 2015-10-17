@@ -2,9 +2,10 @@ app.controller('settingsPassword',
 
 function($scope, $state, admin) {
   $scope.headingName = 'Change Password';
+  $scope.password = {};
 
   $scope.submit = function() {
-    admin.updatePassword($scope.password)
+    admin.update('password', $scope.password)
       .error(function(error) {
         $scope.error = error;
       })
