@@ -2,11 +2,11 @@ extends ../../form
 
 block inputs
   include ../../tinymce
-  mixin tinymce('bio', 'settingsBioTinymce')
+  mixin tinymce('bio.content', 'settingsBioTinymce')
 
   input(
     class='form-control input-field short-input'
-    ng-model='password'
+    ng-model='bio.password'
     placeholder='Password'
     type='password'
   )

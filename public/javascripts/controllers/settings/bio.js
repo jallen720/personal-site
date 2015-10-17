@@ -1,15 +1,28 @@
 app.controller('settingsBio',
 
-function($scope, admin) {
+function($scope, $state, admin) {
   $scope.headingName = 'Change Bio';
+  $scope.bio = {};
 
   $scope.submit = function() {
-    console.log('Bio submit()');
+    admin.updateBio($scope.bio)
+      .error(function(error) {
+        $scope.error = error;
+      })
+
+      .success(function() {
+        $state.go($state.current, {}, { reload: true });
+      });
   };
 
-  admin.getInfo().success(function(admin) {
-    $scope.bio = admin.bio;
-  });
+  admin.getInfo()
+    .error(function(error) {
+      $scope.error = error;
+    })
+
+    .success(function(admin) {
+      $scope.bio.content = admin.bio;
+    });
 }
 
 );

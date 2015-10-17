@@ -1,14 +1,6 @@
 app.factory('posts',
 
 function($http, admin) {
-  function authHeader(token) {
-    return {
-      headers: {
-        Authorization: 'Bearer ' + token
-      }
-    }
-  }
-
   return {
     getAll: function() {
       return $http.get('/posts');
@@ -18,14 +10,14 @@ function($http, admin) {
       return $http.post(
         '/posts',
         post,
-        authHeader(admin.loadToken())
+        admin.getAuthHeader()
       );
     },
 
     delete: function(id) {
       return $http.delete(
         '/posts/' + id,
-        authHeader(admin.loadToken())
+        admin.getAuthHeader()
       );
     },
 
@@ -37,7 +29,7 @@ function($http, admin) {
       return $http.patch(
         '/posts/' + id,
         post,
-        authHeader(admin.loadToken())
+        admin.getAuthHeader()
       );
     },
   };

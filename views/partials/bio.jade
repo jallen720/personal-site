@@ -1,4 +1,4 @@
 div(class='tile')
   img(class='admin-image' ng-src='{{ adminImage }}')
   include divider
-  p {{ bio }}
+  p(ng-bind-html='bio')

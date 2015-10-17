@@ -38,14 +38,18 @@ function sendError(res, messages) {
   });
 }
 
-function savePost(post, res) {
-  post.save(function(err) {
+function saveCheck(res) {
+  return function(err) {
     if (err) {
       sendError(res, getErrorMessages(err.errors));
     } else {
       res.sendStatus(200);
     }
-  });
+  };
+}
+
+function savePost(post, res) {
+  post.save(saveCheck(res));
 }
 
 function createPost(newPost, res) {
@@ -120,43 +124,30 @@ function getAdminAccount(next, callback) {
   });
 }
 
-function isValidEmail(admin, credentials) {
-  return credentials.email &&
-         admin.email == credentials.email;
+function isValidEmail(admin, email) {
+  return email && admin.email == email;
 }
 
-function isValidPassword(admin, credentials) {
-  return credentials.password &&
-         admin.isPassword(credentials.password);
+function isValidPassword(admin, password) {
+  return password && admin.isPassword(password);
 }
 
-function validateCredentials(admin, credentials, callback) {
-  var errorMessages = [];
-
-  if (!isValidEmail(admin, credentials)) {
-    errorMessages.push('Invalid e-mail!');
-  }
-
-  if (!isValidPassword(admin, credentials)) {
-    errorMessages.push('Invalid password!');
-  }
-
-  callback(errorMessages);
+function isValidCredentials(admin, credentials) {
+  return isValidEmail(admin, credentials.email) &&
+         isValidPassword(admin, credentials.password)
 }
 
 router.route('/admin')
   // Login to admin account.
   .post(function(req, res, next) {
     getAdminAccount(next, function(admin) {
-      validateCredentials(admin, req.body, function(errorMessages) {
-        if (errorMessages.length > 0) {
-          sendError(res, errorMessages);
-        } else {
-          res.json({
-            token: admin.generateJWT()
-          });
-        }
-      });
+      if (!isValidCredentials(admin, req.body)) {
+        sendError(res, [ 'Invalid e-mail or password!' ]);
+      } else {
+        res.json({
+          token: admin.generateJWT(),
+        });
+      }
     });
   })
 
@@ -165,9 +156,25 @@ router.route('/admin')
     getAdminAccount(next, function(admin) {
       res.send({
         email: admin.email,
-        bio: admin.bio,
+        bio:   admin.bio,
       });
     })
   });
+
+function updateAdminBio(admin, bio, res) {
+  admin.bio = bio;
+  admin.save(saveCheck(res));
+}
+
+// Update admin bio.
+router.patch('/admin/bio', auth, function(req, res, next) {
+  getAdminAccount(next, function(admin) {
+    if (!isValidPassword(admin, req.body.password)) {
+      sendError(res, [ 'Invalid password!' ]);
+    } else {
+      updateAdminBio(admin, req.body.content, res);
+    }
+  });
+});
 
 module.exports = router;

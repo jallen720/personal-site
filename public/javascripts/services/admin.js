@@ -20,12 +20,12 @@ function($http, $window) {
     $window.localStorage[TOKEN_NAME] = token;
   }
 
-  admin.loadToken = function() {
+  function loadToken() {
     return $window.localStorage[TOKEN_NAME];
-  };
+  }
 
   admin.isLoggedIn = function() {
-    return isValidToken(admin.loadToken());
+    return isValidToken(loadToken());
   };
 
   admin.logIn = function(credentials) {
@@ -41,7 +41,23 @@ function($http, $window) {
 
   admin.getInfo = function() {
     return $http.get('/admin');
-  }
+  };
+
+  admin.getAuthHeader = function() {
+    return {
+      headers: {
+        Authorization: 'Bearer ' + loadToken(),
+      },
+    };
+  };
+
+  admin.updateBio = function(bio) {
+    return $http.patch(
+      '/admin/bio',
+      bio,
+      admin.getAuthHeader()
+    );
+  };
 
   return admin;
 }
