@@ -113,7 +113,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/admin',
 
       views: getViews({
-        templateUrl: '/partials/admin',
+        templateUrl: '/partials/admin.login',
         controller:  'admin',
       }),
 
