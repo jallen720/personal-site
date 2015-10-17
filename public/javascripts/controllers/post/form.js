@@ -1,7 +1,7 @@
 app.controller('postForm',
 
 function($scope) {
-  $scope.tinymceOptions = {
+  $scope.options = {
     content_css: 'stylesheets/style.css',
     menubar:     false,
     statusbar:   false,
