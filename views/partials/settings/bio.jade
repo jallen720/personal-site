@@ -1,0 +1,15 @@
+extends ../form
+
+block header
+  h2 Change Bio
+  include ../divider
+
+block inputs
+  textarea(class='form-control input-field')
+
+  input(
+    class='form-control input-field short-input'
+    ng-model='password'
+    placeholder='Password'
+    type='password'
+  )
