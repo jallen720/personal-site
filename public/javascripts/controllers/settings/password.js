@@ -1,10 +1,17 @@
 app.controller('settingsPassword',
 
-function($scope, admin) {
+function($scope, $state, admin) {
   $scope.headingName = 'Change Password';
 
   $scope.submit = function() {
-    console.log('Password submit()');
+    admin.updatePassword($scope.password)
+      .error(function(error) {
+        $scope.error = error;
+      })
+
+      .success(function() {
+        $state.go($state.current, {}, { reload: true });
+      });
   };
 }
 

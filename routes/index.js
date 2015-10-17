@@ -48,12 +48,12 @@ function saveCheck(res) {
   };
 }
 
-function savePost(post, res) {
-  post.save(saveCheck(res));
+function saveModel(model, res) {
+  model.save(saveCheck(res));
 }
 
 function createPost(newPost, res) {
-  savePost(new Post(newPost), res);
+  saveModel(new Post(newPost), res);
 }
 
 router.route('/posts')
@@ -90,7 +90,7 @@ function updatePost(post, updatedPost, res) {
   post.title    = updatedPost.title;
   post.imageURL = updatedPost.imageURL;
   post.body     = updatedPost.body;
-  savePost(post, res);
+  saveModel(post, res);
 }
 
 router.route('/posts/:post')
@@ -163,7 +163,7 @@ router.route('/admin')
 
 function updateAdminBio(admin, bio, res) {
   admin.bio = bio;
-  admin.save(saveCheck(res));
+  saveModel(admin, res);
 }
 
 // Update admin bio.
@@ -173,6 +173,29 @@ router.patch('/admin/bio', auth, function(req, res, next) {
       sendError(res, [ 'Invalid password!' ]);
     } else {
       updateAdminBio(admin, req.body.content, res);
+    }
+  });
+});
+
+function isValidNewPassword(password) {
+  return password.new && password.confirm &&
+         password.new === password.confirm;
+}
+
+function updateAdminPassword(admin, newPassword, res) {
+  admin.setPassword(newPassword);
+  saveModel(admin, res);
+}
+
+// Update admin password.
+router.patch('/admin/password', auth, function(req, res, next) {
+  getAdminAccount(next, function(admin) {
+    if (!isValidPassword(admin, req.body.current)) {
+      sendError(res, [ 'Current password is invalid!' ]);
+    } else if (!isValidNewPassword(req.body)) {
+      sendError(res, [ 'New password does not match confirmation password!' ]);
+    } else {
+      updateAdminPassword(admin, req.body.new, res);
     }
   });
 });

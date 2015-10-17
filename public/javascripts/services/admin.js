@@ -59,6 +59,14 @@ function($http, $window) {
     );
   };
 
+  admin.updatePassword = function(password) {
+    return $http.patch(
+      '/admin/password',
+      password,
+      admin.getAuthHeader()
+    );
+  };
+
   return admin;
 }
 
