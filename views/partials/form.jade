@@ -1,12 +1,10 @@
-div(class='tile')
-  block header
-  include errors
+include errors
 
-  form(ng-submit='submit()')
-    block inputs
+form(ng-submit='submit()')
+  block inputs
 
-    input(
-      class='btn'
-      type='submit'
-      value='Submit'
-    )
+  input(
+    class='btn'
+    type='submit'
+    value='Submit'
+  )

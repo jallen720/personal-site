@@ -125,7 +125,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
       views: getViews({
         templateUrl: '/partials/settings.settings',
-        controller:  'settings',
       }),
 
       onEnter: nonAdminReroute,

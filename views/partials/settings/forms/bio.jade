@@ -1,0 +1,12 @@
+extends ../../form
+
+block inputs
+  include ../../tinymce
+  mixin tinymce('bio', 'settingsBioTinymce')
+
+  input(
+    class='form-control input-field short-input'
+    ng-model='password'
+    placeholder='Password'
+    type='password'
+  )
