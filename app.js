@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('public'));
 app.use(express.static('bower_components'));
-app.use('/', index);
+app.use(index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

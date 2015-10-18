@@ -109,12 +109,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       },
     })
 
-    .state('admin', {
-      url: '/admin',
+    .state('login', {
+      url: '/login',
 
       views: getViews({
-        templateUrl: '/partials/admin.login',
-        controller:  'admin',
+        templateUrl: '/partials/login.login',
+        controller:  'login',
       }),
 
       onEnter: adminReroute,

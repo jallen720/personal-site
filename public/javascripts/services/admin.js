@@ -29,7 +29,7 @@ function($http, $window) {
   };
 
   admin.logIn = function(credentials) {
-    return $http.post('/admin', credentials)
+    return $http.post('/login', credentials)
       .success(function(data) {
         saveToken(data.token);
       });

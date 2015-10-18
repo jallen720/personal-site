@@ -1,4 +1,4 @@
-app.controller('admin',
+app.controller('login',
 
 function($scope, $state, admin) {
   $scope.heading     = 'Admin Login';
