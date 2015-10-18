@@ -1,7 +1,7 @@
 app.controller('admin',
 
 function($scope, $state, admin) {
-  $scope.headingName = 'Admin Login';
+  $scope.heading     = 'Admin Login';
   $scope.credentials = {};
 
   $scope.submit = function() {

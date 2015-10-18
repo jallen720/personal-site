@@ -142,7 +142,7 @@ router.route('/admin')
   .post(function(req, res, next) {
     getAdminAccount(next, function(admin) {
       if (!isValidCredentials(admin, req.body)) {
-        sendError(res, [ 'Invalid e-mail or password!' ]);
+        sendError(res, [ 'Invalid e-mail and/or password!' ]);
       } else {
         res.json({
           token: admin.generateJWT(),

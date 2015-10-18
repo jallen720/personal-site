@@ -34,7 +34,7 @@
 .fadeout,
 .post-image,
 .admin-image,
-.alert ,
+.alert,
 .divider {
   width: 100%;
 }
@@ -108,7 +108,7 @@ p, ul, ol {
 
 .switcher,
 .btn,
-.warning {
+.alert span {
   font-size: 20px;
 }
 
@@ -144,12 +144,6 @@ p, ul, ol {
 .alert {
   display: table;
   padding: 10px 10px 10px 15px;
-  background-color: #FFA5A5;
-  color: #B51C1C;
-}
-
-.warning {
-  display: table-cell;
 }
 
 .alert-btns {
