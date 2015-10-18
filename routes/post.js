@@ -1,10 +1,10 @@
 var express   = require('express'),
     mongoose  = require('mongoose'),
+    auth      = require('./middleware/auth'),
     saveModel = require('./helpers/saveModel');
 
 var router = express.Router(),
-    Post   = mongoose.model('Post'),
-    auth   = require('../middleware/auth');
+    Post   = mongoose.model('Post');
 
 router.param('post', function(req, _, next, id) {
   Post.findById(id).exec(function(err, post) {

@@ -1,10 +1,10 @@
 var express   = require('express'),
     mongoose  = require('mongoose'),
+    auth      = require('./middleware/auth'),
     saveModel = require('./helpers/saveModel');
 
 var router = express.Router(),
-    Post   = mongoose.model('Post'),
-    auth   = require('../middleware/auth');
+    Post   = mongoose.model('Post');
 
 function createPost(newPost, res) {
   saveModel(new Post(newPost), res);

@@ -1,5 +1,5 @@
 var express         = require('express'),
-    auth            = require('../middleware/auth'),
+    auth            = require('./middleware/auth'),
     saveModel       = require('./helpers/saveModel'),
     sendError       = require('./helpers/sendError'),
     getAdminAccount = require('./helpers/getAdminAccount');
