@@ -2,8 +2,7 @@ var express         = require('express'),
     auth            = require('../middleware/auth'),
     saveModel       = require('./helpers/saveModel'),
     sendError       = require('./helpers/sendError'),
-    getAdminAccount = require('./helpers/getAdminAccount'),
-    isValidPassword = require('./helpers/isValidPassword');
+    getAdminAccount = require('./helpers/getAdminAccount');
 
 var router = express.Router();
 
@@ -31,7 +30,7 @@ function isValidNewPassword(password) {
 
 var updateChecks = {
   email: function(admin, email, res) {
-    if (!isValidPassword(admin, email.password)) {
+    if (!admin.isPassword(email.password)) {
       sendError(res, [ 'Invalid password!' ]);
     } else {
       updaters.email(admin, email.content, res);
@@ -39,7 +38,7 @@ var updateChecks = {
   },
 
   password: function(admin, password, res) {
-    if (!isValidPassword(admin, password.current)) {
+    if (!admin.isPassword(password.current)) {
       sendError(res, [ 'Current password is invalid!' ]);
     } else if (!isValidNewPassword(password)) {
       sendError(res, [ 'New password does not match confirmation password!' ]);
@@ -49,7 +48,7 @@ var updateChecks = {
   },
 
   bio: function(admin, bio, res) {
-    if (!isValidPassword(admin, bio.password)) {
+    if (!admin.isPassword(bio.password)) {
       sendError(res, [ 'Invalid password!' ]);
     } else {
       updaters.bio(admin, bio.content, res);

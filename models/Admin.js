@@ -65,7 +65,14 @@ AdminSchema.methods.setPassword = function(password) {
 };
 
 AdminSchema.methods.isPassword = function(password) {
-  return this.hash === createHash(password, this.salt);
+  return password &&
+         this.hash === createHash(password, this.salt);
+};
+
+AdminSchema.methods.isValidCredentials = function(credentials) {
+  return credentials.email &&
+         this.email === credentials.email &&
+         this.isPassword(credentials.password);
 };
 
 function daysFromNow(days) {
