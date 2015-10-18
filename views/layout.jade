@@ -2,9 +2,10 @@ doctype html
 html
   head
     title= title
-    include dependencies
-    include scripts
+    link(href='bootstrap/dist/css/bootstrap.min.css' rel='stylesheet')
     link(href='stylesheets/style.css' rel='stylesheet')
 
   body(ng-app='angular-express')
     block content
+    include dependencies
+    include scripts
