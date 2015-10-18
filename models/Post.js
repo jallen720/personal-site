@@ -1,17 +1,12 @@
-var mongoose = require('mongoose');
+var mongoose      = require('mongoose'),
+    bodyValidator = require('./tinymceValidator');
 
-var requiredMessage = 'Post must have a {PATH}!'
-
-function stripped(body) {
-  return body.replace(/(<([^>]+)>)/gi, '') // Remove HTML tags
-             .replace(/&nbsp;/gi, '')      // Remove non-breakables spaces
-             .trim();                      // Trim remaining trailing spaces
-}
+const REQUIRED_MESSAGE = 'Post must have a {PATH}!'
 
 var PostSchema = new mongoose.Schema({
   title: {
     type:     String,
-    required: requiredMessage,
+    required: REQUIRED_MESSAGE,
   },
 
   date:     Date,
@@ -21,11 +16,8 @@ var PostSchema = new mongoose.Schema({
     type: String,
 
     validate: {
-      validator: function(body) {
-        return body && stripped(body) !== '';
-      },
-
-      message: requiredMessage,
+      validator: bodyValidator,
+      message:   REQUIRED_MESSAGE,
     },
   },
 });

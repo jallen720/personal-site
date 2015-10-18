@@ -1,13 +1,14 @@
-var mongoose = require('mongoose'),
-    crypto   = require('crypto'),
-    jwt      = require('jsonwebtoken');
+var mongoose     = require('mongoose'),
+    crypto       = require('crypto'),
+    jwt          = require('jsonwebtoken'),
+    bioValidator = require('./tinymceValidator');
 
 var regexes = {
-  email: /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i,
+  email:    /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i,
   password: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,24}$/,
 };
 
-const INVALID_EMAIL_MESSAGE = 'The e-mail you entered is invalid.';
+const INVALID_EMAIL_MESSAGE = 'The e-mail you entered is invalid!';
 
 var AdminSchema = new mongoose.Schema({
   email: {
@@ -27,6 +28,11 @@ var AdminSchema = new mongoose.Schema({
   bio: {
     type:    String,
     default: 'This is your bio...',
+
+    validate: {
+      validator: bioValidator,
+      message:   'Your bio can\'t be empty!',
+    },
   },
 
   hash: {
@@ -63,8 +69,9 @@ AdminSchema.methods.isPassword = function(password) {
 };
 
 function daysFromNow(days) {
-  var today = new Date();
-  var exp = new Date(today);
+  var today = new Date(),
+      exp   = new Date(today);
+
   exp.setDate(today.getDate() + days);
   return exp;
 }
@@ -76,10 +83,7 @@ function createPayload() {
 }
 
 AdminSchema.methods.generateJWT = function() {
-  return jwt.sign(
-    createPayload(),
-    process.env.SECRET
-  );
+  return jwt.sign(createPayload(), process.env.SECRET);
 };
 
 mongoose.model('Admin', AdminSchema);
