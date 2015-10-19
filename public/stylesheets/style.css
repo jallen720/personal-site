@@ -81,29 +81,14 @@ p, ul, ol {
 .btn:focus {
   text-decoration: none;
   padding: 4px 24px 4px 24px;
-  border-style: solid;
-  border-color: #0B9927;
+  color: white !important;
+  background-color: #444;
+  border: none;
   outline: none !important;
-
-  -webkit-transition-property: background-color, color;
-     -moz-transition-property: background-color, color;
-       -o-transition-property: background-color, color;
-          transition-property: background-color, color;
 }
 
-.switcher,
-.btn,
-.btn:focus,
 .input-field {
   border-width: 2px;
-}
-
-#switcher-left {
-  border-right: none;
-}
-
-#switcher-right {
-  border-left: none;
 }
 
 .switcher,
@@ -129,8 +114,7 @@ p, ul, ol {
 
 .btn:hover,
 .switcher-selected {
-  background: #0B9927 !important;
-  color: #fff !important;
+  background-color: #0B9927 !important;
 }
 
 .left-btn {
@@ -174,6 +158,9 @@ body[ng-app='angular-express'],
   border-color: #EEE;
 }
 
+.switcher,
+.btn,
+.btn:focus,
 .input-field {
   -webkit-transition-property: background-color;
      -moz-transition-property: background-color;
