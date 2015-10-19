@@ -1,4 +1,4 @@
-app.controller('postCreate',
+app.controller('post.CreateCtrl',
 
 function($scope, $state, posts) {
   $scope.formAction = 'Create';

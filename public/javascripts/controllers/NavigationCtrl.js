@@ -1,4 +1,4 @@
-app.controller('navigation',
+app.controller('NavigationCtrl',
 
 function($scope, admin) {
   $scope.isLoggedIn = admin.isLoggedIn;

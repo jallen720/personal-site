@@ -1,4 +1,4 @@
-app.controller('settingsBioTinymce',
+app.controller('settings.bio.TinyMceCtrl',
 
 function($scope, admin) {
   $scope.options = {

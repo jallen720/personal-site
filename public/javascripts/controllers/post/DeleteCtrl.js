@@ -1,4 +1,4 @@
-app.controller('postDelete',
+app.controller('post.DeleteCtrl',
 
 function($scope, $state, $stateParams, posts, post) {
   $scope.post = post;

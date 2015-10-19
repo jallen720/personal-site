@@ -1,4 +1,4 @@
-app.controller('home',
+app.controller('HomeCtrl',
 
 function($scope, $state, allPosts, admin) {
   $scope.posts = allPosts;

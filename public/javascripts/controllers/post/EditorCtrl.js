@@ -1,4 +1,4 @@
-app.controller('postEditor',
+app.controller('post.EditorCtrl',
 
 function($scope) {
   $('#editor-preview').hide()

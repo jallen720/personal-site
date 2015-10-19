@@ -84,7 +84,7 @@ function adminReroute($state, admin) {
 
 const BIO_VIEW = {
   templateUrl: '/partials/bio',
-  controller:  'bio',
+  controller:  'BioCtrl',
 };
 
 function getViews(mainView, sideView) {
@@ -101,7 +101,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
       views: getViews({
         templateUrl: '/partials/home',
-        controller:  'home',
+        controller:  'HomeCtrl',
       }),
 
       resolve: {
@@ -114,7 +114,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
       views: getViews({
         templateUrl: '/partials/login.login',
-        controller:  'login',
+        controller:  'LoginCtrl',
       }),
 
       onEnter: adminReroute,
@@ -135,7 +135,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
       views: getViews({
         templateUrl: '/partials/post.editor.editor',
-        controller:  'postCreate',
+        controller:  'post.CreateCtrl',
       }),
 
       onEnter: nonAdminReroute,
@@ -146,7 +146,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
       views: getViews({
         templateUrl: '/partials/post.full',
-        controller:  'postRead',
+        controller:  'post.ReadCtrl',
       }),
 
       resolve: {
@@ -159,7 +159,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
       views: getViews({
         templateUrl: '/partials/post.editor.editor',
-        controller:  'postUpdate',
+        controller:  'post.UpdateCtrl',
       }),
 
       onEnter: nonAdminReroute,
@@ -174,7 +174,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
       views: getViews({
         templateUrl: '/partials/post.delete',
-        controller:  'postDelete',
+        controller:  'post.DeleteCtrl',
       }),
 
       onEnter: nonAdminReroute,

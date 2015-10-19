@@ -1,4 +1,4 @@
-app.controller('settingsPassword',
+app.controller('settings.PasswordCtrl',
 
 function($scope, $state, admin) {
   $scope.heading  = 'Change Password';

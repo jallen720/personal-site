@@ -1,4 +1,4 @@
-app.controller('settingsEmail',
+app.controller('settings.EmailCtrl',
 
 function($scope, $state, admin) {
   $scope.heading = 'Change E-mail';

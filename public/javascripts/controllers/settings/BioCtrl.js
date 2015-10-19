@@ -1,4 +1,4 @@
-app.controller('settingsBio',
+app.controller('settings.BioCtrl',
 
 function($scope, $state, admin) {
   $scope.heading = 'Change Bio';

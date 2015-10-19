@@ -1,4 +1,4 @@
-app.controller('bio',
+app.controller('BioCtrl',
 
 function($scope, $sce, md5, admin) {
   function gravatarURL(emailHash, size) {

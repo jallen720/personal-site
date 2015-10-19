@@ -1,4 +1,4 @@
-app.controller('postForm',
+app.controller('post.FormCtrl',
 
 function($scope) {
   $scope.options = {

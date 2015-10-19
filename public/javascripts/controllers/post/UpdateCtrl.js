@@ -1,4 +1,4 @@
-app.controller('postUpdate',
+app.controller('post.UpdateCtrl',
 
 function($scope, $state, $stateParams, posts, post) {
   $scope.formAction = 'Update';
