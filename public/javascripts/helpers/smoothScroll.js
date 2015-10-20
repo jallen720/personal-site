@@ -1,4 +1,10 @@
-define(function() {
+define([
+  'jquery',
+  'TweenMax',
+  'ScrollToPlugin',
+],
+
+function() {
   var $window = $(window);
 
   var scroll = {

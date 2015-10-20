@@ -16,7 +16,7 @@ function(app) {
     }
 
     function isValidToken(token) {
-      return token && !isExpired(token);
+      return token !== undefined && !isExpired(token);
     }
 
     function saveToken(token) {

@@ -1,14 +1,38 @@
-require([
-  // 3rd-party dependencies
-  '../angular/angular.js',
-  '../angular-ui-router/release/angular-ui-router.min.js',
-  '../tinymce/tinymce.js',
-  '../angular-ui-tinymce/src/tinymce.js',
-  '../jquery/dist/jquery.min.js',
-  '../gsap/src/minified/TweenMax.min.js',
-  '../gsap/src/minified/plugins/ScrollToPlugin.min.js',
-  '../angular-md5/angular-md5.min.js',
+require.config({
+  paths: {
+    angular:        '../angular/angular.min',
+    uiRouter:       '../angular-ui-router/release/angular-ui-router.min',
+    tinyMce:        '../tinymce/tinymce.min',
+    uiTinyMce:      '../angular-ui-tinymce/src/tinymce',
+    angularMd5:     '../angular-md5/angular-md5.min',
+    jquery:         '../jquery/dist/jquery.min',
+    TweenMax:       '../gsap/src/minified/TweenMax.min',
+    ScrollToPlugin: '../gsap/src/minified/plugins/ScrollToPlugin.min',
+  },
 
+  shim: {
+    uiRouter: {
+      deps: [
+        'angular',
+      ],
+    },
+
+    uiTinyMce: {
+      deps: [
+        'angular',
+        'tinyMce',
+      ],
+    },
+
+    angularMd5: {
+      deps: [
+        'angular',
+      ],
+    },
+  },
+});
+
+require([
   'app',
   'services/posts',
   'services/admin',

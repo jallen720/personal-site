@@ -1,6 +1,10 @@
 define([
   'helpers/scrollToTop',
   'config',
+  'angular',
+  'uiRouter',
+  'uiTinyMce',
+  'angularMd5',
 ],
 
 function(scrollToTop, config) {
