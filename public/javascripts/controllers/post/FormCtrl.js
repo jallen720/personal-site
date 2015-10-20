@@ -1,25 +1,29 @@
-app.controller('post.FormCtrl',
+define([
+  'app',
+],
 
-function($scope) {
-  $scope.options = {
-    content_css: 'stylesheets/style.css',
-    menubar:     false,
-    statusbar:   false,
+function(app) {
+  app.controller('post.FormCtrl',
 
-    plugins: [
-      'advlist autolink autoresize lists link image charmap print hr anchor pagebreak',
-      'searchreplace wordcount visualblocks visualchars code fullscreen',
-      'insertdatetime nonbreaking save table contextmenu directionality',
-      'emoticons template paste textcolor colorpicker textpattern',
-    ],
+  function($scope) {
+    $scope.options = {
+      content_css: 'stylesheets/style.css',
+      menubar:     false,
+      statusbar:   false,
 
-    toolbar:
-      'styleselect | bold italic | alignleft aligncenter alignright alignjust' +
-      'ify | bullist numlist outdent indent | link image | forecolor backcolo' +
-      'r emoticons | undo redo',
+      plugins: [
+        'advlist autolink autoresize lists link image charmap print hr anchor pagebreak',
+        'searchreplace wordcount visualblocks visualchars code fullscreen',
+        'insertdatetime nonbreaking save table contextmenu directionality',
+        'emoticons template paste textcolor colorpicker textpattern',
+      ],
 
-    image_advtab: true,
-  };
-}
+      toolbar:
+        'styleselect | bold italic | alignleft aligncenter alignright alignju' +
+        'stify | bullist numlist outdent indent | link image | forecolor back' +
+        'color emoticons | undo redo',
 
-);
+      image_advtab: true,
+    };
+  });
+});

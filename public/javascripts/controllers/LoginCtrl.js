@@ -1,19 +1,23 @@
-app.controller('LoginCtrl',
+define([
+  'app',
+],
 
-function($scope, $state, admin) {
-  $scope.heading     = 'Admin Login';
-  $scope.credentials = {};
+function(app) {
+  app.controller('LoginCtrl',
 
-  $scope.submit = function() {
-    admin.logIn($scope.credentials)
-      .error(function(error) {
-        $scope.error = error;
-      })
+  function($scope, $state, admin) {
+    $scope.heading     = 'Admin Login';
+    $scope.credentials = {};
 
-      .success(function() {
-        $state.go('home');
-      });
-  };
-}
+    $scope.submit = function() {
+      admin.logIn($scope.credentials)
+        .error(function(error) {
+          $scope.error = error;
+        })
 
-);
+        .success(function() {
+          $state.go('home');
+        });
+    };
+  });
+});

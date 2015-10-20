@@ -1,21 +1,26 @@
-app.controller('settings.BioCtrl',
+define([
+  'app',
+  'controllers/settings/helpers/submitFunc',
+],
 
-function($scope, $state, admin) {
-  $scope.heading = 'Change Bio';
-  $scope.bio     = {};
+function(app, submitFunc) {
+  app.controller('settings.BioCtrl',
 
-  $scope.submit = submitFunc($scope, admin, 'bio', function() {
-    $scope.bio.password = '';
-  });
+  function($scope, $state, admin) {
+    $scope.heading = 'Change Bio';
+    $scope.bio     = {};
 
-  admin.getInfo()
-    .error(function(error) {
-      $scope.error = error;
-    })
-
-    .success(function(admin) {
-      $scope.bio.content = admin.bio;
+    $scope.submit = submitFunc($scope, admin, 'bio', function() {
+      $scope.bio.password = '';
     });
-}
 
-);
+    admin.getInfo()
+      .error(function(error) {
+        $scope.error = error;
+      })
+
+      .success(function(admin) {
+        $scope.bio.content = admin.bio;
+      });
+  });
+});

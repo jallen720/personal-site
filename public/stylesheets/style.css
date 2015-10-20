@@ -148,7 +148,7 @@ p, ul, ol {
   margin-bottom: 10px;
 }
 
-body[ng-app='angular-express'],
+body[id='app'],
 .input-field {
   background-color: #EEE;
 }

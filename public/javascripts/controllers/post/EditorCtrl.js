@@ -1,36 +1,40 @@
-app.controller('post.EditorCtrl',
+define([
+  'app',
+],
 
-function($scope) {
-  $('#editor-preview').hide()
+function(app) {
+  app.controller('post.EditorCtrl',
 
-  function setSwitcherOn(switcher, isOn) {
-    $('#switcher-' + switcher).toggleClass('switcher-selected', isOn);
-  }
+  function($scope) {
+    $('#editor-preview').hide()
 
-  setSwitcherOn('left', true);
+    function setSwitcherOn(switcher, isOn) {
+      $('#switcher-' + switcher).toggleClass('switcher-selected', isOn);
+    }
 
-  function updateSwitchers(isForm) {
-    setSwitcherOn('left', isForm);
-    setSwitcherOn('right', !isForm);
-  }
+    setSwitcherOn('left', true);
 
-  function offView(isForm) {
-    return isForm ? 'preview' : 'form';
-  }
+    function updateSwitchers(isForm) {
+      setSwitcherOn('left', isForm);
+      setSwitcherOn('right', !isForm);
+    }
 
-  function fadeViews(onView, offView) {
-    const FADE_DURATION = 100;
+    function offView(isForm) {
+      return isForm ? 'preview' : 'form';
+    }
 
-    $('#editor-' + offView).fadeOut(FADE_DURATION, function() {
-      $('#editor-' + onView).fadeIn(FADE_DURATION);
-    });
-  }
+    function fadeViews(onView, offView) {
+      const FADE_DURATION = 100;
 
-  $scope.switchTo = function(view) {
-    var isForm = view === 'form';
-    updateSwitchers(isForm);
-    fadeViews(view, offView(isForm));
-  };
-}
+      $('#editor-' + offView).fadeOut(FADE_DURATION, function() {
+        $('#editor-' + onView).fadeIn(FADE_DURATION);
+      });
+    }
 
-);
+    $scope.switchTo = function(view) {
+      var isForm = view === 'form';
+      updateSwitchers(isForm);
+      fadeViews(view, offView(isForm));
+    };
+  });
+});

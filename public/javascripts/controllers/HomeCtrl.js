@@ -1,12 +1,16 @@
-app.controller('HomeCtrl',
+define([
+  'app',
+],
 
-function($scope, $state, allPosts, admin) {
-  $scope.posts = allPosts;
-  $scope.isLoggedIn = admin.isLoggedIn;
+function(app) {
+  app.controller('HomeCtrl',
 
-  $scope.postAction = function(action, id) {
-    $state.go('post' + action, { id: id });
-  };
-}
+  function($scope, $state, allPosts, admin) {
+    $scope.posts = allPosts;
+    $scope.isLoggedIn = admin.isLoggedIn;
 
-);
+    $scope.postAction = function(action, id) {
+      $state.go('post' + action, { id: id });
+    };
+  });
+});

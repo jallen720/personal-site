@@ -24,7 +24,8 @@
     "tinymce": "tinymce-dist#4.2.6",
     "bootstrap": "~3.3.5",
     "gsap": "~1.18.0",
-    "angular-md5": "~0.1.8"
+    "angular-md5": "~0.1.8",
+    "requirejs": "~2.1.20"
   },
   "resolutions": {
     "angular": "1.5.0-build.4320+sha.a4ada8b",

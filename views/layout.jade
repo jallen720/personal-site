@@ -5,7 +5,6 @@ html
     link(href='bootstrap/dist/css/bootstrap.min.css' rel='stylesheet')
     link(href='stylesheets/style.css' rel='stylesheet')
 
-  body(ng-app='angular-express')
+  body(id='app')
     block content
-    include dependencies
-    include scripts
+    script(src='requirejs/require.js' data-main='javascripts/main')

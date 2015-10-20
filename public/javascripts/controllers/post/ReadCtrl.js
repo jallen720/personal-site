@@ -1,7 +1,11 @@
-app.controller('post.ReadCtrl',
+define([
+  'app',
+],
 
-function($scope, post) {
-  $scope.post = post;
-}
+function(app) {
+  app.controller('post.ReadCtrl',
 
-);
+  function($scope, post) {
+    $scope.post = post;
+  });
+});

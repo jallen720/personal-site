@@ -1,7 +1,11 @@
-app.controller('post.BodyCtrl',
+define([
+  'app',
+],
 
-function($scope, $sce) {
-  $scope.trust = $sce.trustAsHtml;
-}
+function(app) {
+  app.controller('post.BodyCtrl',
 
-);
+  function($scope, $sce) {
+    $scope.trust = $sce.trustAsHtml;
+  });
+});

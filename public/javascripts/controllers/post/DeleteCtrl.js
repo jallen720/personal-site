@@ -1,18 +1,22 @@
-app.controller('post.DeleteCtrl',
+define([
+  'app',
+],
 
-function($scope, $state, $stateParams, posts, post) {
-  $scope.post = post;
+function(app) {
+  app.controller('post.DeleteCtrl',
 
-  $scope.cancel = function() {
-    $state.go('home');
-  };
+  function($scope, $state, $stateParams, posts, post) {
+    $scope.post = post;
 
-  $scope.deletePost = function() {
-    posts.delete($stateParams.id)
-      .success(function() {
-        $state.go('home');
-      });
-  };
-}
+    $scope.cancel = function() {
+      $state.go('home');
+    };
 
-);
+    $scope.deletePost = function() {
+      posts.delete($stateParams.id)
+        .success(function() {
+          $state.go('home');
+        });
+    };
+  });
+});

@@ -1,19 +1,23 @@
-app.controller('post.UpdateCtrl',
+define([
+  'app',
+],
 
-function($scope, $state, $stateParams, posts, post) {
-  $scope.formAction = 'Update';
-  $scope.post = post;
+function(app) {
+  app.controller('post.UpdateCtrl',
 
-  $scope.submit = function() {
-    posts.update($stateParams.id, $scope.post)
-      .error(function(error) {
-        $scope.error = error;
-      })
+  function($scope, $state, $stateParams, posts, post) {
+    $scope.formAction = 'Update';
+    $scope.post = post;
 
-      .success(function() {
-        $state.go('home');
-      });
-  };
-}
+    $scope.submit = function() {
+      posts.update($stateParams.id, $scope.post)
+        .error(function(error) {
+          $scope.error = error;
+        })
 
-);
+        .success(function() {
+          $state.go('home');
+        });
+    };
+  });
+});

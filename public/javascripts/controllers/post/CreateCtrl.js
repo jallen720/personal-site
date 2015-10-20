@@ -1,19 +1,23 @@
-app.controller('post.CreateCtrl',
+define([
+  'app',
+],
 
-function($scope, $state, posts) {
-  $scope.formAction = 'Create';
-  $scope.post = {};
+function(app) {
+  app.controller('post.CreateCtrl',
 
-  $scope.submit = function() {
-    posts.create($scope.post)
-      .error(function(error) {
-        $scope.error = error;
-      })
+  function($scope, $state, posts) {
+    $scope.formAction = 'Create';
+    $scope.post = {};
 
-      .success(function() {
-        $state.go('home');
-      });
-  };
-}
+    $scope.submit = function() {
+      posts.create($scope.post)
+        .error(function(error) {
+          $scope.error = error;
+        })
 
-);
+        .success(function() {
+          $state.go('home');
+        });
+    };
+  });
+});

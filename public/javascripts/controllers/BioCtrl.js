@@ -1,15 +1,19 @@
-app.controller('BioCtrl',
+define([
+  'app',
+],
 
-function($scope, $sce, md5, admin) {
-  function gravatarURL(emailHash, size) {
-    const GRAVATAR = 'http://www.gravatar.com/avatar/';
-    return GRAVATAR + emailHash + '?s=' + size;
-  }
+function(app) {
+  app.controller('BioCtrl',
 
-  admin.getInfo().success(function(info) {
-    $scope.adminImage = gravatarURL(md5.createHash(info.email), 256);
-    $scope.bio = $sce.trustAsHtml(info.bio);
+  function($scope, $sce, md5, admin) {
+    function gravatarURL(emailHash, size) {
+      const GRAVATAR = 'http://www.gravatar.com/avatar/';
+      return GRAVATAR + emailHash + '?s=' + size;
+    }
+
+    admin.getInfo().success(function(info) {
+      $scope.adminImage = gravatarURL(md5.createHash(info.email), 256);
+      $scope.bio = $sce.trustAsHtml(info.bio);
+    });
   });
-}
-
-);
+});

@@ -1,8 +1,12 @@
-app.controller('NavigationCtrl',
+define([
+  'app',
+],
 
-function($scope, admin) {
-  $scope.isLoggedIn = admin.isLoggedIn;
-  $scope.logOut = admin.logOut;
-}
+function(app) {
+  app.controller('NavigationCtrl',
 
-);
+  function($scope, admin) {
+    $scope.isLoggedIn = admin.isLoggedIn;
+    $scope.logOut = admin.logOut;
+  });
+});
