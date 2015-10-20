@@ -5,7 +5,7 @@ define([
 function(app) {
   app.factory('admin', function($http, $window) {
     var admin = {};
-    var TOKEN_NAME = 'blog-admin-token';
+    const TOKEN_NAME = 'blog-admin-token';
 
     function getPayload(token) {
       return JSON.parse($window.atob(token.split('.')[1]));

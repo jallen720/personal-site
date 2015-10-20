@@ -3,9 +3,9 @@ define([
 ],
 
 function(app) {
-  app.controller('post.ReadCtrl',
-
-  function($scope, post) {
+  function ReadCtrl($scope, post) {
     $scope.post = post;
-  });
+  }
+
+  app.controller('post.ReadCtrl', ReadCtrl);
 });

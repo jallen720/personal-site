@@ -4,11 +4,11 @@ define([
 ],
 
 function(app, submitFunc) {
-  app.controller('settings.PasswordCtrl',
-
-  function($scope, $state, admin) {
+  function PasswordCtrl($scope, $state, admin) {
     $scope.heading  = 'Change Password';
     $scope.password = {};
     $scope.submit   = submitFunc($scope, admin, 'password');
-  });
+  }
+
+  app.controller('settings.PasswordCtrl', PasswordCtrl);
 });

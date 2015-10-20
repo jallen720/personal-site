@@ -3,10 +3,10 @@ define([
 ],
 
 function(app) {
-  app.controller('NavigationCtrl',
-
-  function($scope, admin) {
+  function NavigationCtrl($scope, admin) {
     $scope.isLoggedIn = admin.isLoggedIn;
-    $scope.logOut = admin.logOut;
-  });
+    $scope.logOut     = admin.logOut;
+  }
+
+  app.controller('NavigationCtrl', NavigationCtrl);
 });

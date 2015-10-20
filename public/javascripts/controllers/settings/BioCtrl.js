@@ -4,9 +4,7 @@ define([
 ],
 
 function(app, submitFunc) {
-  app.controller('settings.BioCtrl',
-
-  function($scope, $state, admin) {
+  function BioCtrl($scope, $state, admin) {
     $scope.heading = 'Change Bio';
     $scope.bio     = {};
 
@@ -22,5 +20,7 @@ function(app, submitFunc) {
       .success(function(admin) {
         $scope.bio.content = admin.bio;
       });
-  });
+  }
+
+  app.controller('settings.BioCtrl', BioCtrl);
 });

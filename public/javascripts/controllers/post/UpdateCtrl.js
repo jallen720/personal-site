@@ -3,9 +3,7 @@ define([
 ],
 
 function(app) {
-  app.controller('post.UpdateCtrl',
-
-  function($scope, $state, $stateParams, posts, post) {
+  function UpdateCtrl($scope, $state, $stateParams, posts, post) {
     $scope.formAction = 'Update';
     $scope.post = post;
 
@@ -19,5 +17,7 @@ function(app) {
           $state.go('home');
         });
     };
-  });
+  }
+
+  app.controller('post.UpdateCtrl', UpdateCtrl);
 });

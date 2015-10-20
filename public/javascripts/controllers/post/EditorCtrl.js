@@ -1,40 +1,16 @@
 define([
   'app',
+  'controllers/post/helpers/switchTo',
+  'controllers/post/helpers/setSwitcherOn',
+  'jquery',
 ],
 
-function(app) {
-  app.controller('post.EditorCtrl',
-
-  function($scope) {
-    $('#editor-preview').hide()
-
-    function setSwitcherOn(switcher, isOn) {
-      $('#switcher-' + switcher).toggleClass('switcher-selected', isOn);
-    }
-
+function(app, switchTo, setSwitcherOn) {
+  function EditorCtrl($scope) {
+    $scope.switchTo = switchTo;
     setSwitcherOn('left', true);
+    $('#editor-preview').hide();
+  }
 
-    function updateSwitchers(isForm) {
-      setSwitcherOn('left', isForm);
-      setSwitcherOn('right', !isForm);
-    }
-
-    function offView(isForm) {
-      return isForm ? 'preview' : 'form';
-    }
-
-    function fadeViews(onView, offView) {
-      const FADE_DURATION = 100;
-
-      $('#editor-' + offView).fadeOut(FADE_DURATION, function() {
-        $('#editor-' + onView).fadeIn(FADE_DURATION);
-      });
-    }
-
-    $scope.switchTo = function(view) {
-      var isForm = view === 'form';
-      updateSwitchers(isForm);
-      fadeViews(view, offView(isForm));
-    };
-  });
+  app.controller('post.EditorCtrl', EditorCtrl);
 });

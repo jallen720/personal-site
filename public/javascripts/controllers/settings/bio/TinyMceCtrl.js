@@ -3,9 +3,7 @@ define([
 ],
 
 function(app) {
-  app.controller('settings.bio.TinyMceCtrl',
-
-  function($scope, admin) {
+  function TinyMceCtrl($scope, admin) {
     $scope.options = {
       content_css: 'stylesheets/style.css',
       menubar:     false,
@@ -25,5 +23,7 @@ function(app) {
 
       image_advtab: true,
     };
-  });
+  }
+
+  app.controller('settings.bio.TinyMceCtrl', TinyMceCtrl);
 });

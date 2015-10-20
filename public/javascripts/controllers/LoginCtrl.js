@@ -3,9 +3,7 @@ define([
 ],
 
 function(app) {
-  app.controller('LoginCtrl',
-
-  function($scope, $state, admin) {
+  function LoginCtrl($scope, $state, admin) {
     $scope.heading     = 'Admin Login';
     $scope.credentials = {};
 
@@ -19,5 +17,7 @@ function(app) {
           $state.go('home');
         });
     };
-  });
+  }
+
+  app.controller('LoginCtrl', LoginCtrl);
 });

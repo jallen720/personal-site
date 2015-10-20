@@ -3,9 +3,7 @@ define([
 ],
 
 function(app) {
-  app.controller('post.CreateCtrl',
-
-  function($scope, $state, posts) {
+  function CreateCtrl($scope, $state, posts) {
     $scope.formAction = 'Create';
     $scope.post = {};
 
@@ -19,5 +17,7 @@ function(app) {
           $state.go('home');
         });
     };
-  });
+  }
+
+  app.controller('post.CreateCtrl', CreateCtrl);
 });

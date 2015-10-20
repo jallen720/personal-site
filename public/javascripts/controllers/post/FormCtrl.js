@@ -3,9 +3,7 @@ define([
 ],
 
 function(app) {
-  app.controller('post.FormCtrl',
-
-  function($scope) {
+  function FormCtrl($scope) {
     $scope.options = {
       content_css: 'stylesheets/style.css',
       menubar:     false,
@@ -25,5 +23,7 @@ function(app) {
 
       image_advtab: true,
     };
-  });
+  }
+
+  app.controller('post.FormCtrl', FormCtrl);
 });

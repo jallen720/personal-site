@@ -3,9 +3,7 @@ define([
 ],
 
 function(app) {
-  app.controller('post.DeleteCtrl',
-
-  function($scope, $state, $stateParams, posts, post) {
+  function DeleteCtrl($scope, $state, $stateParams, posts, post) {
     $scope.post = post;
 
     $scope.cancel = function() {
@@ -18,5 +16,7 @@ function(app) {
           $state.go('home');
         });
     };
-  });
+  }
+
+  app.controller('post.DeleteCtrl', DeleteCtrl);
 });
