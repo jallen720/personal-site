@@ -11,7 +11,7 @@ function(blog) {
 
     admin.getInfo().success(function(info) {
       $scope.adminImage = gravatarURL(md5.createHash(info.email), 256);
-      $scope.bio = $sce.trustAsHtml(info.bio);
+      $scope.bio        = $sce.trustAsHtml(info.bio);
     });
   }
 

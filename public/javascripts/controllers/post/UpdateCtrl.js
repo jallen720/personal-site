@@ -5,7 +5,7 @@ define([
 function(blog) {
   function UpdateCtrl($scope, $state, $stateParams, posts, post) {
     $scope.formAction = 'Update';
-    $scope.post = post;
+    $scope.post       = post;
 
     $scope.submit = function() {
       posts.update($stateParams.id, $scope.post)

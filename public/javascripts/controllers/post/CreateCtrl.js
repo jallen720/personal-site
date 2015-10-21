@@ -5,7 +5,7 @@ define([
 function(blog) {
   function CreateCtrl($scope, $state, posts) {
     $scope.formAction = 'Create';
-    $scope.post = {};
+    $scope.post       = {};
 
     $scope.submit = function() {
       posts.create($scope.post)
