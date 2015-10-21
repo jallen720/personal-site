@@ -31,7 +31,7 @@ function isValidNewPassword(password) {
 var updateChecks = {
   email: function(admin, email, res) {
     if (!admin.isPassword(email.password)) {
-      sendError(res, [ 'Invalid password!' ]);
+      sendError(res, 'Invalid password!');
     } else {
       updaters.email(admin, email.content, res);
     }
@@ -39,9 +39,9 @@ var updateChecks = {
 
   password: function(admin, password, res) {
     if (!admin.isPassword(password.current)) {
-      sendError(res, [ 'Current password is invalid!' ]);
+      sendError(res, 'Current password is invalid!');
     } else if (!isValidNewPassword(password)) {
-      sendError(res, [ 'New password does not match confirmation password!' ]);
+      sendError(res, 'New password does not match confirmation password!');
     } else {
       updaters.password(admin, password.new, res);
     }
@@ -49,7 +49,7 @@ var updateChecks = {
 
   bio: function(admin, bio, res) {
     if (!admin.isPassword(bio.password)) {
-      sendError(res, [ 'Invalid password!' ]);
+      sendError(res, 'Invalid password!');
     } else {
       updaters.bio(admin, bio.content, res);
     }
