@@ -3,38 +3,42 @@ define([
 ],
 
 function(blog) {
-  blog.factory('posts', function($http, admin) {
-    return {
-      getAll: function() {
-        return $http.get('/posts');
-      },
+  function Posts($http, admin) {
+    var posts = {};
 
-      create: function(post) {
-        return $http.post(
-          '/posts',
-          post,
-          admin.getAuthHeader()
-        );
-      },
-
-      delete: function(id) {
-        return $http.delete(
-          '/posts/' + id,
-          admin.getAuthHeader()
-        );
-      },
-
-      get: function(id) {
-        return $http.get('/posts/' + id);
-      },
-
-      update: function(id, post) {
-        return $http.patch(
-          '/posts/' + id,
-          post,
-          admin.getAuthHeader()
-        );
-      },
+    posts.getAll = function() {
+      return $http.get('/posts');
     };
-  });
+
+    posts.create = function(post) {
+      return $http.post(
+        '/posts',
+        post,
+        admin.getAuthHeader()
+      );
+    };
+
+    posts.delete = function(id) {
+      return $http.delete(
+        '/posts/' + id,
+        admin.getAuthHeader()
+      );
+    };
+
+    posts.get = function(id) {
+      return $http.get('/posts/' + id);
+    };
+
+    posts.update = function(id, post) {
+      return $http.patch(
+        '/posts/' + id,
+        post,
+        admin.getAuthHeader()
+      );
+    };
+
+    return posts;
+  }
+
+  blog.factory('posts', Posts);
 });

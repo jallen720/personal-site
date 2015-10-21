@@ -19,6 +19,7 @@ require([
   // Register services.
   'services/posts',
   'services/admin',
+  'services/token',
 
   // Register controllers.
   'controllers/NavigationCtrl',

@@ -3,43 +3,22 @@ define([
 ],
 
 function(blog) {
-  blog.factory('admin', function($http, $window) {
+  function Admin($http, token) {
     var admin = {};
-    const TOKEN_NAME = 'blog-admin-token';
-
-    function getPayload(token) {
-      return JSON.parse($window.atob(token.split('.')[1]));
-    }
-
-    function isExpired(token) {
-      return getPayload(token).expiration <= Date.now() / 1000;
-    }
-
-    function isValidToken(token) {
-      return token !== undefined && !isExpired(token);
-    }
-
-    function saveToken(token) {
-      $window.localStorage[TOKEN_NAME] = token;
-    }
-
-    function loadToken() {
-      return $window.localStorage[TOKEN_NAME];
-    }
 
     admin.isLoggedIn = function() {
-      return isValidToken(loadToken());
+      return token.isValid();
     };
 
     admin.logIn = function(credentials) {
       return $http.post('/login', credentials)
         .success(function(data) {
-          saveToken(data.token);
+          token.save(data.token);
         });
     };
 
     admin.logOut = function() {
-      $window.localStorage.removeItem(TOKEN_NAME);
+      token.destroy();
     };
 
     admin.getInfo = function() {
@@ -49,7 +28,7 @@ function(blog) {
     admin.getAuthHeader = function() {
       return {
         headers: {
-          Authorization: 'Bearer ' + loadToken(),
+          Authorization: 'Bearer ' + token.load(),
         },
       };
     };
@@ -58,10 +37,12 @@ function(blog) {
       return $http.patch(
         '/admin/' + info,
         data,
-        admin.getAuthHeader()
+        this.getAuthHeader()
       );
     };
 
     return admin;
-  });
+  }
+
+  blog.factory('admin', Admin);
 });
