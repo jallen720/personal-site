@@ -1,9 +1,9 @@
-var express   = require('express'),
-    partials  = require('./partials'),
-    posts     = require('./posts'),
-    post      = require('./post'),
-    login     = require('./login'),
-    admin     = require('./admin');
+var express  = require('express'),
+    partials = require('./partials'),
+    posts    = require('./posts'),
+    post     = require('./post'),
+    login    = require('./login'),
+    admin    = require('./admin');
 
 var router = express.Router();
 
