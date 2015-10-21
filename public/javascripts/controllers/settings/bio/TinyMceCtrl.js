@@ -1,8 +1,8 @@
 define([
-  'app',
+  'modules/blog',
 ],
 
-function(app) {
+function(blog) {
   function TinyMceCtrl($scope, admin) {
     $scope.options = {
       content_css: 'stylesheets/style.css',
@@ -25,5 +25,5 @@ function(app) {
     };
   }
 
-  app.controller('settings.bio.TinyMceCtrl', TinyMceCtrl);
+  blog.controller('settings.bio.TinyMceCtrl', TinyMceCtrl);
 });

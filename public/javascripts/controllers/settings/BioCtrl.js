@@ -1,9 +1,9 @@
 define([
-  'app',
+  'modules/blog',
   'controllers/settings/helpers/submitFunc',
 ],
 
-function(app, submitFunc) {
+function(blog, submitFunc) {
   function BioCtrl($scope, $state, admin) {
     $scope.heading = 'Change Bio';
     $scope.bio     = {};
@@ -22,5 +22,5 @@ function(app, submitFunc) {
       });
   }
 
-  app.controller('settings.BioCtrl', BioCtrl);
+  blog.controller('settings.BioCtrl', BioCtrl);
 });

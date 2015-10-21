@@ -1,8 +1,8 @@
 define([
-  'app',
+  'modules/blog',
 ],
 
-function(app) {
+function(blog) {
   function DeleteCtrl($scope, $state, $stateParams, posts, post) {
     $scope.post = post;
 
@@ -18,5 +18,5 @@ function(app) {
     };
   }
 
-  app.controller('post.DeleteCtrl', DeleteCtrl);
+  blog.controller('post.DeleteCtrl', DeleteCtrl);
 });

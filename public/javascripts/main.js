@@ -33,9 +33,28 @@ require.config({
 });
 
 require([
-  'app',
+  // Register modules.
+  'modules/blog',
+
+  // Run initialization scripts.
+  'initialization/smoothScroll',
+  'initialization/scrollToTop',
+
+  // Register states.
+  'states/settings',
+  'states/login',
+  'states/home',
+  'states/default',
+  'states/post/create',
+  'states/post/read',
+  'states/post/update',
+  'states/post/delete',
+
+  // Register services.
   'services/posts',
   'services/admin',
+
+  // Register controllers.
   'controllers/NavigationCtrl',
   'controllers/HomeCtrl',
   'controllers/LoginCtrl',
@@ -51,9 +70,11 @@ require([
   'controllers/settings/EmailCtrl',
   'controllers/settings/PasswordCtrl',
   'controllers/settings/bio/TinyMceCtrl',
-  'helpers/smoothScroll',
 ],
 
 function() {
-  angular.bootstrap(document, [ 'angular-express' ]);
+  // Bootstrap application modules.
+  angular.bootstrap(document, [
+    'blog'
+  ]);
 });

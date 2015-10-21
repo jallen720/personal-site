@@ -1,8 +1,8 @@
 define([
-  'app',
+  'modules/blog',
 ],
 
-function(app) {
+function(blog) {
   function LoginCtrl($scope, $state, admin) {
     $scope.heading     = 'Admin Login';
     $scope.credentials = {};
@@ -19,5 +19,5 @@ function(app) {
     };
   }
 
-  app.controller('LoginCtrl', LoginCtrl);
+  blog.controller('LoginCtrl', LoginCtrl);
 });

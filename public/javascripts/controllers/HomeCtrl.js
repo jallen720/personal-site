@@ -1,8 +1,8 @@
 define([
-  'app',
+  'modules/blog',
 ],
 
-function(app) {
+function(blog) {
   function HomeCtrl($scope, $state, allPosts, admin) {
     $scope.posts      = allPosts;
     $scope.isLoggedIn = admin.isLoggedIn;
@@ -12,5 +12,5 @@ function(app) {
     };
   }
 
-  app.controller('HomeCtrl', HomeCtrl);
+  blog.controller('HomeCtrl', HomeCtrl);
 });

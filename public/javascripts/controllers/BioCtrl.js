@@ -1,8 +1,8 @@
 define([
-  'app',
+  'modules/blog',
 ],
 
-function(app) {
+function(blog) {
   function BioCtrl($scope, $sce, md5, admin) {
     function gravatarURL(emailHash, size) {
       const GRAVATAR = 'http://www.gravatar.com/avatar/';
@@ -15,5 +15,5 @@ function(app) {
     });
   }
 
-  app.controller('BioCtrl', BioCtrl);
+  blog.controller('BioCtrl', BioCtrl);
 });

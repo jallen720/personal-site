@@ -1,8 +1,8 @@
 define([
-  'app',
+  'modules/blog',
 ],
 
-function(app) {
+function(blog) {
   function FormCtrl($scope) {
     $scope.options = {
       content_css: 'stylesheets/style.css',
@@ -25,5 +25,5 @@ function(app) {
     };
   }
 
-  app.controller('post.FormCtrl', FormCtrl);
+  blog.controller('post.FormCtrl', FormCtrl);
 });

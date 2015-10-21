@@ -1,8 +1,8 @@
 define([
-  'app',
+  'modules/blog',
 ],
 
-function(app) {
+function(blog) {
   function UpdateCtrl($scope, $state, $stateParams, posts, post) {
     $scope.formAction = 'Update';
     $scope.post = post;
@@ -19,5 +19,5 @@ function(app) {
     };
   }
 
-  app.controller('post.UpdateCtrl', UpdateCtrl);
+  blog.controller('post.UpdateCtrl', UpdateCtrl);
 });

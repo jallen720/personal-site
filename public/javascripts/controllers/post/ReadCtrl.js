@@ -1,11 +1,11 @@
 define([
-  'app',
+  'modules/blog',
 ],
 
-function(app) {
+function(blog) {
   function ReadCtrl($scope, post) {
     $scope.post = post;
   }
 
-  app.controller('post.ReadCtrl', ReadCtrl);
+  blog.controller('post.ReadCtrl', ReadCtrl);
 });

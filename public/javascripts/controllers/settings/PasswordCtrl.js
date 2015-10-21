@@ -1,14 +1,14 @@
 define([
-  'app',
+  'modules/blog',
   'controllers/settings/helpers/submitFunc',
 ],
 
-function(app, submitFunc) {
+function(blog, submitFunc) {
   function PasswordCtrl($scope, $state, admin) {
     $scope.heading  = 'Change Password';
     $scope.password = {};
     $scope.submit   = submitFunc($scope, admin, 'password');
   }
 
-  app.controller('settings.PasswordCtrl', PasswordCtrl);
+  blog.controller('settings.PasswordCtrl', PasswordCtrl);
 });

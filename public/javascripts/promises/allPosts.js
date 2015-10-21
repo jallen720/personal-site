@@ -1,5 +1,5 @@
 define([
-  'helpers/formatDate',
+  'promises/helpers/formatDate',
 ],
 
 function(formatDate) {

@@ -1,12 +1,12 @@
 define([
-  'app',
+  'modules/blog',
 ],
 
-function(app) {
+function(blog) {
   function NavigationCtrl($scope, admin) {
     $scope.isLoggedIn = admin.isLoggedIn;
     $scope.logOut     = admin.logOut;
   }
 
-  app.controller('NavigationCtrl', NavigationCtrl);
+  blog.controller('NavigationCtrl', NavigationCtrl);
 });

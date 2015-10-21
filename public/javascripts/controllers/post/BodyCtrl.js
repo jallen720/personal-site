@@ -1,11 +1,11 @@
 define([
-  'app',
+  'modules/blog',
 ],
 
-function(app) {
+function(blog) {
   function BodyCtrl($scope, $sce) {
     $scope.trust = $sce.trustAsHtml;
   }
 
-  app.controller('post.BodyCtrl', BodyCtrl);
+  blog.controller('post.BodyCtrl', BodyCtrl);
 });

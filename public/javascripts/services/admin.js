@@ -1,9 +1,9 @@
 define([
-  'app',
+  'modules/blog',
 ],
 
-function(app) {
-  app.factory('admin', function($http, $window) {
+function(blog) {
+  blog.factory('admin', function($http, $window) {
     var admin = {};
     const TOKEN_NAME = 'blog-admin-token';
 

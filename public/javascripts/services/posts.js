@@ -1,9 +1,9 @@
 define([
-  'app',
+  'modules/blog',
 ],
 
-function(app) {
-  app.factory('posts', function($http, admin) {
+function(blog) {
+  blog.factory('posts', function($http, admin) {
     return {
       getAll: function() {
         return $http.get('/posts');
