@@ -1,7 +1,7 @@
-var read             = require('read'),
-    mongoose         = require('mongoose'),
-    adminModel       = require('../models/Admin.js'),
-    getErrorMessages = require('./getErrorMessages');
+var read        = require('read'),
+    mongoose    = require('mongoose'),
+    adminModel  = require('../models/Admin.js'),
+    getMessages = require('./getMessages');
 
 mongoose.connect('mongodb://localhost/blog');
 
@@ -9,10 +9,9 @@ var Admin = mongoose.model('Admin');
 
 function displayResult(err) {
   if (err) {
-    getErrorMessages(err.errors)
-      .forEach(function(errorMessage) {
-        console.log('[ERROR] %s', errorMessage);
-      });
+    getMessages(err.errors).forEach(function(errorMessage) {
+      console.log('[ERROR] %s', errorMessage);
+    });
   } else {
     console.log('Admin account created successfully!');
   }
