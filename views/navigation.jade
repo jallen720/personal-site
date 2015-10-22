@@ -1,16 +1,5 @@
-nav(
-  class='navbar navbar-inverse blog-nav'
-  role='navigation'
-  ng-controller='NavigationCtrl'
-)
-  div(class='row')
-    div(class='col-md-offset-1')
-      ul(class='nav navbar-nav blog-nav-items')
-        li
-          a(ui-sref='home') Home
-        li
-          a(ng-show='isLoggedIn()' ui-sref='postCreate') Create Post
-        li
-          a(ng-show='isLoggedIn()' ui-sref='settings') Settings
-        li
-          a(ng-show='isLoggedIn()' ui-sref='home' ng-click='logOut()') Log Out
+extends partials/navigation/bar
+
+block items
+  include partials/navigation/items/user
+  include partials/navigation/items/admin
