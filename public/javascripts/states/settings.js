@@ -1,10 +1,9 @@
 define([
   'modules/blog',
   'states/helpers/getViews',
-  'states/helpers/adminReroute',
 ],
 
-function(blog, getViews, adminReroute) {
+function(blog, getViews) {
   blog.config(function($stateProvider) {
     $stateProvider.state('settings', {
       url: '/settings',
@@ -12,8 +11,6 @@ function(blog, getViews, adminReroute) {
       views: getViews({
         templateUrl: '/partials/settings.settings',
       }),
-
-      onEnter: adminReroute(true),
     });
   });
 });

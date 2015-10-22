@@ -1,10 +1,9 @@
 define([
   'modules/blog',
   'states/helpers/getViews',
-  'states/helpers/adminReroute',
 ],
 
-function(blog, getViews, adminReroute) {
+function(blog, getViews) {
   blog.config(function($stateProvider) {
     $stateProvider.state('login', {
       url: '/login',
@@ -13,8 +12,6 @@ function(blog, getViews, adminReroute) {
         templateUrl: '/partials/login.login',
         controller:  'LoginCtrl',
       }),
-
-      onEnter: adminReroute(false),
     });
   });
 });

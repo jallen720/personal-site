@@ -5,6 +5,7 @@ require([
   // Run initialization scripts.
   'initialization/smoothScroll',
   'initialization/scrollToTop',
+  'initialization/authentication',
 
   // Register states.
   'states/settings',
