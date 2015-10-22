@@ -12,7 +12,8 @@
 .switcher,
 .btn,
 .btn:focus,
-.tile {
+.tile,
+.blog-nav {
   background-color: white;
 }
 
@@ -64,7 +65,8 @@
 .post-body,
 .input-field,
 .mce-content-body,
-p {
+p,
+.blog-nav-items li a {
   font-size: 18px;
 }
 
@@ -72,7 +74,8 @@ p, ul, ol {
   margin-bottom: 24px;
 }
 
-.switcher {
+.switcher,
+.short-input {
   width: 50%;
 }
 
@@ -83,7 +86,6 @@ p, ul, ol {
   padding: 4px 24px 4px 24px;
   color: white !important;
   background-color: #444;
-  border: none;
   outline: none !important;
 }
 
@@ -179,25 +181,21 @@ body[id='app'],
           box-shadow: none;
 }
 
-.short-input {
-  max-width: 50%;
-}
-
 .blog-nav,
-.alert {
+.alert,
+.switcher,
+.btn,
+.btn:focus {
   border: none;
 }
 
 .blog-nav {
-  background: white;
   box-shadow: 0px 1px 14px #666;
   margin-left: -5px;
   margin-right: -5px;
 }
 
 .blog-nav-items li a {
-  color: #444 !important;
-  font-size: 18px;
   padding-bottom: 12px; /* To account for the 3px bottom border */
 }
 
@@ -241,8 +239,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body,
-.btn {
-  color: #444;
+.blog-nav-items li a {
+  color: #444 !important;
 }
 
 html, body {
