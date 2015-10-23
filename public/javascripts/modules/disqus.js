@@ -3,5 +3,5 @@ define([
 ],
 
 function() {
-  return angular.module('disqus', []);
+  return angular.module('blog.disqus', []);
 });

@@ -2,13 +2,13 @@ define([
   'modules/disqus',
   'directives/helpers/validateReqdAttribs',
   'directives/helpers/readyToBindFunc',
-  'angular',
 ],
 
 function(disqus, validateReqdAttribs, readyToBindFunc) {
   function dirDisqus($window) {
     return {
-      restrict: 'E',
+      restrict:    'E',
+      templateUrl: '/partials/disqus',
 
       scope: {
         shortname:   '@shortname',
@@ -17,8 +17,6 @@ function(disqus, validateReqdAttribs, readyToBindFunc) {
         url:         '@url',
         readyToBind: '@',
       },
-
-      templateUrl: '/partials/disqus',
 
       link: function(scope) {
         validateReqdAttribs(scope);

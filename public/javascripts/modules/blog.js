@@ -11,6 +11,6 @@ function() {
     'ui.router',
     'ui.tinymce',
     'angular-md5',
-    'disqus',
+    'blog.disqus',
   ]);
 });
