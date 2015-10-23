@@ -1,11 +1,13 @@
 require([
   // Register modules.
   'modules/blog',
+  'modules/disqus',
 
   // Run initialization scripts.
   'initialization/smoothScroll',
   'initialization/scrollToTop',
   'initialization/authentication',
+  'initialization/disqus',
 
   // Register states.
   'states/settings',
@@ -22,11 +24,15 @@ require([
   'services/admin',
   'services/token',
 
+  // Register directives.
+  'directives/disqus',
+
   // Register controllers.
   'controllers/NavigationCtrl',
   'controllers/HomeCtrl',
   'controllers/LoginCtrl',
   'controllers/BioCtrl',
+  'controllers/DisqusCtrl',
   'controllers/post/CreateCtrl',
   'controllers/post/ReadCtrl',
   'controllers/post/UpdateCtrl',

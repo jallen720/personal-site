@@ -10,7 +10,7 @@ function(blog, getViews, postPromise) {
       url: '/postRead/{id}',
 
       views: getViews({
-        templateUrl: '/partials/post.full',
+        templateUrl: '/partials/post.read',
         controller:  'post.ReadCtrl',
       }),
 

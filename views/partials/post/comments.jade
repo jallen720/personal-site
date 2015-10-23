@@ -1,0 +1,9 @@
+include ../divider
+
+dir(class='disqus' ng-controller='DisqusCtrl as Disqus')
+  dir-disqus(
+    shortname='{{ Disqus.shortname }}'
+    url='{{ Disqus.url }}'
+    identifier='{{ post._id }}'
+    title='{{ post.title }}'
+  )
