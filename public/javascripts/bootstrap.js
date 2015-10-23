@@ -33,17 +33,16 @@ require([
   'controllers/LoginCtrl',
   'controllers/BioCtrl',
   'controllers/DisqusCtrl',
+  'controllers/TinyMceCtrl',
   'controllers/post/CreateCtrl',
   'controllers/post/ReadCtrl',
   'controllers/post/UpdateCtrl',
   'controllers/post/DeleteCtrl',
-  'controllers/post/FormCtrl',
   'controllers/post/BodyCtrl',
   'controllers/post/EditorCtrl',
   'controllers/settings/BioCtrl',
   'controllers/settings/EmailCtrl',
   'controllers/settings/PasswordCtrl',
-  'controllers/settings/bio/TinyMceCtrl',
 ],
 
 function() {

@@ -3,8 +3,8 @@ define([
 ],
 
 function(blog) {
-  function TinyMceCtrl($scope, admin) {
-    $scope.options = {
+  function TinyMceCtrl() {
+    this.options = {
       content_css: 'stylesheets/style.css',
       menubar:     false,
       statusbar:   false,
@@ -17,13 +17,13 @@ function(blog) {
       ],
 
       toolbar:
-        'styleselect | bold italic | alignleft aligncenter alignright alignjust' +
-        'ify | bullist numlist outdent indent | link image | forecolor backcolo' +
-        'r emoticons | undo redo',
+        'styleselect | bold italic | alignleft aligncenter alignright alignju' +
+        'stify | bullist numlist outdent indent | link image | forecolor back' +
+        'color emoticons | undo redo',
 
       image_advtab: true,
     };
   }
 
-  blog.controller('settings.bio.TinyMceCtrl', TinyMceCtrl);
+  blog.controller('TinyMceCtrl', TinyMceCtrl);
 });
