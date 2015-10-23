@@ -5,7 +5,7 @@ define([
 function(blog) {
   function TinyMceCtrl() {
     this.options = {
-      content_css: 'stylesheets/style.css',
+      content_css: '/stylesheets/style.css',
       menubar:     false,
       statusbar:   false,
 
