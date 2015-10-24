@@ -3,7 +3,6 @@ define([
   'uiRouter',
   'uiTinyMce',
   'angularMd5',
-  'modules/disqus',
 ],
 
 function() {
@@ -11,6 +10,5 @@ function() {
     'ui.router',
     'ui.tinymce',
     'angular-md5',
-    'blog.disqus',
   ]);
 });

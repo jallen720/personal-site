@@ -1,10 +1,10 @@
 define([
-  'modules/disqus',
+  'modules/blog',
   'directives/helpers/validateReqdAttribs',
   'directives/helpers/readyToBindFunc',
 ],
 
-function(disqus, validateReqdAttribs, readyToBindFunc) {
+function(blog, validateReqdAttribs, readyToBindFunc) {
   function dirDisqus($window) {
     return {
       restrict:    'E',
@@ -25,5 +25,5 @@ function(disqus, validateReqdAttribs, readyToBindFunc) {
     };
   }
 
-  disqus.directive('dirDisqus', dirDisqus);
+  blog.directive('dirDisqus', dirDisqus);
 });

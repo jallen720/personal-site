@@ -1,7 +1,6 @@
 require([
   // Register modules.
   'modules/blog',
-  'modules/disqus',
 
   // Run initialization scripts.
   'initialization/smoothScroll',
@@ -25,7 +24,7 @@ require([
   'services/token',
 
   // Register directives.
-  'directives/disqus',
+  'directives/dirDisqus',
 
   // Register controllers.
   'controllers/NavigationCtrl',
