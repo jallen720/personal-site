@@ -1,42 +1,27 @@
-define(function() {
-  function monthString(dateString) {
-    const MONTH_BEGIN = 5;
-    const MONTH_END   = 7;
-    return dateString.substring(MONTH_BEGIN, MONTH_END);
+define([
+  'helpers/insert'
+],
+
+function(insert) {
+  function dateString(postDate) {
+    return new Date(postDate).toString();
   }
 
-  function monthIndex(dateString) {
-    return parseInt(monthString(dateString)) - 1;
+  function dateSubString(dateString) {
+    const DATE_BEGIN = 4;
+    const DATE_END   = 15;
+    return dateString.slice(DATE_BEGIN, DATE_END);
   }
 
-  var months = [
-    "January", "February", "March",
-    "April",   "May",      "June",
-    "July",    "August",   "September",
-    "October", "November", "December",
-  ];
-
-  function monthName(dateString) {
-    return months[monthIndex(dateString)];
+  function addComma(dateSubString) {
+    return insert(',', dateSubString, 6);
   }
 
-  function dayString(dateString) {
-    const DAY_BEGIN = 8;
-    const DAY_END   = 10;
-    return dateString.substring(DAY_BEGIN, DAY_END);
+  function formattedDate(postDate) {
+    return addComma(dateSubString(dateString(
+      postDate
+    )));
   }
-
-  function yearString(dateString) {
-    const YEAR_BEGIN = 0;
-    const YEAR_END   = 4;
-    return dateString.substring(YEAR_BEGIN, YEAR_END);
-  }
-
-  function formattedDate(dateString) {
-    return monthName(dateString) + ' ' +
-           dayString(dateString) + ', ' +
-           yearString(dateString);
-  };
 
   return function(post) {
     post.date = formattedDate(post.date);
