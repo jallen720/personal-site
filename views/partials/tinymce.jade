@@ -1,8 +1,8 @@
 mixin tinymce(model)
   textarea(
     ng-model=model
-    ng-controller='TinyMceCtrl as TinyMce'
-    ui-tinymce='TinyMce.options'
+    ng-controller='TinyMceCtrl as tinyMce'
+    ui-tinymce='tinyMce.options'
   )
 
   .tinymce-bottom-margin

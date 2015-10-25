@@ -1,7 +1,7 @@
-ul(ng-show='isLoggedIn()' class='nav navbar-nav blog-nav-items')
+ul(ng-show='navigation.isLoggedIn()' class='nav navbar-nav blog-nav-items')
   li
     a(ui-sref='postCreate') Create Post
   li
     a(ui-sref='settings') Settings
   li
-    a(ui-sref='home' ng-click='logOut()') Log Out
+    a(ui-sref='home' ng-click='navigation.logOut()') Log Out

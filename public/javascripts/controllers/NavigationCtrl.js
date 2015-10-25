@@ -3,9 +3,9 @@ define([
 ],
 
 function(blog) {
-  function NavigationCtrl($scope, admin) {
-    $scope.isLoggedIn = admin.isLoggedIn;
-    $scope.logOut     = admin.logOut;
+  function NavigationCtrl(admin) {
+    this.isLoggedIn = admin.isLoggedIn;
+    this.logOut     = admin.logOut;
   }
 
   blog.controller('NavigationCtrl', NavigationCtrl);
