@@ -29,8 +29,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static('public'));
-app.use(express.static('bower_components'));
+
+// Static resources.
+app.use('/app', express.static('public/javascripts'));
+app.use('/lib', express.static('bower_components'));
+app.use('/res/css', express.static('public/stylesheets'));
+app.use('/res/images', express.static('public/images'));
+
 app.use(index);
 
 // catch 404 and forward to error handler
