@@ -1,5 +1,5 @@
 var mongoose      = require('mongoose'),
-    bodyValidator = require('./tinymceValidator');
+    bodyValidator = require('./helpers/tinymceValidator');
 
 const REQUIRED_MESSAGE = 'Post must have a {PATH}!'
 
