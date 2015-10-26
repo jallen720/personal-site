@@ -1,0 +1,10 @@
+span(ng-show='isLoggedIn()')
+  button(
+    class='btn'
+    ng-click='postAction("Update", post._id)'
+  ) Update
+
+  button(
+    class='btn'
+    ng-click='postAction("Delete", post._id)'
+  ) Delete

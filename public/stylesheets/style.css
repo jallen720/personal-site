@@ -113,15 +113,11 @@ p, ul, ol {
 
 .btn:hover,
 .switcher-selected {
-  background-color: #0B9927 !important;
+  background-color: #0DB32E !important;
 }
 
-.left-btn {
+.btn {
   margin-right: 10px;
-}
-
-.right-btn {
-  margin-left: 10px;
 }
 
 .alert {
@@ -206,15 +202,14 @@ body[id='app'],
 }
 
 .blog-nav-items li:hover {
-  border-bottom-color: #0EBF32;
+  border-bottom-color: #0DB32E;
 }
 
 .tile {
   padding: 10px;
 }
 
-.tile,
-.alert {
+.tile {
   -webkit-box-shadow: 0 1px 5px #aaa;
      -moz-box-shadow: 0 1px 5px #aaa;
        -o-box-shadow: 0 1px 5px #aaa;
