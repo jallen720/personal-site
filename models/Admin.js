@@ -65,11 +65,13 @@ AdminSchema.methods.setPassword = function(password) {
 };
 
 AdminSchema.methods.isPassword = function(password) {
-  return password && this.hash === createHash(password, this.salt);
+  return password !== undefined &&
+         this.hash === createHash(password, this.salt);
 };
 
 AdminSchema.methods.isEmail = function(email) {
-  return email && this.email === email
+  return email !== undefined &&
+         this.email === email
 }
 
 AdminSchema.methods.isValidCredentials = function(credentials) {
