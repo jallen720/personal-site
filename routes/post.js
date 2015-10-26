@@ -25,8 +25,8 @@ function updatePost(post, data, res) {
     post.edits.push(edit);
   });
 
-  post.title    = data.post.title;
   post.imageURL = data.post.imageURL;
+  post.title    = data.post.title;
   post.body     = data.post.body;
   saveModel(post, res);
 }

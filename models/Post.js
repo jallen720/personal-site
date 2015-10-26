@@ -4,13 +4,12 @@ var mongoose      = require('mongoose'),
 const REQUIRED_MESSAGE = 'Post must have a {PATH}!'
 
 var PostSchema = new mongoose.Schema({
+  imageURL: String,
+
   title: {
     type:     String,
     required: REQUIRED_MESSAGE,
   },
-
-  date:     Date,
-  imageURL: String,
 
   body: {
     type: String,
@@ -21,20 +20,17 @@ var PostSchema = new mongoose.Schema({
     },
   },
 
+  date: {
+    type:    Date,
+    default: Date.now,
+  },
+
   edits: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref:  'Edit',
     },
   ],
-});
-
-PostSchema.pre('save', function(next) {
-  if (!this.date) {
-    this.date = new Date();
-  }
-
-  next();
 });
 
 mongoose.model('Post', PostSchema);
