@@ -10,7 +10,7 @@ function(blog, getViews, postPromise) {
       url: '/postUpdate/{id}',
 
       views: getViews({
-        templateUrl: '/partials/post.editor.editor',
+        templateUrl: '/partials/post.editor.update',
         controller:  'post.UpdateCtrl',
       }),
 

@@ -10,8 +10,9 @@ var express      = require('express'),
     cookieParser = require('cookie-parser'),
     bodyParser   = require('body-parser'),
     mongoose     = require('mongoose'),
-    Post         = require('./models/Post'),
     Admin        = require('./models/Admin'),
+    Post         = require('./models/Post'),
+    Edit         = require('./models/Edit'),
     index        = require('./routes/index');
 
 var app = express();

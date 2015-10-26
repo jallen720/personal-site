@@ -66,7 +66,10 @@
 .input-field,
 .mce-content-body,
 p,
-.blog-nav-items li a {
+.blog-nav-items li a,
+.switcher,
+.btn,
+.alert span {
   font-size: 18px;
 }
 
@@ -91,12 +94,6 @@ p, ul, ol {
 
 .input-field {
   border-width: 2px;
-}
-
-.switcher,
-.btn,
-.alert span {
-  font-size: 20px;
 }
 
 .switcher,
@@ -244,7 +241,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body,
-.blog-nav-items li a {
+.blog-nav-items li a,
+.post-edit-reason {
   color: #444 !important;
 }
 

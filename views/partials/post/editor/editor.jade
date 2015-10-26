@@ -1,8 +1,8 @@
 div(ng-controller='post.EditorCtrl')
   include states
 
-  div(id='editor-form')
-    include formTile
+  div(id='editor-form' class='tile')
+    block form
 
   div(id='editor-preview')
     include ../full

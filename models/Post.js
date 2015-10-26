@@ -20,6 +20,13 @@ var PostSchema = new mongoose.Schema({
       message:   REQUIRED_MESSAGE,
     },
   },
+
+  edits: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref:  'Edit',
+    },
+  ],
 });
 
 PostSchema.pre('save', function(next) {

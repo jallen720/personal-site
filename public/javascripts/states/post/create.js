@@ -9,7 +9,7 @@ function(blog, getViews) {
       url: '/postCreate',
 
       views: getViews({
-        templateUrl: '/partials/post.editor.editor',
+        templateUrl: '/partials/post.editor.create',
         controller:  'post.CreateCtrl',
       }),
     });

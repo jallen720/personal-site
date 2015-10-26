@@ -1,0 +1,15 @@
+input(
+  class='input-field form-control'
+  ng-model='post.title'
+  placeholder='Title'
+  autofocus
+)
+
+input(
+  class='input-field form-control'
+  ng-model='post.imageURL'
+  placeholder='Header Image URL'
+)
+
+include ../../tinymce
+mixin tinymce('post.body')

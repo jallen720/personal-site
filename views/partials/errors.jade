@@ -1,3 +1,6 @@
-div(ng-show='error' class='alert alert-danger')
-  div(ng-repeat='message in error.messages')
-    span {{ message }}
+div(
+  class='alert alert-danger'
+  ng-show='error'
+  ng-repeat='message in error.messages'
+)
+  span {{ message }}

@@ -1,7 +1,8 @@
-var express   = require('express'),
-    mongoose  = require('mongoose'),
-    auth      = require('./middleware/auth'),
-    saveModel = require('./helpers/saveModel');
+var express      = require('express'),
+    mongoose     = require('mongoose'),
+    auth         = require('./middleware/auth'),
+    saveModel    = require('./helpers/saveModel'),
+    checkNewEdit = require('./helpers/checkNewEdit');
 
 var router = express.Router(),
     Post   = mongoose.model('Post');
@@ -19,16 +20,26 @@ router.param('post', function(req, _, next, id) {
   });
 });
 
-function updatePost(post, updatedPost, res) {
-  post.title    = updatedPost.title;
-  post.imageURL = updatedPost.imageURL;
-  post.body     = updatedPost.body;
+function updatePost(post, data, res) {
+  checkNewEdit(data.reason, post, function(edit) {
+    post.edits.push(edit);
+  });
+
+  post.title    = data.post.title;
+  post.imageURL = data.post.imageURL;
+  post.body     = data.post.body;
   saveModel(post, res);
 }
 
 router.route('/posts/:post')
   .get(function(req, res) {
-    res.send(req.post);
+    req.post.populate('edits', function(err, post) {
+      if (err) {
+        next(err);
+      } else {
+        res.json(req.post);
+      }
+    });
   })
 
   .patch(auth, function(req, res) {

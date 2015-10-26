@@ -29,10 +29,10 @@ function(blog) {
       return $http.get('/posts/' + id);
     };
 
-    posts.update = function(id, post) {
+    posts.update = function(id, data) {
       return $http.patch(
         '/posts/' + id,
-        post,
+        data,
         admin.getAuthHeader()
       );
     };
