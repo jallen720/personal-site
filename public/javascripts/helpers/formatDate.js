@@ -3,8 +3,8 @@ define([
 ],
 
 function(insert) {
-  function dateString(postDate) {
-    return new Date(postDate).toString();
+  function dateString(date) {
+    return new Date(date).toString();
   }
 
   function dateSubString(dateString) {
@@ -17,14 +17,12 @@ function(insert) {
     return insert(',', dateSubString, 6);
   }
 
-  function formattedDate(postDate) {
-    return addComma(dateSubString(dateString(
-      postDate
-    )));
+  function formattedDate(date) {
+    return addComma(dateSubString(dateString(date)));
   }
 
-  return function(post) {
-    post.date = formattedDate(post.date);
-    return post;
+  return function(object) {
+    object.date = formattedDate(object.date);
+    return object;
   };
 });
