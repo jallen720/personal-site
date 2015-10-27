@@ -32,9 +32,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Static resources.
-app.use('/app', express.static('public/javascripts'));
+app.use('/app', express.static('public/app'));
 app.use('/lib', express.static('bower_components'));
-app.use('/res/css', express.static('public/stylesheets'));
+app.use('/res/css', express.static('public/css'));
 app.use('/res/images', express.static('public/images'));
 
 app.use(index);
