@@ -1,9 +1,9 @@
 {
-  "name": "angular-express",
+  "name": "blog",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "NODE_ENV=development nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",

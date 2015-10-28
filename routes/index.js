@@ -16,7 +16,7 @@ router.use(admin);
 // Home page.
 router.get('/*', function(_, res) {
   res.render('index', {
-    title: 'My Blog'
+    title: process.env.TITLE,
   });
 });
 
