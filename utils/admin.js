@@ -1,9 +1,14 @@
-var read        = require('read'),
-    mongoose    = require('mongoose'),
-    adminModel  = require('../models/Admin.js'),
-    getMessages = require('./getMessages');
+var loadEnvironment = require('./loadEnvironment');
 
-mongoose.connect('mongodb://localhost/blog');
+loadEnvironment();
+
+var read         = require('read'),
+    mongoose     = require('mongoose'),
+    adminModel   = require('../models/Admin.js'),
+    getMessages  = require('./getMessages'),
+    mongoConnect = require('./mongoConnect');
+
+mongoConnect(mongoose);
 
 var Admin = mongoose.model('Admin');
 

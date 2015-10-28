@@ -5,4 +5,4 @@ module.exports = function() {
   if (process.env.NODE_ENV === undefined) {
     env2('config.env');
   }
-}
+};

@@ -12,12 +12,12 @@ var express      = require('express'),
     Admin        = require('./models/Admin'),
     Post         = require('./models/Post'),
     Edit         = require('./models/Edit'),
-    index        = require('./routes/index');
+    index        = require('./routes/index'),
+    mongoConnect = require('./utils/mongoConnect');
 
 var app = express();
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost/blog');
+mongoConnect(mongoose);
 
 // view engine setup
 app.set('views', 'views');
