@@ -1,9 +1,10 @@
-module.exports = function(text) {
-  function stripped(text) {
-    return text.replace(/(<([^>]+)>)/gi, '') // Remove HTML tags.
-               .replace(/&nbsp;/gi, '')      // Remove non-breakables spaces.
-               .trim();                      // Trim remaining trailing spaces.
-  }
+function stripped(text) {
+  return text.replace(/(<([^>]+)>)/gi, '') // Remove HTML tags.
+             .replace(/&nbsp;/gi, '')      // Remove non-breakable spaces.
+             .trim();                      // Trim remaining trailing spaces.
+}
 
-  return text && stripped(text) !== '';
+module.exports = function(text) {
+  return text !== undefined &&
+         stripped(text) !== '';
 };
