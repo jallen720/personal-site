@@ -11,7 +11,8 @@
 .input-field:focus,
 .switcher,
 .btn,
-.btn:focus {
+.btn:focus,
+.portfolio-item-info {
   background-color: white;
 }
 
@@ -34,7 +35,8 @@
 .post-image,
 .admin-image,
 .alert,
-.divider {
+.divider,
+.portfolio-item-container {
   width: 100%;
 }
 
@@ -81,9 +83,7 @@ p, ul, ol {
 .btn:focus,
 .blog-nav-items li a {
   color: white !important;
-  font-weight: bold;
   font-family: "Droid Sans", sans-serif;
-  text-shadow: 0px 1px #09202E;
 }
 
 .switcher,
@@ -94,7 +94,8 @@ p, ul, ol {
 .blog-nav,
 .switcher,
 .btn,
-.btn:focus {
+.btn:focus,
+.portfolio-item-img {
   background-color: #09202E;
 }
 
@@ -196,7 +197,30 @@ body[id='app'],
   border: none;
 }
 
-.blog-nav {
+.portfolio-item-info {
+  padding: 20px 20px 20px 320px;
+  width: 100%;
+}
+
+.portfolio-item-img {
+  float: left;
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.portfolio-item-img img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.portfolio-item {
+  height: 400px;
+}
+
+.blog-nav,
+.portfolio-item {
   margin-bottom: 30px;
 }
 
