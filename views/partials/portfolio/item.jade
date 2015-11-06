@@ -1,6 +1,6 @@
 .tile
   .port-item-header
-    img(ng-src='{{ item.image }}')
+    img(ng-show='item.imageURL' ng-src='{{ item.imageURL }}')
 
     .port-item-title
       h1 {{ item.title }}

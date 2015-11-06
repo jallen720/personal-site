@@ -23,6 +23,7 @@ require([
   'services/posts',
   'services/admin',
   'services/token',
+  'services/portfolio',
 
   // Register directives.
   'directives/dirDisqus',

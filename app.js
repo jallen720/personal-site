@@ -2,18 +2,19 @@ var loadEnvironment = require('./utils/loadEnvironment');
 
 loadEnvironment();
 
-var express      = require('express'),
-    path         = require('path'),
-    favicon      = require('serve-favicon'),
-    logger       = require('morgan'),
-    cookieParser = require('cookie-parser'),
-    bodyParser   = require('body-parser'),
-    mongoose     = require('mongoose'),
-    Admin        = require('./models/Admin'),
-    Post         = require('./models/Post'),
-    Edit         = require('./models/Edit'),
-    index        = require('./routes/index'),
-    mongoConnect = require('./utils/mongoConnect');
+var express       = require('express'),
+    path          = require('path'),
+    favicon       = require('serve-favicon'),
+    logger        = require('morgan'),
+    cookieParser  = require('cookie-parser'),
+    bodyParser    = require('body-parser'),
+    mongoose      = require('mongoose'),
+    Admin         = require('./models/Admin'),
+    Post          = require('./models/Post'),
+    Edit          = require('./models/Edit'),
+    PortfolioItem = require('./models/PortfolioItem'),
+    index         = require('./routes/index'),
+    mongoConnect  = require('./utils/mongoConnect');
 
 var app = express();
 
