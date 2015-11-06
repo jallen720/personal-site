@@ -1,8 +1,12 @@
-div(class='portfolio-item-container')
-  div(class='portfolio-item portfolio-item-img')
+.port-item-container
+  .port-item-header
     img(ng-src='{{ item.image }}')
 
-  div(class='portfolio-item portfolio-item-info')
-    h1 {{ item.title }}
-    include ../divider
+    .port-item-title
+      h1 {{ item.title }}
+      .port-item-summary {{ item.summary }}
+
+  include ../divider
+
+  .port-item-info
     p {{ item.body }}
