@@ -107,10 +107,10 @@ p, ul, ol {
   border-width: 2px;
 }
 
-.switcher,
+.switcher/*,
 .btn,
 .input-field,
-.blog-nav-items li {
+.blog-nav-items li*/ {
   -webkit-transition-duration: 0.2s;
      -moz-transition-duration: 0.2s;
        -o-transition-duration: 0.2s;
@@ -120,9 +120,7 @@ p, ul, ol {
      -moz-transition-timing-function: linear;
        -o-transition-timing-function: linear;
           transition-timing-function: linear;
-}
 
-.blog-nav-items li {
   -webkit-transition-property: background-color;
      -moz-transition-property: background-color;
        -o-transition-property: background-color;
@@ -168,16 +166,6 @@ body[id='app'],
 .input-field,
 .input-field:focus {
   border-color: #EEE;
-}
-
-.switcher,
-.btn,
-.btn:focus,
-.input-field {
-  -webkit-transition-property: background-color;
-     -moz-transition-property: background-color;
-       -o-transition-property: background-color;
-          transition-property: background-color;
 }
 
 .switcher,
