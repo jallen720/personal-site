@@ -12,7 +12,7 @@
 .switcher,
 .btn,
 .btn:focus,
-.tile,
+/*.tile,*/
 .blog-nav {
   background-color: white;
 }
@@ -40,7 +40,7 @@
   width: 100%;
 }
 
-.post-image,
+/*.post-image,
 .admin-image {
   margin-left: -10px;
   margin-right: -10px;
@@ -50,7 +50,7 @@
   width:    -moz-calc(100% + 20px);
   width:      -o-calc(100% + 20px);
   width:         calc(100% + 20px);
-}
+}*/
 
 .fadeout {
   position: absolute;
@@ -135,7 +135,7 @@ p, ul, ol {
 .post-date,
 .alert,
 #switcher-container,
-.tile,
+/*.tile,*/
 .post-image,
 .post-preview,
 .divider,
@@ -205,16 +205,16 @@ body[id='app'],
   border-bottom-color: #0DB32E;
 }
 
-.tile {
+/*.tile {
   padding: 10px;
-}
+}*/
 
-.tile {
+/*.tile {
   -webkit-box-shadow: 0 1px 5px #aaa;
      -moz-box-shadow: 0 1px 5px #aaa;
        -o-box-shadow: 0 1px 5px #aaa;
           box-shadow: 0 1px 5px #aaa;
-}
+}*/
 
 .col-md-8,
 .col-md-2 {
