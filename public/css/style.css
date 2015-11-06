@@ -132,12 +132,13 @@ p, ul, ol {
 
 .input-field,
 .tinymce-bottom-margin,
-.post-date,
 .alert,
 #switcher-container,
 /*.tile,*/
+.post-date,
 .post-image,
 .post-preview,
+.post-controls,
 .divider,
 .admin-image {
   margin-bottom: 10px;
