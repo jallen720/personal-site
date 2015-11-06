@@ -1,17 +1,13 @@
 define([
   'modules/blog',
-  'states/helpers/getViews',
 ],
 
-function(blog, getViews) {
+function(blog) {
   blog.config(function($stateProvider) {
     $stateProvider.state('postCreate', {
-      url: '/postCreate',
-
-      views: getViews({
-        templateUrl: '/partials/post.editor.create',
-        controller:  'post.CreateCtrl',
-      }),
+      url:         '/postCreate',
+      templateUrl: '/partials/post.editor.create',
+      controller:  'post.CreateCtrl',
     });
   });
 });

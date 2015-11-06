@@ -1,17 +1,13 @@
 define([
   'modules/blog',
-  'states/helpers/getViews',
 ],
 
-function(blog, getViews) {
+function(blog) {
   blog.config(function($stateProvider) {
     $stateProvider.state('login', {
-      url: '/login',
-
-      views: getViews({
-        templateUrl: '/partials/login.login',
-        controller:  'LoginCtrl',
-      }),
+      url:         '/login',
+      templateUrl: '/partials/login.login',
+      controller:  'LoginCtrl',
     });
   });
 });
