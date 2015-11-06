@@ -30,7 +30,6 @@ require([
 
   // Register controllers.
   'controllers/post/CreateCtrl',
-  'controllers/post/BodyCtrl',
   'controllers/post/DeleteCtrl',
   'controllers/post/ReadCtrl',
   'controllers/post/UpdateCtrl',
@@ -38,6 +37,7 @@ require([
   'controllers/settings/EmailCtrl',
   'controllers/settings/PasswordCtrl',
   'controllers/BioCtrl',
+  'controllers/BodyCtrl',
   'controllers/DisqusCtrl',
   'controllers/EditorCtrl',
   'controllers/HomeCtrl',

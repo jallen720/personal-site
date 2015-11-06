@@ -1,5 +1,5 @@
 div(
-  class='post-body'
-  ng-bind-html='trust(post.body)'
-  ng-controller='post.BodyCtrl'
+  class='content-body'
+  ng-bind-html='bodyCtrl.trust(post.body)'
+  ng-controller='BodyCtrl as bodyCtrl'
 )
