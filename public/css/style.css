@@ -12,7 +12,7 @@
 .switcher,
 .btn,
 .btn:focus,
-.port-item-container {
+.tile {
   background-color: white;
 }
 
@@ -40,7 +40,7 @@
 .admin-image,
 .alert,
 .divider,
-.port-item-container {
+.tile {
   width: 100%;
 }
 
@@ -152,11 +152,9 @@ p, ul, ol {
 .input-field,
 .tinymce-bottom-margin,
 .alert,
-#switcher-container,
 .post-date,
 .post-image,
 .post-preview,
-.post-controls,
 .divider,
 .admin-image {
   margin-bottom: 10px;
@@ -210,11 +208,11 @@ body[id='app'],
 }
 
 .blog-nav,
-.port-item-container {
+.tile {
   margin-bottom: 30px;
 }
 
-.port-item-container {
+.tile {
   padding: 20px;
 }
 
