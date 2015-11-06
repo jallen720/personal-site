@@ -3,48 +3,48 @@ require([
   'modules/blog',
 
   // Run initialization scripts.
-  'initialization/smoothScroll',
-  'initialization/scrollToTop',
   'initialization/authentication',
   'initialization/disqus',
+  'initialization/scrollToTop',
+  'initialization/smoothScroll',
 
   // Register states.
-  'states/settings',
-  'states/login',
-  'states/home',
-  'states/default',
-  'states/portfolio',
   'states/post/create',
+  'states/post/delete',
   'states/post/read',
   'states/post/update',
-  'states/post/delete',
+  'states/default',
+  'states/home',
+  'states/login',
+  'states/portfolio',
+  'states/settings',
 
   // Register services.
-  'services/posts',
   'services/admin',
-  'services/token',
   'services/portfolio',
+  'services/posts',
+  'services/token',
 
   // Register directives.
   'directives/dirDisqus',
 
   // Register controllers.
-  'controllers/NavigationCtrl',
-  'controllers/HomeCtrl',
-  'controllers/LoginCtrl',
-  'controllers/BioCtrl',
-  'controllers/DisqusCtrl',
-  'controllers/TinyMceCtrl',
-  'controllers/PortfolioCtrl',
   'controllers/post/CreateCtrl',
+  'controllers/post/BodyCtrl',
+  'controllers/post/DeleteCtrl',
   'controllers/post/ReadCtrl',
   'controllers/post/UpdateCtrl',
-  'controllers/post/DeleteCtrl',
-  'controllers/post/BodyCtrl',
-  'controllers/post/EditorCtrl',
   'controllers/settings/BioCtrl',
   'controllers/settings/EmailCtrl',
   'controllers/settings/PasswordCtrl',
+  'controllers/BioCtrl',
+  'controllers/DisqusCtrl',
+  'controllers/EditorCtrl',
+  'controllers/HomeCtrl',
+  'controllers/LoginCtrl',
+  'controllers/NavigationCtrl',
+  'controllers/PortfolioCtrl',
+  'controllers/TinyMceCtrl',
 ],
 
 function() {

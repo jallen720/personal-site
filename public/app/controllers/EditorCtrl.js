@@ -1,7 +1,7 @@
 define([
   'modules/blog',
-  'controllers/post/helpers/switchTo',
-  'controllers/post/helpers/setSwitcherOn',
+  'controllers/helpers/switchTo',
+  'controllers/helpers/setSwitcherOn',
   'jquery',
 ],
 
@@ -12,5 +12,5 @@ function(blog, switchTo, setSwitcherOn) {
     $('#editor-preview').hide();
   }
 
-  blog.controller('post.EditorCtrl', EditorCtrl);
+  blog.controller('EditorCtrl', EditorCtrl);
 });

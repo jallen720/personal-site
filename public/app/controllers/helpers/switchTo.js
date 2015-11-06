@@ -1,6 +1,6 @@
 define([
-  'controllers/post/helpers/updateSwitchers',
-  'controllers/post/helpers/fadeViews',
+  'controllers/helpers/updateSwitchers',
+  'controllers/helpers/fadeViews',
 ],
 
 function(updateSwitchers, fadeViews) {

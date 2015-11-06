@@ -1,5 +1,5 @@
 define([
-  'controllers/post/helpers/setSwitcherOn',
+  'controllers/helpers/setSwitcherOn',
 ],
 
 function(setSwitcherOn) {

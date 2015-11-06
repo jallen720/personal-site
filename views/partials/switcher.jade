@@ -1,2 +1,12 @@
 div(id='switcher-container' class='tile' align='center')
-  block states
+  button(
+    class='switcher'
+    id='switcher-left'
+    ng-click='switchTo("form")'
+  ) {{ formAction }}
+
+  button(
+    class='switcher'
+    id='switcher-right'
+    ng-click='switchTo("preview")'
+  ) Preview
