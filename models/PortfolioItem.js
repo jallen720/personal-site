@@ -4,10 +4,6 @@ var mongoose      = require('mongoose'),
 const REQUIRED_MESSAGE = 'Portfolio item must have a {PATH}!'
 
 var PortfolioItemSchema = new mongoose.Schema({
-  imageURL:     String,
-  playStoreURL: String,
-  iTunesURL:    String,
-
   title: {
     type:     String,
     required: REQUIRED_MESSAGE,
@@ -17,6 +13,14 @@ var PortfolioItemSchema = new mongoose.Schema({
     type:     String,
     required: REQUIRED_MESSAGE,
   },
+
+  imageURL: {
+    type:     String,
+    required: REQUIRED_MESSAGE,
+  },
+
+  playStoreURL: String,
+  iTunesURL:    String,
 
   body: {
     type: String,
