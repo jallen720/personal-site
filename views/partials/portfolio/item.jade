@@ -1,12 +1,16 @@
 .tile
   .port-item-header
-    img(ng-show='item.imageURL' ng-src='{{ item.imageURL }}')
+    img(ng-src='{{ portfolioItem.imageURL }}')
 
     .port-item-title
-      h1 {{ item.title }}
-      .port-item-summary {{ item.summary }}
+      h1 {{ portfolioItem.title }}
+      .port-item-summary {{ portfolioItem.summary }}
 
   include ../divider
 
   .port-item-info
-    p {{ item.body }}
+    div(
+      class='content-body'
+      ng-bind-html='bodyCtrl.trust(portfolioItem.body)'
+      ng-controller='BodyCtrl as bodyCtrl'
+    )

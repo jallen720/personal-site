@@ -40,13 +40,13 @@ router.param('item', function(req, _, next, id) {
   });
 });
 
-function updateItem(item, data, res) {
-  item.imageURL     = data.item.imageURL;
-  item.playStoreURL = data.item.playStoreURL;
-  item.iTunesURL    = data.item.iTunesURL;
-  item.title        = data.item.title;
-  item.summary      = data.item.summary;
-  item.body         = data.item.body;
+function updateItem(item, updatedItem, res) {
+  item.title        = updatedItem.title;
+  item.summary      = updatedItem.summary;
+  item.imageURL     = updatedItem.imageURL;
+  item.playStoreURL = updatedItem.playStoreURL;
+  item.iTunesURL    = updatedItem.iTunesURL;
+  item.body         = updatedItem.body;
   saveModel(item, res);
 }
 

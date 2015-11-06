@@ -9,6 +9,8 @@ require([
   'initialization/smoothScroll',
 
   // Register states.
+  'states/portfolio/create',
+  'states/portfolio/update',
   'states/post/create',
   'states/post/delete',
   'states/post/read',
@@ -29,6 +31,8 @@ require([
   'directives/dirDisqus',
 
   // Register controllers.
+  'controllers/portfolio/CreateCtrl',
+  'controllers/portfolio/UpdateCtrl',
   'controllers/post/CreateCtrl',
   'controllers/post/DeleteCtrl',
   'controllers/post/ReadCtrl',

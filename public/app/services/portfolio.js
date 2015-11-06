@@ -29,10 +29,10 @@ function(blog) {
       return $http.get('/portfolioItems/' + id);
     };
 
-    portfolio.update = function(id, data) {
+    portfolio.update = function(id, item) {
       return $http.patch(
         '/portfolioItems/' + id,
-        data,
+        item,
         admin.getAuthHeader()
       );
     };
