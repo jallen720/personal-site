@@ -11,9 +11,7 @@
 .input-field:focus,
 .switcher,
 .btn,
-.btn:focus,
-/*.tile,*/
-.blog-nav {
+.btn:focus {
   background-color: white;
 }
 
@@ -39,18 +37,6 @@
 .divider {
   width: 100%;
 }
-
-/*.post-image,
-.admin-image {
-  margin-left: -10px;
-  margin-right: -10px;
-  margin-top: -10px;
-
-  width: -webkit-calc(100% + 20px);
-  width:    -moz-calc(100% + 20px);
-  width:      -o-calc(100% + 20px);
-  width:         calc(100% + 20px);
-}*/
 
 .fadeout {
   position: absolute;
@@ -87,9 +73,21 @@ p, ul, ol {
 .btn:focus {
   text-decoration: none;
   padding: 4px 24px 4px 24px;
-  color: white !important;
-  background-color: #444;
   outline: none !important;
+}
+
+.switcher,
+.btn,
+.btn:focus,
+.blog-nav-items li a {
+  color: white !important;
+}
+
+.blog-nav,
+.switcher,
+.btn,
+.btn:focus {
+  background-color: #444;
 }
 
 .input-field {
@@ -112,8 +110,9 @@ p, ul, ol {
 }
 
 .btn:hover,
-.switcher-selected {
-  background-color: #0DB32E !important;
+.switcher-selected,
+.blog-nav-items li:hover {
+  background-color: #23ADDB !important;
 }
 
 .btn {
@@ -134,7 +133,6 @@ p, ul, ol {
 .tinymce-bottom-margin,
 .alert,
 #switcher-container,
-/*.tile,*/
 .post-date,
 .post-image,
 .post-preview,
@@ -184,38 +182,15 @@ body[id='app'],
 }
 
 .blog-nav {
-  box-shadow: 0px 1px 14px #666;
-  margin-left: -5px;
-  margin-right: -5px;
-}
-
-.blog-nav-items li a {
-  padding-bottom: 12px; /* To account for the 3px bottom border */
+  margin-bottom: 30px;
 }
 
 .blog-nav-items li {
-  border-bottom: 3px solid transparent;
-
-  -webkit-transition-property: border-bottom-color;
-     -moz-transition-property: border-bottom-color;
-       -o-transition-property: border-bottom-color;
-          transition-property: border-bottom-color;
+  -webkit-transition-property: background-color;
+     -moz-transition-property: background-color;
+       -o-transition-property: background-color;
+          transition-property: background-color;
 }
-
-.blog-nav-items li:hover {
-  border-bottom-color: #0DB32E;
-}
-
-/*.tile {
-  padding: 10px;
-}*/
-
-/*.tile {
-  -webkit-box-shadow: 0 1px 5px #aaa;
-     -moz-box-shadow: 0 1px 5px #aaa;
-       -o-box-shadow: 0 1px 5px #aaa;
-          box-shadow: 0 1px 5px #aaa;
-}*/
 
 .col-md-8,
 .col-md-2 {
@@ -237,7 +212,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body,
-.blog-nav-items li a,
 .post-edit-reason {
   color: #444 !important;
 }
