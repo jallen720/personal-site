@@ -1,0 +1,10 @@
+span(ng-show='isLoggedIn()')
+  button(
+    class='btn'
+    ng-click='portfolioItemAction("Update", portfolioItem._id)'
+  ) Update
+
+  button(
+    class='btn'
+    ng-click='portfolioItemAction("Delete", portfolioItem._id)'
+  ) Delete

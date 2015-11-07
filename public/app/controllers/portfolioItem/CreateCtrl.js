@@ -19,5 +19,5 @@ function(blog) {
     };
   }
 
-  blog.controller('portfolio.CreateCtrl', CreateCtrl);
+  blog.controller('portfolioItem.CreateCtrl', CreateCtrl);
 });

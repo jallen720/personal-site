@@ -1,16 +1,3 @@
 .tile
-  .port-item-header
-    img(ng-src='{{ portfolioItem.imageURL }}')
-
-    .port-item-title
-      h1 {{ portfolioItem.title }}
-      .port-item-summary {{ portfolioItem.summary }}
-
-  include ../divider
-
-  .port-item-info
-    div(
-      class='content-body'
-      ng-bind-html='bodyCtrl.trust(portfolioItem.body)'
-      ng-controller='BodyCtrl as bodyCtrl'
-    )
+  include full
+  include item/controls
