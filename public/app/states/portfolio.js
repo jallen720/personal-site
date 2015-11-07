@@ -7,7 +7,7 @@ function(blog, portfolioItemsPromise) {
   blog.config(function($stateProvider) {
     $stateProvider.state('portfolio', {
       url:         '/portfolio',
-      templateUrl: '/partials/portfolio.list',
+      templateUrl: '/partials/portfolio',
       controller:  'PortfolioCtrl',
 
       resolve: {
