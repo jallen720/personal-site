@@ -90,6 +90,17 @@ p, ul, ol {
   font-family: "Droid Sans", sans-serif;
 }
 
+.blog-nav-items li {
+  border-width: 2px 0px;
+  border-style: solid;
+  border-color: transparent;
+
+}
+
+.blog-nav-items li:hover {
+  border-bottom-color: #1C628C;
+}
+
 .switcher,
 .btn {
   height: 40px;
