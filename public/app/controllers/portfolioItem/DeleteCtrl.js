@@ -7,13 +7,13 @@ function(blog) {
     $scope.portfolioItem = portfolioItem;
 
     $scope.cancel = function() {
-      $state.go('home');
+      $state.go('portfolio');
     };
 
     $scope.deletePortfolioItem = function() {
       portfolio.delete($stateParams.id)
         .success(function() {
-          $state.go('home');
+          $state.go('portfolio');
         });
     };
   }
