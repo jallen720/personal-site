@@ -1,14 +1,12 @@
 define([
   'modules/blog',
-  'initialization/helpers/pageNames'
+  'initialization/helpers/getPageInfo'
 ],
 
-function(blog, pageNames) {
+function(blog, getPageInfo) {
   blog.run(function($rootScope) {
     function setPageName(_, toState) {
-      $rootScope.pageName = pageNames.find(function(pageName) {
-        return pageName.isForState(toState.name);
-      }).value;
+      $rootScope.pageName = getPageInfo(toState).name;
     }
 
     $rootScope.$on('$stateChangeSuccess', setPageName);
