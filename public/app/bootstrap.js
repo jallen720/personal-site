@@ -6,6 +6,7 @@ require([
   'initialization/authentication',
   'initialization/disqus',
   'initialization/scrollToTop',
+  'initialization/setPageName',
   'initialization/smoothScroll',
 
   // Register states.

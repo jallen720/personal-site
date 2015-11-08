@@ -2,7 +2,12 @@ extends layout
 
 block content
   include navigation
+  div(class='header-image')
+    img(src='http://p1.pichost.me/i/11/1343811.png')
 
   div(class='row')
     div(class='col-md-8 col-md-offset-2')
+      div(class='header-title')
+        h1(ng-bind='pageName') loading...
+
       div(ui-view)
