@@ -6,7 +6,7 @@ define([
 function(blog, states) {
   blog.run(function($rootScope, $state, admin) {
     function redirect() {
-      $state.go('home');
+      $state.go('about');
     }
 
     function checkRedirect(_, toState) {

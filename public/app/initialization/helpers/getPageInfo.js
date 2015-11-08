@@ -25,7 +25,7 @@ define(function() {
       },
 
       info: {
-        name: 'About',
+        name: 'About Me',
       },
     },
     {

@@ -16,6 +16,12 @@
   background-color: white;
 }
 
+.admin-image,
+.port-item-header img {
+  width: 128px;
+  height: 128px;
+}
+
 .header-image {
   width: 100%;
   position: absolute;
@@ -65,7 +71,6 @@
 
 .fadeout,
 .post-image,
-.admin-image,
 .alert,
 .divider,
 .tile {
@@ -228,10 +233,7 @@ body[id='app'],
 
 .port-item-header img {
   float: left;
-  width: 120px;
-  height: 120px;
   margin-right: 20px;
-  border-radius: 5px;
 }
 
 .blog-nav {

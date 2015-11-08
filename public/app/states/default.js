@@ -4,6 +4,6 @@ define([
 
 function(blog) {
   blog.config(function($urlRouterProvider) {
-    $urlRouterProvider.otherwise('home');
+    $urlRouterProvider.otherwise('about');
   });
 });
