@@ -17,7 +17,7 @@
 }
 
 .admin-image,
-.port-item-header img {
+.resource-header img {
   width: 128px;
   height: 128px;
 }
@@ -51,7 +51,7 @@
 }
 
 .post-date,
-.port-item-summary {
+.resource-summary {
   color: #999;
 }
 
@@ -231,7 +231,7 @@ body[id='app'],
   border: none;
 }
 
-.port-item-header img {
+.resource-header img {
   float: left;
   margin-right: 20px;
 }
@@ -248,15 +248,15 @@ body[id='app'],
   padding: 20px;
 }
 
-.port-item-header {
+.resource-header {
   height: 140px;
 }
 
-.port-item-title h1 {
+.resource-title h1 {
   font-size: 70px;
 }
 
-.port-item-summary {
+.resource-summary {
   font-size: 22px;
   font-style: italic;
 }

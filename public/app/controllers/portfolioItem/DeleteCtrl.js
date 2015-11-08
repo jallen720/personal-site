@@ -4,7 +4,7 @@ define([
 
 function(blog) {
   function DeleteCtrl($scope, $state, $stateParams, portfolio, portfolioItem) {
-    $scope.portfolioItem = portfolioItem;
+    $scope.resource = portfolioItem;
 
     $scope.cancel = function() {
       $state.go('portfolio');

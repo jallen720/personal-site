@@ -4,11 +4,11 @@ define([
 
 function(blog) {
   function CreateCtrl($scope, $state, portfolio) {
-    $scope.formAction    = 'Create';
-    $scope.portfolioItem = {};
+    $scope.formAction = 'Create';
+    $scope.resource   = {};
 
     $scope.submit = function() {
-      portfolio.create($scope.portfolioItem)
+      portfolio.create($scope.resource)
         .error(function(error) {
           $scope.error = error;
         })

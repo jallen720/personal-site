@@ -1,8 +1,4 @@
-div(ng-controller='EditorCtrl')
-  include ../../switcher
+extends ../../resource/editor
 
-  div(id='editor-form' class='tile')
-    include form
-
-  div(id='editor-preview')
-    include ../item
+block form
+  include form

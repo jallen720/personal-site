@@ -1,0 +1,25 @@
+extends ../form
+
+block inputs
+  input(
+    class='input-field form-control'
+    ng-model='resource.title'
+    placeholder='Title'
+    autofocus
+  )
+
+  input(
+    class='input-field form-control'
+    ng-model='resource.summary'
+    placeholder='Summary'
+  )
+
+  input(
+    class='input-field form-control'
+    ng-model='resource.imageURL'
+    placeholder='Image URL'
+  )
+
+  block secondaryInputs
+  include ../tinymce
+  mixin tinymce('resource.body')

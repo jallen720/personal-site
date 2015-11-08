@@ -4,11 +4,11 @@ define([
 
 function(blog) {
   function UpdateCtrl($scope, $state, $stateParams, portfolio, portfolioItem) {
-    $scope.formAction    = 'Update';
-    $scope.portfolioItem = portfolioItem;
+    $scope.formAction = 'Update';
+    $scope.resource   = portfolioItem;
 
     $scope.submit = function() {
-      portfolio.update($stateParams.id, $scope.portfolioItem)
+      portfolio.update($stateParams.id, $scope.resource)
         .error(function(error) {
           $scope.error = error;
         })

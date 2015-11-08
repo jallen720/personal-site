@@ -1,36 +1,14 @@
-extends ../../form
+extends ../../resource/form
 
-block inputs
+block secondaryInputs
   input(
     class='input-field form-control'
-    ng-model='portfolioItem.title'
-    placeholder='Title'
-    autofocus
-  )
-
-  input(
-    class='input-field form-control'
-    ng-model='portfolioItem.summary'
-    placeholder='Summary'
-  )
-
-  input(
-    class='input-field form-control'
-    ng-model='portfolioItem.imageURL'
-    placeholder='Image URL'
-  )
-
-  input(
-    class='input-field form-control'
-    ng-model='portfolioItem.playStoreURL'
+    ng-model='resource.playStoreURL'
     placeholder='Play Store URL'
   )
 
   input(
     class='input-field form-control'
-    ng-model='portfolioItem.iTunesURL'
+    ng-model='resource.iTunesURL'
     placeholder='iTunes URL'
   )
-
-  include ../../tinymce
-  mixin tinymce('portfolioItem.body')
