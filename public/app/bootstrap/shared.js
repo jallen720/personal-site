@@ -17,6 +17,7 @@ define([
   // Register controllers.
   'controllers/BodyCtrl',
   'controllers/EditorCtrl',
+  'controllers/FooterCtrl',
   'controllers/LoginCtrl',
   'controllers/NavigationCtrl',
   'controllers/TinyMceCtrl',

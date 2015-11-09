@@ -12,7 +12,8 @@
 .switcher,
 .btn,
 .btn:focus,
-.tile {
+.tile,
+.footer {
   background-color: white;
 }
 
@@ -49,9 +50,17 @@
 
 .header-title h1 {
   color: white;
-  text-align: center;
   text-shadow: 0px 2px 5px rgb(9, 32, 46);
   font-size: 90px;
+}
+
+.footer {
+  padding: 10px 0px;
+}
+
+.header-title h1,
+.footer {
+  text-align: center;
 }
 
 .post-date,
@@ -98,7 +107,8 @@ p,
 .blog-nav-items li,
 .switcher,
 .btn,
-.alert span {
+.alert span,
+.footer {
   font-size: 18px;
 }
 
