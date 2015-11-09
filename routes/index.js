@@ -4,6 +4,7 @@ var express        = require('express'),
     post           = require('./post'),
     login          = require('./login'),
     admin          = require('./admin'),
+    aboutInfo      = require('./aboutInfo'),
     portfolioItems = require('./portfolioItems');
 
 var router = express.Router();
@@ -13,6 +14,7 @@ router.use(posts);
 router.use(post);
 router.use(login);
 router.use(admin);
+router.use(aboutInfo);
 router.use(portfolioItems);
 
 // Home page.

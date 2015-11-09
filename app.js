@@ -13,6 +13,7 @@ var express       = require('express'),
     Post          = require('./models/Post'),
     Edit          = require('./models/Edit'),
     PortfolioItem = require('./models/PortfolioItem'),
+    AboutInfo     = require('./models/AboutInfo'),
     index         = require('./routes/index'),
     mongoConnect  = require('./utils/mongoConnect');
 
