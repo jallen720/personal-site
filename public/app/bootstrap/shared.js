@@ -4,7 +4,7 @@ define([
   'initialization/html5',
   'initialization/scrollToTop',
   'initialization/setPageName',
-  'initialization/smoothScroll',
+  // 'initialization/smoothScroll',
 
   // Register states.
   'states/default',

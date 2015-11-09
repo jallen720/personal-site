@@ -236,12 +236,12 @@ p, ul, ol {
 
 body[id='app'],
 .input-field {
-  background-color: #EEE;
+  background-color: #E3E3E3;
 }
 
 .input-field,
 .input-field:focus {
-  border-color: #EEE;
+  border-color: #E3E3E3;
 }
 
 .switcher,
@@ -275,6 +275,7 @@ body[id='app'],
 .tile {
   margin-bottom: 30px;
   padding: 20px;
+  border: solid 1px #DDD;
 }
 
 .resource-header {
@@ -295,7 +296,7 @@ body[id='app'],
 }
 
 .divider {
-  border-bottom: solid 2px #DDD;
+  border-bottom: solid 1px #DDD;
 }
 
 .disqus {
