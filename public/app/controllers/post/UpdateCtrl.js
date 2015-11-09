@@ -18,7 +18,7 @@ function(blog) {
         })
 
         .success(function() {
-          $state.go('home');
+          $state.go('about');
         });
     };
   }

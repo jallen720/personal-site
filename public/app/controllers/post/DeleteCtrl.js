@@ -7,13 +7,13 @@ function(blog) {
     $scope.post = post;
 
     $scope.cancel = function() {
-      $state.go('home');
+      $state.go('about');
     };
 
     $scope.deletePost = function() {
       posts.delete($stateParams.id)
         .success(function() {
-          $state.go('home');
+          $state.go('about');
         });
     };
   }
