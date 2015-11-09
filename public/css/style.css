@@ -177,10 +177,7 @@ p, ul, ol {
   border-width: 2px;
 }
 
-.switcher/*,
-.btn,
-.input-field,
-.blog-nav-items li*/ {
+.switcher {
   -webkit-transition-duration: 0.2s;
      -moz-transition-duration: 0.2s;
        -o-transition-duration: 0.2s;
@@ -198,8 +195,7 @@ p, ul, ol {
 }
 
 .btn:hover,
-.switcher-selected/*,
-.blog-nav-items li:hover*/ {
+.switcher-selected {
   background-color: #30A9F2 !important;
 }
 
@@ -225,8 +221,7 @@ p, ul, ol {
 .post-image,
 .post-preview,
 .divider,
-.admin-image,
-.portfolio-links a img {
+.admin-image {
   margin-bottom: 10px;
 }
 
@@ -270,15 +265,12 @@ body[id='app'],
 
 .tile {
   margin-bottom: 30px;
-}
-
-.tile {
   padding: 20px;
 }
 
 .resource-header {
   height: 140px;
-}s
+}
 
 .resource-title h1 {
   font-size: 70px;
