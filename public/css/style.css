@@ -30,28 +30,29 @@
 .header-image {
   width: 100%;
   position: absolute;
-  top: 54px;
+  top: 0px;
   overflow: hidden;
+  height: 409px;
 }
 
 .header-image img {
   width: 100%;
 }
 
-.header-image,
-.header-title {
-  height: 350px;
-}
-
 .header-title {
   margin-bottom: 30px;
-  padding-top: 110px;
+  padding-top: 100px;
+  height: 350px;
 }
 
 .header-title h1 {
   color: white;
   text-shadow: 0px 2px 5px rgb(9, 32, 46);
   font-size: 90px;
+}
+
+.blog-nav-items li a {
+  text-shadow: 0px 1px 2px rgb(9, 32, 46);
 }
 
 .footer {
@@ -104,7 +105,6 @@
 .input-field,
 .mce-content-body,
 p,
-.blog-nav-items li,
 .switcher,
 .btn,
 .alert span,
@@ -138,15 +138,24 @@ p, ul, ol {
   font-family: "Droid Sans", sans-serif;
 }
 
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+}
+
+.blog-nav {
+  text-align: center;
+}
+
 .blog-nav-items li {
   border-width: 2px 0px;
   border-style: solid;
   border-color: transparent;
-
 }
 
 .blog-nav-items li:hover {
-  border-bottom-color: #298FCC;
+  border-bottom-color: white;
+  box-shadow: 0 4px 5px -5px rgb(9, 32, 46);
 }
 
 .switcher,
@@ -154,7 +163,10 @@ p, ul, ol {
   height: 40px;
 }
 
-.blog-nav,
+.blog-nav {
+  background-color: transparent;
+}
+
 .switcher,
 .btn,
 .btn:focus {
@@ -186,8 +198,8 @@ p, ul, ol {
 }
 
 .btn:hover,
-.switcher-selected,
-.blog-nav-items li:hover {
+.switcher-selected/*,
+.blog-nav-items li:hover*/ {
   background-color: #30A9F2 !important;
 }
 
@@ -266,15 +278,19 @@ body[id='app'],
 
 .resource-header {
   height: 140px;
-}
+}s
 
 .resource-title h1 {
   font-size: 70px;
 }
 
 .resource-summary {
-  font-size: 22px;
   font-style: italic;
+}
+
+.blog-nav-items li,
+.resource-summary {
+  font-size: 22px;
 }
 
 .divider {
