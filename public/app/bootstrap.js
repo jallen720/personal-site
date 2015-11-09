@@ -1,6 +1,6 @@
 require([
   'bootstrap/about',
-  'bootstrap/blog',
+  // 'bootstrap/blog',
   'bootstrap/portfolio',
   'bootstrap/settings',
   'bootstrap/shared',
