@@ -21,7 +21,7 @@ define(function() {
     },
     {
       isForState: function(stateName) {
-        return stateName === 'about'
+        return stateName.indexOf('about') !== -1;
       },
 
       info: {

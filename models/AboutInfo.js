@@ -1,7 +1,7 @@
 var mongoose      = require('mongoose'),
     bodyValidator = require('./helpers/tinymceValidator');
 
-const REQUIRED_MESSAGE = '"About" info must have a {PATH}!'
+const REQUIRED_MESSAGE = 'About info must have a {PATH}!'
 
 var AboutInfoSchema = new mongoose.Schema({
   title: {

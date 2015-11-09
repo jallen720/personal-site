@@ -12,14 +12,6 @@ router.all('/admin*', function(req, _, next) {
   });
 });
 
-// Get admin account info.
-router.get('/admin', function(req, res) {
-  res.send({
-    email: req.admin.email,
-    bio:   req.admin.bio,
-  });
-});
-
 router.param('property', function(req, _, next, property) {
   if (!updaters.hasOwnProperty(property)) {
     next(new Error('Cannot update "' + property + '" property!'));

@@ -5,10 +5,10 @@ define([
 
 function(blog, aboutInfoPromise) {
   blog.config(function($stateProvider) {
-    $stateProvider.state('about', {
-      url:         '/about',
-      templateUrl: '/partials/about',
-      controller:  'AboutCtrl',
+    $stateProvider.state('aboutUpdate', {
+      url:         '/aboutUpdate',
+      templateUrl: '/partials/about.editor',
+      controller:  'about.UpdateCtrl',
 
       resolve: {
         aboutInfo: aboutInfoPromise,

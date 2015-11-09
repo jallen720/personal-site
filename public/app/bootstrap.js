@@ -10,6 +10,7 @@ require([
   'initialization/smoothScroll',
 
   // Register states.
+  'states/about/update',
   'states/portfolioItem/create',
   'states/portfolioItem/delete',
   'states/portfolioItem/update',
@@ -25,6 +26,7 @@ require([
   'states/settings',
 
   // Register services.
+  'services/about',
   'services/admin',
   'services/portfolio',
   'services/posts',
@@ -34,6 +36,7 @@ require([
   'directives/dirDisqus',
 
   // Register controllers.
+  'controllers/about/UpdateCtrl',
   'controllers/portfolioItem/CreateCtrl',
   'controllers/portfolioItem/DeleteCtrl',
   'controllers/portfolioItem/UpdateCtrl',

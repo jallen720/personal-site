@@ -1,7 +1,6 @@
-var mongoose     = require('mongoose'),
-    crypto       = require('crypto'),
-    jwt          = require('jsonwebtoken'),
-    bioValidator = require('./helpers/tinymceValidator');
+var mongoose = require('mongoose'),
+    crypto   = require('crypto'),
+    jwt      = require('jsonwebtoken');
 
 var regexes = {
   email:    /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i,
@@ -23,16 +22,6 @@ var AdminSchema = new mongoose.Schema({
     },
 
     required: INVALID_EMAIL_MESSAGE,
-  },
-
-  bio: {
-    type:    String,
-    default: 'This is your bio...',
-
-    validate: {
-      validator: bioValidator,
-      message:   'Your bio can\'t be empty!',
-    },
   },
 
   hash: {

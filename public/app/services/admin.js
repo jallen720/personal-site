@@ -21,10 +21,6 @@ function(blog) {
       token.destroy();
     };
 
-    admin.getInfo = function() {
-      return $http.get('/admin');
-    };
-
     admin.getAuthHeader = function() {
       return {
         headers: {
