@@ -1,5 +1,5 @@
 define(function() {
-  return function($scope, admin, prop, onSuccess) {
+  return function($scope, admin, prop) {
     return function() {
       admin.update(prop, $scope[prop])
         .error(function(error) {
@@ -10,12 +10,7 @@ define(function() {
         .success(function() {
           $scope.success = 'Your ' + prop + ' has been successfully updated!';
           $scope.error   = undefined;
-
-          if (onSuccess) {
-            onSuccess();
-          } else {
-            $scope[prop] = {};
-          }
+          $scope[prop]   = {};
         });
     };
   };

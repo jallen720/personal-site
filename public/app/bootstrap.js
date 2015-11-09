@@ -41,7 +41,6 @@ require([
   'controllers/post/DeleteCtrl',
   'controllers/post/ReadCtrl',
   'controllers/post/UpdateCtrl',
-  'controllers/settings/BioCtrl',
   'controllers/settings/EmailCtrl',
   'controllers/settings/PasswordCtrl',
   'controllers/AboutCtrl',
