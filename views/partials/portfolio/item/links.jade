@@ -1,0 +1,20 @@
+.portfolio-links
+  a(
+    ng-show='resource.playStoreURL'
+    ng-href='{{ resource.playStoreURL }}'
+    target='_blank'
+  )
+    img(
+      alt='Get it on Google Play'
+      src='https://developer.android.com/images/brand/en_generic_rgb_wo_60.png'
+    )
+
+  a(
+    ng-show='resource.iTunesURL'
+    ng-href='{{ resource.iTunesURL }}'
+    target='_blank'
+  )
+    img(
+      alt='Get it on iTunes'
+      src='res/images/Get_it_on_iTunes_Badge_US_1114.svg'
+    )

@@ -16,6 +16,10 @@
   background-color: white;
 }
 
+.portfolio-links a img {
+  height: 60px;
+}
+
 .admin-image,
 .resource-header img {
   width: 128px;
@@ -177,7 +181,8 @@ p, ul, ol {
   background-color: #30A9F2 !important;
 }
 
-.btn {
+.btn,
+.portfolio-links a img {
   margin-right: 10px;
 }
 
@@ -198,7 +203,8 @@ p, ul, ol {
 .post-image,
 .post-preview,
 .divider,
-.admin-image {
+.admin-image,
+.portfolio-links a img {
   margin-bottom: 10px;
 }
 
