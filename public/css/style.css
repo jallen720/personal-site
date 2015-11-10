@@ -234,14 +234,17 @@ p, ul, ol {
   margin-bottom: 10px;
 }
 
-body[id='app'],
-.input-field {
+body[id='app'] {
   background-color: #E3E3E3;
+}
+
+.input-field {
+  background-color: #EEE;
 }
 
 .input-field,
 .input-field:focus {
-  border-color: #E3E3E3;
+  border-color: #EEE;
 }
 
 .switcher,
