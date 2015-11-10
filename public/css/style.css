@@ -66,6 +66,7 @@
 
 .footer {
   padding: 10px 0px;
+  border-width: 1px 0 0 0;
 }
 
 .header-title h1,
@@ -278,7 +279,15 @@ body[id='app'] {
 .tile {
   margin-bottom: 30px;
   padding: 20px;
-  border: solid 1px #DDD;
+  border-width: 1px;
+}
+
+.tile,
+.footer,
+.header-image,
+.divider {
+  border-style: solid;
+  border-color: #BEBEBE;
 }
 
 .resource-header {
@@ -298,8 +307,9 @@ body[id='app'] {
   font-size: 22px;
 }
 
-.divider {
-  border-bottom: solid 1px #DDD;
+.divider,
+.header-image {
+  border-width: 0 0 1px 0;
 }
 
 .disqus {
