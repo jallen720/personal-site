@@ -5,22 +5,23 @@ define([
 
 function(blog, states) {
   blog.run(function($rootScope, $state, admin) {
-    function redirect() {
+    function redirect(event) {
+      event.preventDefault();
       $state.go('about');
     }
 
-    function checkRedirect(_, toState) {
+    function checkRedirect(event, toState) {
       if (states.requiresLoggedIn(toState)) {
         if (!admin.isLoggedIn()) {
-          redirect();
+          redirect(event);
         }
       } else if (states.requiresLoggedOut(toState)) {
         if (admin.isLoggedIn()) {
-          redirect();
+          redirect(event);
         }
       }
     }
 
-    $rootScope.$on('$stateChangeSuccess', checkRedirect);
+    $rootScope.$on('$stateChangeStart', checkRedirect);
   });
 });

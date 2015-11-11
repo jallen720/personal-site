@@ -5,6 +5,10 @@ define([
 function() {
   var states = {
     loggedIn: [
+      'aboutUpdate',
+      'portfolioItemCreate',
+      'portfolioItemUpdate',
+      'portfolioItemDelete',
       'postCreate',
       'postUpdate',
       'postDelete',
