@@ -22,6 +22,13 @@ var PortfolioItemSchema = new mongoose.Schema({
   playStoreURL: String,
   iTunesURL:    String,
 
+  priority: {
+    type:     Number,
+    required: REQUIRED_MESSAGE,
+    min:      0,
+    default:  0,
+  },
+
   body: {
     type: String,
 

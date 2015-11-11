@@ -13,7 +13,7 @@ function createItem(newItem, res) {
 router.route('/portfolioItems')
   // Get all portfolio items.
   .get(function(_, res, next) {
-    PortfolioItem.find({}, function(err, items) {
+    PortfolioItem.find({}).sort('-priority').exec(function(err, items) {
       if (err) {
         next(err);
       } else {
@@ -46,6 +46,7 @@ function updateItem(item, updatedItem, res) {
   item.imageURL     = updatedItem.imageURL;
   item.playStoreURL = updatedItem.playStoreURL;
   item.iTunesURL    = updatedItem.iTunesURL;
+  item.priority     = updatedItem.priority;
   item.body         = updatedItem.body;
   saveModel(item, res);
 }
