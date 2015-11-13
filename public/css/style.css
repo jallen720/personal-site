@@ -139,11 +139,20 @@ p, ul, ol {
   outline: none !important;
 }
 
+#my-name {
+  margin-top: 0;
+  padding: 15px 15px 15px 15px;
+  font-weight: bold;
+  line-height: 20px;
+  display: inline;
+}
+
 .switcher,
 .btn,
 .btn:focus,
 .blog-nav-items li a,
-.header-title h1 {
+.header-title h1,
+#my-name {
   color: white !important;
   font-family: "Droid Sans", sans-serif;
 }
@@ -163,7 +172,7 @@ p, ul, ol {
   border-color: transparent;
 }
 
-.blog-nav-items li:hover {
+.blog-nav-items li:not([id='my-name']):hover {
   border-bottom-color: white;
   box-shadow: 0 4px 5px -5px rgb(9, 32, 46);
 }
@@ -303,7 +312,8 @@ body[id='app'] {
 }
 
 .blog-nav-items li,
-.resource-summary {
+.resource-summary,
+#my-name {
   font-size: 22px;
 }
 
