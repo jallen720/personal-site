@@ -17,7 +17,8 @@ function displayResult(err) {
     getMessages(err.errors).forEach(function(errorMessage) {
       console.log('[ERROR] %s', errorMessage);
     });
-  } else {
+  }
+  else {
     console.log('Admin account created successfully!');
   }
 }

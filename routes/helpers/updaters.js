@@ -15,7 +15,8 @@ module.exports = {
   email: function(admin, email, res) {
     if (!admin.isPassword(email.password)) {
       sendError(res, 'Invalid password!');
-    } else {
+    }
+    else {
       update(admin, res, function() {
         admin.email = email.content;
       });
@@ -25,9 +26,11 @@ module.exports = {
   password: function(admin, password, res) {
     if (!admin.isPassword(password.current)) {
       sendError(res, 'Current password is invalid!');
-    } else if (!isValidNewPassword(password)) {
+    }
+    else if (!isValidNewPassword(password)) {
       sendError(res, 'New password does not match confirmation password!');
-    } else {
+    }
+    else {
       update(admin, res, function() {
         admin.setPassword(password.new);
       });
@@ -37,7 +40,8 @@ module.exports = {
   bio: function(admin, bio, res) {
     if (!admin.isPassword(bio.password)) {
       sendError(res, 'Invalid password!');
-    } else {
+    }
+    else {
       update(admin, res, function() {
         admin.bio = bio.content;
       });

@@ -15,7 +15,8 @@ router.all('/admin*', function(req, _, next) {
 router.param('property', function(req, _, next, property) {
   if (!updaters.hasOwnProperty(property)) {
     next(new Error('Cannot update "' + property + '" property!'));
-  } else {
+  }
+  else {
     req.updater = updaters[property];
     next();
   }

@@ -16,7 +16,8 @@ function displayResult(err) {
     getMessages(err.errors).forEach(function(errorMessage) {
       console.log('[ERROR] %s', errorMessage);
     });
-  } else {
+  }
+  else {
     console.log('About info created successfully!');
   }
 }

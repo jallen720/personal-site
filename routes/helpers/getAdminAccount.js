@@ -6,9 +6,11 @@ module.exports = function(next, callback) {
   Admin.findOne(function(err, admin) {
     if (err) {
       next(err);
-    } else if (!admin) {
+    }
+    else if (!admin) {
       next(new Error('An admin account has not been set up!'));
-    } else {
+    }
+    else {
       callback(admin);
     }
   });

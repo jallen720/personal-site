@@ -11,9 +11,11 @@ router.param('post', function(req, _, next, id) {
   Post.findById(id).exec(function(err, post) {
     if (err) {
       next(err);
-    } else if (!post) {
+    }
+    else if (!post) {
       next(new Error('Can\'t find post!'));
-    } else {
+    }
+    else {
       req.post = post;
       next();
     }
@@ -36,7 +38,8 @@ router.route('/posts/:post')
     req.post.populate('edits', function(err, post) {
       if (err) {
         next(err);
-      } else {
+      }
+      else {
         res.json(req.post);
       }
     });
@@ -50,7 +53,8 @@ router.route('/posts/:post')
     req.post.remove(function(err) {
       if (err) {
         next(err);
-      } else {
+      }
+      else {
         res.sendStatus(200);
       }
     });

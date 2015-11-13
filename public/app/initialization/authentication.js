@@ -15,7 +15,8 @@ function(blog, states) {
         if (!admin.isLoggedIn()) {
           redirect(event);
         }
-      } else if (states.requiresLoggedOut(toState)) {
+      }
+      else if (states.requiresLoggedOut(toState)) {
         if (admin.isLoggedIn()) {
           redirect(event);
         }

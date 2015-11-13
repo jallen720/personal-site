@@ -5,7 +5,8 @@ module.exports = function(model, res) {
   model.save(function(err) {
     if (err) {
       sendError(res, getMessages(err.errors));
-    } else {
+    }
+    else {
       res.sendStatus(200);
     }
   });

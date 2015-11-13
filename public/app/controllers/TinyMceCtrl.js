@@ -5,9 +5,10 @@ define([
 function(blog) {
   function TinyMceCtrl() {
     this.options = {
-      content_css: '/res/css/style.css',
-      menubar:     false,
-      statusbar:   false,
+      content_css:  '/res/css/style.css',
+      menubar:      false,
+      statusbar:    false,
+      image_advtab: true,
 
       plugins:
         'advlist autolink autoresize lists link image charmap print hr ' +
@@ -20,8 +21,6 @@ function(blog) {
         'styleselect | bold italic | alignleft aligncenter alignright ' +
         'alignjustify | bullist numlist outdent indent | link image | ' +
         'forecolor backcolor emoticons | undo redo',
-
-      image_advtab: true,
     };
   }
 

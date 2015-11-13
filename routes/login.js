@@ -7,7 +7,8 @@ var router = express.Router();
 function checkLogin(admin, credentials, res) {
   if (!admin.isValidCredentials(credentials)) {
     sendError(res, 'Invalid e-mail and/or password!');
-  } else {
+  }
+  else {
     res.send({
       token: admin.generateJWT(),
     });

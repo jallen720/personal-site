@@ -16,7 +16,8 @@ router.route('/posts')
     Post.find({}).sort('-date').exec(function(err, posts) {
       if (err) {
         next(err);
-      } else {
+      }
+      else {
         res.json(posts);
       }
     });

@@ -16,7 +16,8 @@ router.route('/portfolioItems')
     PortfolioItem.find({}).sort('-priority').exec(function(err, items) {
       if (err) {
         next(err);
-      } else {
+      }
+      else {
         res.json(items);
       }
     });
@@ -31,9 +32,11 @@ router.param('item', function(req, _, next, id) {
   PortfolioItem.findById(id).exec(function(err, item) {
     if (err) {
       next(err);
-    } else if (!item) {
+    }
+    else if (!item) {
       next(new Error('Can\'t find portfolio item!'));
-    } else {
+    }
+    else {
       req.item = item;
       next();
     }
@@ -64,7 +67,8 @@ router.route('/portfolioItems/:item')
     req.item.remove(function(err) {
       if (err) {
         next(err);
-      } else {
+      }
+      else {
         res.sendStatus(200);
       }
     });

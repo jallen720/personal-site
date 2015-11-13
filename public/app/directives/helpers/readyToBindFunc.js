@@ -23,7 +23,7 @@ function(setupScript) {
 
       if (scope.$eval(isReady)) {
         setGlobalConfig();
-        setupScript($window, scope);
+        setupScript($window.DISQUS, scope);
       }
     };
   };

@@ -6,9 +6,11 @@ module.exports = function(next, callback) {
   AboutInfo.findOne(function(err, aboutInfo) {
     if (err) {
       next(err);
-    } else if (!aboutInfo) {
+    }
+    else if (!aboutInfo) {
       next(new Error('Admin "about" info has not been set up!'));
-    } else {
+    }
+    else {
       callback(aboutInfo);
     }
   });

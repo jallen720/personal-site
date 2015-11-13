@@ -28,17 +28,14 @@ define(function() {
     });
   }
 
-  function checkScriptAction(DISQUS, scope) {
+  return function(DISQUS, scope) {
     // Get the remote Disqus script and insert it into the DOM, but only if it
     // hasn't been loaded (as that will cause warnings).
     if (!DISQUS) {
       addNewScript(scope);
-    } else {
+    }
+    else {
       resetScript(DISQUS, scope);
     }
-  }
-
-  return function($window, scope) {
-    checkScriptAction($window.DISQUS, scope);
   };
 });
