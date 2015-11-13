@@ -30,6 +30,22 @@
   height: 60px;
 }
 
+.contacts a img {
+  max-height: 42px;
+  margin-right: 10px;
+}
+
+.contacts {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+}
+
+#github-link {
+  background-color: white;
+  border-radius: 5px;
+}
+
 .admin-image,
 .resource-header img {
   width: 128px;
@@ -37,20 +53,16 @@
 }
 
 .header-image {
-  width: 100%;
   position: absolute;
   top: 0px;
   overflow: hidden;
   height: 409px;
 }
 
-.header-image img {
-  width: 100%;
-}
-
 .header-title {
+  position: relative;
   margin-bottom: 30px;
-  padding-top: 100px;
+  padding-top: 83px;
   height: 350px;
 }
 
@@ -69,7 +81,7 @@
   border-width: 1px 0 0 0;
 }
 
-.header-title h1,
+.header-title,
 .footer {
   text-align: center;
 }
@@ -97,7 +109,10 @@
 .post-image,
 .alert,
 .divider,
-.tile {
+.tile,
+.header-image img,
+.header-image,
+.contacts {
   width: 100%;
 }
 
