@@ -18,7 +18,6 @@ var express       = require('express'),
     mongoConnect  = require('./utils/mongoConnect');
 
 var app = express();
-
 mongoConnect(mongoose);
 
 // view engine setup
